@@ -1,0 +1,217 @@
+{
+    "appDescription": "Common Configuration",
+    "categories": [
+        {
+            "categoryName": "Security Configurations",
+            "properties": [
+                {
+                    "propName": "enableSecureAPI",
+                    "propDescription": "Enable security for APIs",
+                    "allowedValues": [
+                        "true",
+                        "false"
+                    ],
+                    "propValue": "true",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                }
+            ]
+        },
+        {
+            "categoryName": "Backend Datasource",
+            "properties": [
+                {
+                    "propName": "cmPluggableCache",
+                    "propDescription": "Catalog Management Backend Datasource",
+                    "allowedValues": [
+                        "Redis",
+                        "Relational"
+                    ],
+                    "propValue": "Redis",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "omPluggableCache",
+                    "propDescription": "Order Management Backend Datasource",
+                    "allowedValues": [
+                        "Redis",
+                        "Relational"
+                    ],
+                    "propValue": "Redis",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                }
+            ]
+        },
+        {
+            "categoryName": "General Configurations",
+            "properties": [
+                {
+                    "propName": "default.tenant.id",
+                    "propDescription": "Default Tenant ID",
+                    "propValue": "TIBCO",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "catalogMode",
+                    "propDescription": "Start Configurator service for - OM or OPES",
+                    "propValue": "OM",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                }
+            ]
+        },
+        {
+            "categoryName": "Resource and Service Level Metrics",
+            "properties": [
+                {
+                    "propName": "management.endpoints.web.exposure.include",
+                    "propDescription": "Resource Metric Endpoints to expose",
+                    "propValue": "health,info,ready",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "management.endpoints.jmx.exposure.include",
+                    "propDescription": "Jmx Endpoints to expose",
+                    "propValue": "*",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "management.endpoints.jolokia.enabled",
+                    "propDescription": "Whether to enable the Jolokia endpoint",
+                    "propValue": "true",
+                    "valueType": "boolean",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "monitoringSystem",
+                    "propDescription": "External System to moniter metrics",
+                    "propValue": "",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "management.metrics.export.elastic.enabled",
+                    "propDescription": "Enable the Elastic metrics",
+                    "propValue": "false",
+                    "valueType": "boolean",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "management.metrics.export.elastic.host",
+                    "propDescription": "Elastic Host Url to export metrics",
+                    "propValue": "http://localhost:9200",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "management.metrics.export.elastic.index",
+                    "propDescription": "Elastic Index to export metrics",
+                    "propValue": "micrometer-metrics",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "management.metrics.export.elastic.step",
+                    "propDescription": "Reporting Frequency To Export Metrics To Elastic",
+                    "propValue": "1m",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "management.metrics.export.elastic.userName",
+                    "propDescription": "Login user of the Elastic server",
+                    "propValue": "",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "management.metrics.export.elastic.password",
+                    "propDescription": "Login password of the Elastic server",
+                    "propValue": "",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "management.metrics.export.dynatrace.uri",
+                    "propDescription": "Dynatrace Host URL To Export Metrics",
+                    "propValue": "",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "management.metrics.export.dynatrace.api-token",
+                    "propDescription": "Dynatrace Authentication Token",
+                    "propValue": "",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "management.metrics.export.dynatrace.device-id",
+                    "propDescription": "ID of the custom device that is exporting metrics to Dynatrace",
+                    "propValue": "",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "management.metrics.export.dynatrace.step",
+                    "propDescription": "Reporting Frequency To Export Metrics To Dynatrace",
+                    "propValue": "1m",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "management.metrics.export.dynatrace.enabled",
+                    "propDescription": "Whether to enable the Dynatrace metrics",
+                    "propValue": "false",
+                    "valueType": "boolean",
+                    "isTenantProperty": "false"
+                }
+            ]
+        },
+        {
+            "categoryName": "Authorization Server Configuration Properties Used for Swagger UI",
+            "properties": [
+                {
+                    "propName": "authorizationServiceTokenEndPoint",
+                    "propDescription": "Authorization Server OAuth URL",
+                    "propValue": "http://localhost:9091/oauth/token",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "authorization.client.id",
+                    "propDescription": "Authorized Client ID",
+                    "propValue": "order-management-client",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "authorization.client.secret",
+                    "propDescription": "Authorized Client Secret",
+                    "propValue": "ENC(ggsmFvh5HBbeSD1j+l5Y0rP4qv0rJvEm)",
+                    "valueType": "password",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "authentication.token.signing.key",
+                    "propDescription": "Authentication Token Signing Key",
+                    "propValue": "ENC(nSa0k6lmjPPN8ZA5SO6BpQ==)",
+                    "valueType": "password",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "useAccessTokenFromProperty",
+                    "propDescription": "Use Static Access-Token",
+                    "propValue": "false",
+                    "valueType": "boolean",
+                    "isTenantProperty": "false"
+                }
+            ]
+        }
+    ]
+}

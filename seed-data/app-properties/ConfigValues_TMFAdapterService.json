@@ -1,0 +1,83 @@
+{
+    "appDescription": "TMFAdapter Service",
+    "categories": [
+        {
+            "categoryName": "TMF OM Adapter Engine Configuration",
+            "properties": [
+                {
+                    "propName": "access.token",
+                    "propDescription": "Static Access-Token",
+                    "propValue": "",
+                    "valueType": "password",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "logging.config",
+                    "propDescription": "Logging Configuration File Path",
+                    "propValue": "config/logback_tmf.xml",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "info.app.name",
+                    "propDescription": "Application name to show on actuator info endpoint",
+                    "propValue": "TMF-OM-Adapter",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                }
+            ]
+        },
+        {
+            "categoryName": "Orchestrator Service Configuration",
+            "properties": [
+                {
+                    "propName": "omServerOrderUrl",
+                    "propDescription": "Orchestrator Service Submit Order Rest Api URL",
+                    "propValue": "http://localhost:9093/v1/order",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "spring.jackson.default-property-inclusion",
+                    "propDescription": "Inclusion of Properties During Serialization",
+                    "propValue": "NON_NULL",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "omServerWithdrawOrderPath",
+                    "propDescription": "Orchestrator Service WithdrawOrder End-Point",
+                    "propValue": "http://localhost:9093/v1/order",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "omServerOrderDetailsPath",
+                    "propDescription": "Orchestrator Service GetOrderDetails End-Point",
+                    "propValue": "http://localhost:9093/v1/order",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                }
+            ]
+        },
+        {
+            "categoryName": "User Details For Inter Service Communication",
+            "properties": [
+                {
+                    "propName": "authorization.service.username",
+                    "propDescription": "Username For Inter Service Communication",
+                    "propValue": "apiUser",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "authorization.service.password",
+                    "propDescription": "User Password For Inter Service Communication",
+                    "propValue": "apiUser",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,758 @@
+{
+  "appDescription": "Jeopardy Service",
+  "categories": [
+    {
+      "categoryName": "Jeopardy General configuration",
+      "properties": [
+        {
+          "propName": "logging.config",
+          "propDescription": "Logging Configuration File Path",
+          "propValue": "config/logback_jeopardy.xml",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "info.app.name",
+          "propDescription": "Application name to show on actuator info endpoint",
+          "propValue": "Jeopardy",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        }
+      ]
+    },
+    {
+      "categoryName": "Jeopardy Functional configuration",
+      "properties": [
+        {
+          "propName": "riskThreshold",
+          "propDescription": "Percantage of Plan Fragment's Typical Duration used to consider a Plan/Plan Item in Hazard State",
+          "propValue": "25",
+          "valueType": "number",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "outOfScopeThreshold",
+          "propDescription": "Percantage of Plan Fragment's Maximum Duration used to consider a Plan/Plan Item in OOS State",
+          "propValue": "25",
+          "valueType": "number",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "planProcessStartDate",
+          "propDescription": "Plan process start date",
+          "propValue": "01/18/2012",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "timeWindow",
+          "propDescription": "Time used by jeoMS to cluster plan items in execution to optimize jeopardy detection cycle.",
+          "propValue": "10",
+          "valueType": "number",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "timeWindowUnit",
+          "propDescription": "Unit of Time used by jeoMS to cluster plan items in execution to optimize jeopardy detection cycle.",
+          "allowedValues": [
+            "SECOND",
+            "MINUTE",
+            "HOUR",
+            "DAY",
+            "MONTH"
+          ],
+          "propValue": "SECOND",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "jeopardyDetectionInterval",
+          "propDescription": "Jeopardy detection cycle interval in seconds",
+          "propValue": "60",
+          "valueType": "number",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "planLevelThresholdDuration",
+          "propDescription": "Plan Level Threshold (in millis) over the typical duration. Within this threshold, plan won't be considered in Jeopardy.",
+          "propValue": "0",
+          "valueType": "number",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "sectionLevelThresholdDuration",
+          "propDescription": "Section Level Threshold (in millis) over the typical duration. Within this threshold, section won't be considered in Jeopardy.",
+          "propValue": "0",
+          "valueType": "number",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "numOfOrdersPerCycle",
+          "propDescription": "Number of orders to process per cycle",
+          "propValue": "0",
+          "valueType": "number",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "jeopardyDetectorStartDelay",
+          "propDescription": "Jeopardy detector start delay in seconds",
+          "propValue": "10",
+          "valueType": "number",
+          "isTenantProperty": "false"
+        }
+      ]
+    },
+    {
+      "categoryName": "Jeopardy Data Source Configuration",
+      "properties": [
+        {
+          "propName": "datasourceDriverClassName",
+          "propDescription": "Data Source Driver Name",
+          "allowedValues": [
+            "org.postgresql.Driver",
+            "oracle.jdbc.driver.OracleDriver"
+          ],
+          "propValue": "org.postgresql.Driver",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "jeopardyDsUrl",
+          "propDescription": "Data Source URL",
+          "allowedValues": [
+            "jdbc:postgresql://localhost:5432/jeopardydbll?currentSchema=jeopardyschemall",
+            "jdbc:oracle:thin:@//localhost:1521/orcl.apac.tibco.com"
+          ],
+          "propValue": "jdbc:postgresql://localhost:5432/jeopardydbll?currentSchema=jeopardyschemall",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "jeopardyDsUsername",
+          "propDescription": "Data Source Username",
+          "propValue": "jeopardyuserll",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "jeopardyDsPassword",
+          "propDescription": "Data Source Password",
+          "propValue": "jeopardyuserll",
+          "valueType": "password",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "jeopardyDsInitialSize",
+          "propDescription": "Number of connections that will be established when the connection pool is started",
+          "propValue": "10",
+          "valueType": "number",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "jeopardyDsMaxIdle",
+          "propDescription": "Maximum number of connections that should be kept in the idle pool",
+          "propValue": "100",
+          "valueType": "number",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "jeopardyDsMinIdle",
+          "propDescription": "Minimum number of connections that should be kept in the idle pool",
+          "propValue": "100",
+          "valueType": "number",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "jeopardyDsMaxActive",
+          "propDescription": "Maximum number of active connections that can be allocated from this pool at the same time",
+          "propValue": "100",
+          "valueType": "number",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "jeopardyDsMaxWait",
+          "propDescription": "Maximum number of milliseconds that the pool will wait when there are no available connections",
+          "propValue": "30000",
+          "valueType": "number",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "datasourceValidationQuery",
+          "propDescription": "SQL query that will be used to validate connections",
+          "allowedValues": [
+            "SELECT 1",
+            "select 1 from dual"
+          ],
+          "propValue": "SELECT 1",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "jeopardyDsTestOnBorrow",
+          "propDescription": "Enable connection validation before being borrowed from the pool",
+          "propValue": "false",
+          "valueType": "boolean",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "jeopardyDsValidationInterval",
+          "propDescription": "Data source validation interval in milliseconds",
+          "propValue": "5000",
+          "valueType": "number",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "hibernateDsDefaults",
+          "propDescription": "Enable Hibernate Metadata Defaults",
+          "propValue": "false",
+          "valueType": "boolean",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "hibernateDialect",
+          "propDescription": "Hibernate Dialect",
+          "allowedValues": [
+            "org.hibernate.dialect.PostgreSQLDialect",
+            "org.hibernate.dialect.Oracle10gDialect"
+          ],
+          "propValue": "org.hibernate.dialect.PostgreSQLDialect",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "jeopardyHibernateShowSql",
+          "propDescription": "Hibernate Show SQL",
+          "propValue": "false",
+          "valueType": "boolean",
+          "isTenantProperty": "false"
+        }
+      ]
+    },
+    {
+      "categoryName": "Messaging configuration",
+      "properties": [
+        {
+          "propName": "emsServerURL",
+          "propDescription": "EMS server url",
+          "propValue": "tcp://localhost:7222",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "emsServerUsername",
+          "propDescription": "EMS server username",
+          "propValue": "admin",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "emsServerPassword",
+          "propDescription": "EMS server password",
+          "propValue": "admin",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "jndiConnectionFactory",
+          "propDescription": "JNDI connection factory",
+          "propValue": "GenericConnectionFactory",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "initialContextFactory",
+          "propDescription": "Initial context factory",
+          "propValue": "com.tibco.tibjms.naming.TibjmsInitialContextFactory",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "planDevelopmentNotificationQueue",
+          "propDescription": "Plan development order state notification queue",
+          "propValue": "jeopardy.plan.create",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "planDevelopmentNotificationDeadQueue",
+          "propDescription": "Plan development order state notification dead queue",
+          "propValue": "jeopardy.plan.create.dead",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "orderNotificationQueue",
+          "propDescription": "Order statenotification queue",
+          "propValue": "jeopardy.order",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "orderNotificationDeadQueue",
+          "propDescription": "Order statenotification dead queue",
+          "propValue": "jeopardy.order.dead",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "planNotificationQueue",
+          "propDescription": "Plan state notification queue",
+          "propValue": "jeopardy.plan",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "planNotificationDeadQueue",
+          "propDescription": "Plan state notification dead queue",
+          "propValue": "jeopardy.plan.dead",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "planItemExecuteRequestNotificationQueue",
+          "propDescription": "Plan item execute request notification queue",
+          "propValue": "jeopardy.planitem.execute.request",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "planItemExecuteRequestNotificationDeadQueue",
+          "propDescription": "Plan item execute request notification dead queue",
+          "propValue": "jeopardy.planitem.execute.request.dead",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "planItemExecuteResponseNotificationQueue",
+          "propDescription": "Plan item execute response notification queue",
+          "propValue": "jeopardy.planitem.execute.response",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "planItemExecuteResponseNotificationDeadQueue",
+          "propDescription": "Plan item execute response notification dead queue",
+          "propValue": "jeopardy.planitem.execute.response.dead",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "milestoneNotifyRequestNotificationQueue",
+          "propDescription": "Milestone notify request notification queue",
+          "propValue": "jeopardy.milestone.notify.request",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "milestoneNotifyRequestNotificationDeadQueue",
+          "propDescription": "Milestone notify request notification dead queue",
+          "propValue": "jeopardy.milestone.notify.request",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "milestoneReleaseRequestNotificationQueue",
+          "propDescription": "Milestone release request notification queue",
+          "propValue": "jeopardy.milestone.release.request",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "milestoneReleaseRequestNotificationDeadQueue",
+          "propDescription": "Milestone release request notification dead queue",
+          "propValue": "jeopardy.milestone.release.request.dead",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "processComponentModelPublishQueue",
+          "propDescription": "Process component model publish queue",
+          "propValue": "jeopardy.processcomponent.publish.queue",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "processComponentModelPublishDeadQueue",
+          "propDescription": "Process component model publish dead queue",
+          "propValue": "jeopardy.processcomponent.publish.dead.queue",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "notificationRedeliveryCount",
+          "propDescription": "Notification redelivery count",
+          "propValue": "1",
+          "valueType": "number",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "notificationReceiverCount",
+          "propDescription": "Notification receiver count",
+          "propValue": "1",
+          "valueType": "number",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "jmsSessionTransacted",
+          "propDescription": "Whether JMS session is transacted",
+          "propValue": "true",
+          "valueType": "boolean",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "timeoutMillis",
+          "propDescription": "JMS Receive Calls Timeout in milliseconds",
+          "propValue": "10000",
+          "valueType": "number",
+          "isTenantProperty": "false"
+        }
+      ]
+    },
+    {
+      "categoryName": "Relational configuration for Catalog datasource",
+      "properties": [
+        {
+          "propName": "datasourceDriverClassName",
+          "propDescription": "Data Source Driver Name",
+          "allowedValues": [
+            "org.postgresql.Driver",
+            "oracle.jdbc.driver.OracleDriver"
+          ],
+          "propValue": "org.postgresql.Driver",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "catalogDsUrl",
+          "propDescription": "Data Source URL",
+          "allowedValues": [
+            "jdbc:postgresql://localhost:5432/catalogdsdbll?currentSchema=catalogdsschemall",
+            "jdbc:oracle:thin:@//localhost:1521/orcl.apac.tibco.com"
+          ],
+          "propValue": "jdbc:postgresql://localhost:5432/catalogdsdbll?currentSchema=catalogdsschemall",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "catalogDsUsername",
+          "propDescription": "Data Source Username",
+          "propValue": "catalogdsuserll",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "catalogDsPassword",
+          "propDescription": "Data Source Password",
+          "propValue": "catalogdsuserll",
+          "valueType": "password",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "catalogDsInitializeSize",
+          "propDescription": "Number of connections that will be established when the connection pool is started",
+          "propValue": "10",
+          "valueType": "number",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "catalogDsMaxIdle",
+          "propDescription": "Maximum number of connections that should be kept in the idle pool",
+          "propValue": "100",
+          "valueType": "number",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "catalogDsMinIdle",
+          "propDescription": "Minimum number of connections that should be kept in the idle pool",
+          "propValue": "100",
+          "valueType": "number",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "catalogDsMaxActive",
+          "propDescription": "Maximum number of active connections that can be allocated from this pool at the same time",
+          "propValue": "100",
+          "valueType": "number",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "catalogDsMaxWait",
+          "propDescription": "Maximum number of milliseconds that the pool will wait when there are no available connections",
+          "propValue": "30000",
+          "valueType": "number",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "datasourceValidationQuery",
+          "propDescription": "SQL query that will be used to validate connections",
+          "allowedValues": [
+            "SELECT 1",
+            "select 1 from dual"
+          ],
+          "propValue": "SELECT 1",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "catalogDsTestOnBorrow",
+          "propDescription": "Enable connection validation before being borrowed from the pool",
+          "propValue": "false",
+          "valueType": "boolean",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "catalogDsValidationInterval",
+          "propDescription": "Data source validation interval in milliseconds",
+          "propValue": "5000",
+          "valueType": "number",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "hibernateDsDefaults",
+          "propDescription": "Enable Hibernate Metadata Defaults",
+          "propValue": "false",
+          "valueType": "boolean",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "hibernateDialect",
+          "propDescription": "Hibernate Dialect",
+          "allowedValues": [
+            "org.hibernate.dialect.PostgreSQLDialect",
+            "org.hibernate.dialect.Oracle10gDialect"
+          ],
+          "propValue": "org.hibernate.dialect.PostgreSQLDialect",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "catalogHibernateShowSql",
+          "propDescription": "Hibernate Show SQL",
+          "propValue": "false",
+          "valueType": "boolean",
+          "isTenantProperty": "false"
+        }
+      ]
+    },
+    {
+      "categoryName": "Redis configuration for Catalog datasource",
+      "properties": [
+        {
+          "propName": "catalogRedisHost",
+          "propDescription": "Redis Server Host for Catalog datasource",
+          "propValue": "localhost",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "catalogRedisClusterEnabled",
+          "propDescription": "Whether redis is running in Cluster Mode",
+          "propValue": "true",
+          "valueType": "boolean",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "catalogRedisPort",
+          "propDescription": "Redis Server Port for Catalog datasource",
+          "propValue": "6379",
+          "valueType": "number",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "catalogRedisUsername",
+          "propDescription": " Username to connect to Redis Cluster/Node",
+          "propValue": "",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "catalogRedisPassword",
+          "propDescription": "Password to connect to Redis Cluster/Node",
+          "propValue": "password",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "catalogRedisDatabase",
+          "propDescription": "Redis server Database name for Catalog datasource",
+          "propValue": "",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "catalogRedisClientName",
+          "propDescription": "Redis server ClientName for Catalog datasource",
+          "propValue": "",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "redisTestOnBorrow",
+          "propDescription": "Enable connection validation before being borrowed from the pool",
+          "propValue": "true",
+          "valueType": "boolean",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "redisTestOnReturn",
+          "propDescription": "Enable connection validation before being returned to the pool",
+          "propValue": "true",
+          "valueType": "boolean",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "redisTestWhileIdle",
+          "propDescription": "Enable connection validation while idle in connection pool",
+          "propValue": "true",
+          "valueType": "boolean",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "redisBlockedWhenExhausted",
+          "propDescription": "Enable connection blocking on borrow when connection pool is exhausted",
+          "propValue": "true",
+          "valueType": "boolean",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "redisJmxEnabled",
+          "propDescription": "Enabled JMX for connections",
+          "propValue": "true",
+          "valueType": "boolean",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "redisLifo",
+          "propDescription": "Enable LIFO behaviour for idle objects. Always returning the most recently used object from the pool",
+          "propValue": "true",
+          "valueType": "boolean",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "redisMaxIdle",
+          "propDescription": "Maximum number of idle connections in the pool",
+          "propValue": "64",
+          "valueType": "number",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "redisMinIdle",
+          "propDescription": "Minimum number of idle connections to maintain the pool",
+          "propValue": "16",
+          "valueType": "number",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "redisMaxTotal",
+          "propDescription": "Maximum number of connections that can be allocated by the pool at a given time",
+          "propValue": "64",
+          "valueType": "number",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "redisNumTestsPerEvictionRun",
+          "propDescription": "Maximum number of connections to examine during each evictor run",
+          "propValue": "5",
+          "valueType": "number",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "redisSoftMinEvictableIdleTimeMillis",
+          "propDescription": "Minimum amount of time in milliseconds an object may sit idle in the pool if minIdle instances are available",
+          "propValue": "3000",
+          "valueType": "number",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "redisMinEvictableIdleTimeMillis",
+          "propDescription": "Minimum amount of time in milliseconds an object may sit idle in the pool",
+          "propValue": "6000",
+          "valueType": "number",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "redisTimeBetweenEvictionRunsMillis",
+          "propDescription": "Number of milliseconds to sleep between runs of the idle object evictor thread",
+          "propValue": "3000",
+          "valueType": "number",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "catalogRedisSslEnabled",
+          "propDescription": "Connect to Redis Cluster/Node via SSL",
+          "propValue": "true",
+          "valueType": "boolean",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "redisKeyStoreType",
+          "propDescription": "Redis SSL KeyStore Type",
+          "propValue": "pkcs12",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "redisKeyStorePassword",
+          "propDescription": "Redis SSL KeyStore Password",
+          "propValue": "tibco123",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "redisTrustStoreType",
+          "propDescription": "Redis SSL TrustStore Type",
+          "propValue": "jks",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "redisTrustStorePassword",
+          "propDescription": "Redis SSL TrustStore Password",
+          "propValue": "tibco123",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "redisKeyStoreAbsoluteFilePath",
+          "propDescription": "Redis SSL KeyStore Absolute File Path",
+          "propValue": "D:/certificate/myhost.p12",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "redisTrustStoreAbsoluteFilePath",
+          "propDescription": "Redis SSL TrustStore Absolute File Path",
+          "propValue": "D:/certificate/cacert",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        }
+      ]
+    },
+    {
+      "categoryName": "Lock properties",
+      "properties": [
+        {
+          "propName": "lockRetryCount",
+          "propDescription": "Lock retry count",
+          "propValue": "5",
+          "valueType": "number",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "lockRetryInterval",
+          "propDescription": "Lock retry interval",
+          "propValue": "2",
+          "valueType": "number",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "hashCodeIndexDistributionSize",
+          "propDescription": "Number of rows in JEOPARDY_LOCK table",
+          "propValue": "2048",
+          "valueType": "number",
+          "isTenantProperty": "false"
+        }
+      ]
+    }
+  ]
+}
