@@ -1,0 +1,321 @@
+[
+  {
+    "propName": "com.tibco.af.omsui.httpChannelType",
+    "propDescription": "",
+    "allowedValues": [
+      "http",
+      "https",
+      "any"
+    ],
+    "propValue": "http",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.af.omsui.http.port",
+    "propDescription": "",
+    "propValue": "9097",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.af.omsui.https.port",
+    "propDescription": "",
+    "propValue": "8443",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "archivalHost",
+    "propDescription": "Host address of the Archival service",
+    "propValue": "localhost",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "archivalPort",
+    "propDescription": "Port number of the Archival service",
+    "propValue": "9099",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "jeopardyServiceProxyHost",
+    "propDescription": "Host address of the Jeopardy server",
+    "propValue": "localhost",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "jeopardyServiceProxyPort",
+    "propDescription": "Port number of the Jeopardy Service",
+    "propValue": "9102",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.af.omsui.enableRecordCountFetch",
+    "propDescription": "Enable the Record count fetch for pagination. This will make the data fetch slower and enable Last Page option in pagination.",
+    "propValue": "true",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.af.omsui.session-fixation-protection",
+    "propDescription": "",
+    "allowedValues": [
+      "migrateSession",
+      "none",
+      "newSession"
+    ],
+    "propValue": "migrateSession",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.af.concurrencyControl.maxSessionPerUser",
+    "propDescription": "",
+    "propValue": "1",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.af.omsui.shortDateFormat",
+    "propDescription": "OMS UI Short Date Format (Day [dd] , Month[MM] and Year [yyyy])",
+    "propValue": "MM/dd/yyyy",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.af.omsui.longDateFormat",
+    "propDescription": "OMS UI Long Date Time Format (Day [dd] , Month [MM], Year [yyyy], Hour [HH], Minute [mm] and Seconds [ss])",
+    "propValue": "MM/dd/yyyy HH:mm:ss",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.af.omsui.longDateFormatTimeZone",
+    "propDescription": "OMS UI Long Date Time Format (Day [dd] , Month [MM], Year [yyyy], Hour [HH], Minute [mm], Seconds [ss] and Timezone [z])",
+    "propValue": "MM/dd/yyyy HH:mm:ss z",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.af.omsui.longDateFormatTimeZoneMillis",
+    "propDescription": "OMS UI Long Date Time Format (Day [dd] , Month [MM], Year [yyyy], Hour [HH], Minute [mm], Seconds [ss], Milliseconds [SSS] and Timezone [z])",
+    "propValue": "MM/dd/yyyy HH:mm:ss:SSS z",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.af.oms.default.tenantId",
+    "propDescription": "Default tenant information",
+    "propValue": "TIBCO",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.af.oms.security.bcryptPasswordEncoder",
+    "propDescription": "bcryptPasswordEncoder",
+    "propValue": "org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "info.app.name",
+    "propDescription": "Application name to show on actuator info endpoint",
+    "propValue": "Order Management System UI",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.af.omsui.planItemExpression.gridView",
+    "propDescription": "OMS UI PlanItem Display Template for Grid View. Possible template variables are - PlanItemID, PlanFragmentID, ProductID, Action and Description; these template variables are case sensitive and have to be specified within curly braces {}. Different template variables can be combined with any type of delimiter e.g. {PlanFragmentID}|{PlanItemID}",
+    "propValue": "{ProductID}|{PlanItemID}",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.af.omsui.planItemExpression.ganttView",
+    "propDescription": "OMS UI PlanItem Display Template for Gantt View. Possible template variables are - PlanItemID, PlanFragmentID,ProductID, Action and Description; these template variables are case sensitive and have to be specified within curly braces {}. Different template variables can be combined with any type of delimiter e.g. {PlanFragmentID}|{PlanItemID}",
+    "propValue": "{PlanItemID}",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.af.omsui.planItemExpression.dependencyView",
+    "propDescription": "OMS UI PlanItem Display Template for Dependency View. Possible template variables are - PlanItemID, PlanFragmentID, ProductID, Action and Description; these template variables are case sensitive and have to be specified within curly braces {}. Different template variables can be combined with any type of delimiter e.g. {PlanFragmentID}|{PlanItemID}",
+    "propValue": "{ProductID}",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.af.omsui.pagination.enable",
+    "propDescription": "Enable Grid View and Gantt View Pagination",
+    "propValue": "false",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.af.omsui.gridView.pageSize",
+    "propDescription": "OMS UI Grid View Page Size",
+    "propValue": "20",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.af.omsui.ganttView.pageSize",
+    "propDescription": "OMS UI Gantt View Page Size",
+    "propValue": "10",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "databaseType",
+    "propDescription": "Database Type",
+    "allowedValues": [
+      "postgres",
+      "oracle"
+    ],
+    "propValue": "postgres",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.pcErrorHandlerType",
+    "propDescription": "The Error Handler component to be used in case of failed plan item",
+    "allowedValues": [
+      "ExternalErrorHandler",
+      "InternalErrorHandler"
+    ],
+    "propValue": "InternalErrorHandler",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.roles.piExecutionToComplete",
+    "propDescription": "To force completing plan items in execution status on the bases of role",
+    "propValue": "ROLE_ADMIN",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.nonexecuting.planfragmentID",
+    "propDescription": "ID of the plan fragment to be assigned for Non Executing plan items",
+    "propValue": "NON_EXECUTING",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "jndiConnectionFactory",
+    "propDescription": "JNDI Connection factory JNDI Name",
+    "propValue": "GenericConnectionFactory",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "jndiTopicConnectionFactory",
+    "propDescription": "Topic Connection factory JNDI Name",
+    "propValue": "TopicConnectionFactory",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "tibjmsNamingSecurityProtocol",
+    "propDescription": "For SSL Configuration value should be ssl",
+    "propValue": "",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "tibjmsNamingSslEnableVerifyHost",
+    "propDescription": "For SSL enable verify host value should be false",
+    "propValue": "",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "initialContextFactory",
+    "propDescription": "JNDI Initial Context Factory",
+    "propValue": "com.tibco.tibjms.naming.TibjmsInitialContextFactory",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "emsServerURL",
+    "propDescription": "JNDI URL for JMS Service",
+    "propValue": "tibjmsnaming://localhost:7222",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "emsServerUsername",
+    "propDescription": "JNDI Username",
+    "propValue": "admin",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "emsServerPassword",
+    "propDescription": "JNDI Password",
+    "propValue": "admin",
+    "valueType": "password",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "jndiCfBeo",
+    "propDescription": "Orchestrator Queue Connection factory JNDI Name",
+    "propValue": "QueueConnectionFactory",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "jndiCfBeoDeliverymode",
+    "propDescription": "Orchestrator JMS Delivery Mode",
+    "propValue": "2",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "jndiCfBeoQosEnabled",
+    "propDescription": "Orchestrator JMS QoS Enabled?",
+    "propValue": "false",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "jndiCfIpc",
+    "propDescription": "IPC Queue Connection factory JNDI Name",
+    "propValue": "GenericConnectionFactory",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "jndiCfIpcDeliverymode",
+    "propDescription": "IPC  JMS Delivery Mode",
+    "propValue": "1",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "jndiCfIpcQosEnabled",
+    "propDescription": "IPC JMS QoS Enabled",
+    "propValue": "false",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "modelEmsPostDisabled",
+    "propDescription": "Post Models on EMS for AOPD Disabled",
+    "propValue": "true",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.af.oms.security.authProvider",
+    "propDescription": "Default Authentication Provider",
+    "propValue": "defaultAuthenticationProvider",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  }
+]

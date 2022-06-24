@@ -1,0 +1,1835 @@
+[
+  {
+    "propName": "enableAuditTrail",
+    "propDescription": "Enable Audit Trail Persistence",
+    "propValue": "false",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "enableLogNotifications",
+    "propDescription": "Enable logging of order state change notifications",
+    "propValue": "false",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "logNotificationTypes",
+    "propDescription": "Types of order state change notification to log",
+    "propValue": "*",
+    "allowedValues": [
+      "ORDER",
+      "ORDERLINE",
+      "PLANDEVELOPMENT",
+      "PLAN",
+      "PLANITEM",
+      "DEPENDENCY",
+      "ORDERAMENDMENT",
+      "MILESTONE",
+      "*"
+    ],
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "validateDuplicateOrder",
+    "propDescription": "Enable Duplicate Order Validation",
+    "propValue": "false",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "recoverFailedOrder",
+    "propDescription": "Enable Failed Order Recovery",
+    "propValue": "false",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "enablePurgeCompleteOrder",
+    "propDescription": "Enable Order Purging Post Order Completion",
+    "propValue": "false",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "pcNotificationPubEndpoint",
+    "propDescription": "Process-Component Notification Publishing End-Point",
+    "propValue": "process-component",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "numCachedMachines",
+    "propDescription": "Number of Pre Instantiated State-Machines",
+    "propValue": "200",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "enableStats",
+    "propDescription": "Enable Order Statistics",
+    "propValue": "false",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "spring.profiles.active",
+    "propDescription": "Spring Active Profile",
+    "propValue": "DEV",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "spring.jackson.serialization.WRITE_DATES_AS_TIMESTAMPS",
+    "propDescription": "Enable Serialization of Dates as Timestamps",
+    "propValue": "false",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "spring.jackson.default-property-inclusion",
+    "propDescription": "Inclusion of Properties During Serialization",
+    "propValue": "NON_NULL",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "logging.config",
+    "propDescription": "Logging Configuration File Path",
+    "propValue": "config/logback_orch.xml",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "overridePlanfragmentDestination",
+    "propDescription": "Flag to enable or disable the overriding of process component destinations from ProcessComponent.props file",
+    "propValue": "false",
+    "valueType": "string",
+    "isTenantProperty": "true"
+  },
+  {
+    "propName": "tenantSpecificDestination",
+    "propDescription": "Flag to enable or disable using the tenant specific destination for process component",
+    "propValue": "false",
+    "valueType": "string",
+    "isTenantProperty": "true"
+  },
+  {
+    "propName": "enableFailurePointInjection",
+    "propDescription": "Enable failure point injection for testing purpose",
+    "propValue": "false",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.pcErrorHandlerType",
+    "propDescription": "The Error Handler component to be used in case of failed plan item",
+    "allowedValues": [
+      "ExternalErrorHandler",
+      "InternalErrorHandler"
+    ],
+    "propValue": "InternalErrorHandler",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.flag.shouldFailedPlanItemSuspend",
+    "propDescription": "Enable plan item suspention for plan item in Error.",
+    "propValue": "false",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.noreciprocalaction.planfragmentID",
+    "propDescription": "Non Executing Plan Fragment ID",
+    "propValue": "NO_RECIPROCAL_ACTION",
+    "valueType": "string",
+    "isTenantProperty": "true"
+  },
+  {
+    "propName": "com.tibco.fom.orch.enableMilestoneReleaseDuringActivation",
+    "propDescription": "Enable Milestone Release during activation",
+    "propValue": "true",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.milestone.allowMultipleSpaces",
+    "propDescription": "Enable processing of milestone id with multiple spaces",
+    "propValue": "false",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "numPILargePlan",
+    "propDescription": "Number of planitems for large plan",
+    "propValue": "50",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "info.app.name",
+    "propDescription": "Application name to show on actuator info endpoint",
+    "propValue": "Orchestrator",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.enableOrderSequencing",
+    "propDescription": "Order Sequencing Criteria",
+    "allowedValues": [
+      "disable",
+      "enableForAll",
+      "enableWithUdf"
+    ],
+    "propValue": "disable",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.sequencing.customerJsonPath",
+    "propDescription": "JsonPath expression for Order Sequencing Key",
+    "propValue": "$.orderRequest.header.customerID",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "sequencingMode",
+    "propDescription": "Sequencing Interaction Mode",
+    "propValue": "JMS",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "pendingOrderProcessor.processingInterval",
+    "propDescription": "Pending Order Event Processing Interval in milliseconds",
+    "propValue": "60000",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "pendingOrderProcessor.eventOffsetInSeconds",
+    "propDescription": "Pending Order Event Offset in seconds",
+    "propValue": "60",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "pendingOrderProcessor.numOfWorkerThreads",
+    "propDescription": "Pending Order Event Number of Worker Threads",
+    "propValue": "1",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "pendingOrderProcessor.orderEventProcessCount",
+    "propDescription": "Number of Pending Order Events to Process during each run",
+    "propValue": "5",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "pendingOrderProcessor.orderEventRetryCount",
+    "propDescription": "Pending Order Event Retry Count",
+    "propValue": "5",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "enablePlanFragmentGlobalCache",
+    "propDescription": "Enable Plan-Fragment Catalog Global Caching",
+    "propValue": "true",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.af.orch.cacheType.cache.maxNoPlanFragmentcached",
+    "propDescription": "Maximum number of Plan-Fragment catalog stored in cache",
+    "propValue": "1000",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "planFragmentCacheExpiryPeriod",
+    "propDescription": "Plan-Fragment Catalog Cache Expiry Period in Seconds",
+    "propValue": "30",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "aopdGeneratePlanResourceURL",
+    "propDescription": "AOPD Server Plan Generation URL",
+    "propValue": "http://localhost:9094/v1/generatePlan",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "aopdAmendPlanResourceURL",
+    "propDescription": "AOPD Server Amend Plan Generation URL",
+    "propValue": "http://localhost:9094/v1/plan/amend",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.retryFailedOPD",
+    "propDescription": "Enable retry of failed OPD request",
+    "propValue": "false",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.OPDRetries",
+    "propDescription": "Number of retries for failed OPD request",
+    "propValue": "5",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.opdRetryInterval",
+    "propDescription": "Time interval, in milliseconds, between two consecutive OPD retries",
+    "propValue": "6000",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "enableNotification",
+    "propDescription": "Enable Order State Change Notifications",
+    "propValue": "true",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "isTenantProperty": "false",
+    "propDescription": "Types of JMS Notification to send for order state change. * means all",
+    "propName": "jmsNotificationTypes",
+    "allowedValues": [
+      "ORDER",
+      "ORDERLINE",
+      "PLANDEVELOPMENT",
+      "PLAN",
+      "PLANITEM",
+      "DEPENDENCY",
+      "ORDERAMENDMENT",
+      "MILESTONE",
+      "*"
+    ],
+    "propValue": "*",
+    "valueType": "string"
+  },
+  {
+    "propName": "com.tibco.fom.orch.outbound.notification.destination",
+    "propDescription": "Order State Change Notification topic",
+    "propValue": "tibco.aff.orchestrator.outbound.notification",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.order.statusChange.destination",
+    "propDescription": "Order status change destination",
+    "propValue": "tibco.aff.orchestrator.notification.order",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.orderLine.statusChange.destination",
+    "propDescription": "OrderLine status change destination",
+    "propValue": "tibco.aff.orchestrator.notification.orderLine",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.plan.statusChange.destination",
+    "propDescription": "Plan status change destination",
+    "propValue": "tibco.aff.orchestrator.notification.plan",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.planItem.statusChange.destination",
+    "propDescription": "PlanItem status change destination",
+    "propValue": "tibco.aff.orchestrator.notification.planItem",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.orderAmendment.statusChange.destination",
+    "propDescription": "Order Amendment status change destination",
+    "propValue": "tibco.aff.orchestrator.notification.orderAmendment",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.order.statusChange.filter",
+    "propDescription": "Filter for Order status change notification; * will publish all",
+    "propValue": "*",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.orderLine.statusChange.filter",
+    "propDescription": "Filter for OrderLine status change notification; * will publish all",
+    "propValue": "*",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.plan.statusChange.filter",
+    "propDescription": "Filter for Plan status change notification; * will publish all",
+    "propValue": "*",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.planItem.statusChange.filter",
+    "propDescription": "Filter for PlanItem status change notification; * will publish all",
+    "propValue": "*",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.orderAmendment.filter",
+    "propDescription": "Filter for OrderAmendment status change notification; * will publish all",
+    "propValue": "*",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "pcResourceExecuteRequestURL",
+    "propDescription": "PC Execute Request URL",
+    "propValue": "http://localhost:9089/v1/planitem/executionrequest",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "pcResourceSuspendRequestURL",
+    "propDescription": "PC Suspend Request URL",
+    "propValue": "http://localhost:9089/v1/planitem/suspendrequest",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "pcResourceActivateRequestURL",
+    "propDescription": "PC Activate Request URL",
+    "propValue": "http://localhost:9089/v1/planitem/activaterequest",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "pcResourceExtErrorHanlderRequestURL",
+    "propDescription": "PC Error Handler Request URL",
+    "propValue": "http://localhost:9089/v1/planitem/errorhandlerrequest",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "feasibleRequestPathRequestURL",
+    "propDescription": "PC Feasibility Request URL",
+    "propValue": "http://localhost:9089/v1/feasibility",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "pqfRequestPathRequestURL",
+    "propDescription": "PC Pre Qualification Request URL",
+    "propValue": "http://localhost:9089/v1/pqf",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "pcResourceMileReleaseRequestURL",
+    "propDescription": "PC PlanItem MilestoneRelease Request URL",
+    "propValue": "http://localhost:9089/v1/planitem/milestonerelease",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "defaultAckMode",
+    "propDescription": "Default Acknowledge Mode for Process-Component",
+    "propValue": "JMS",
+    "allowedValues": [
+      "ASYNC",
+      "SYNC_CONFIRM",
+      "SYNC_NOCONFIRM",
+      "JMS"
+    ],
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "archivalGetOrderDetailsURL",
+    "propDescription": "Archival GetOrderDetails URL",
+    "propValue": "http://localhost:9099/v1/ordersByCriteria",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "archivalInteractionMode",
+    "propDescription": "Archival Interaction Mode",
+    "propValue": "JMS",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "migrationEnabled",
+    "propDescription": "Enable runtime order migration from 5.0.*",
+    "propValue": "false",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "migrationURL",
+    "propDescription": "Migration service endpoint",
+    "propValue": "http://localhost:9100/v1/migration/order",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "opeOfferValidationSecureURL",
+    "propDescription": "OPE Service Offer Validation Secure URL",
+    "propValue": "http://localhost:8181/opes/api/v1/offers/validate",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "opeOfferValidationNonSecureURL",
+    "propDescription": "OPE Service Offer Validation Non Secure URL",
+    "propValue": "http://localhost:9090/opes/api/v1/offers/validate",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "opeGetAuthTokenURL",
+    "propDescription": "OPE Service Get Auth URL",
+    "propValue": "http://localhost:8181/login",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "opeSecureApiUsername",
+    "propDescription": "OPE Secure Service API Username",
+    "propValue": "admin",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "opeSecureApiPassword",
+    "propDescription": "OPE Secure Service API Password",
+    "propValue": "admin",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "extResource.enableOfferValidation",
+    "propDescription": "Enable Offer Validation",
+    "allowedValues": [
+      "true",
+      "false"
+    ],
+    "propValue": "false",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "operation.roles.submitOrder",
+    "propDescription": "User Role for submitOrder Service",
+    "propValue": "ROLE_ADMIN",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "operation.roles.orderExecutionPlan",
+    "propDescription": "User Role for orderExecutionPlan Service",
+    "propValue": "ROLE_ADMIN,ROLE_USER",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "operation.roles.getOrderDetails",
+    "propDescription": "User Role for getOrderDetails Service",
+    "propValue": "ROLE_ADMIN,ROLE_USER",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "operation.roles.getAuditTrail",
+    "propDescription": "User Role for getAuditTrail Service",
+    "propValue": "ROLE_ADMIN,ROLE_USER",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "operation.roles.executePlanItemReply",
+    "propDescription": "User Role for executePlanItemReply Service",
+    "propValue": "ROLE_ADMIN",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "operation.roles.orderWithdraw",
+    "propDescription": "User Role for orderWithdraw Service",
+    "propValue": "ROLE_ADMIN",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "emsServerURL",
+    "propDescription": "EMS Server URL",
+    "propValue": "tcp://localhost:7222",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "emsServerUsername",
+    "propDescription": "EMS Server User Name",
+    "propValue": "admin",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "emsServerPassword",
+    "propDescription": "EMS Server Password",
+    "propValue": "admin",
+    "valueType": "password",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "jndiConnectionFactory",
+    "propDescription": "JNDI Connection Factory Name",
+    "propValue": "GenericConnectionFactory",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "tibjmsNamingSecurityProtocol",
+    "propDescription": "For SSL Configuration value should be ssl",
+    "propValue": "",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "tibjmsNamingSslEnableVerifyHost",
+    "propDescription": "For SSL enable verify host value should be false",
+    "propValue": "",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "initialContextFactory",
+    "propDescription": "Initializing Context Factory Name",
+    "propValue": "com.tibco.tibjms.naming.TibjmsInitialContextFactory",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "jmsSessionTransacted",
+    "propDescription": "Keep JMS Session Transacted",
+    "propValue": "true",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "timeoutReceiveCalls",
+    "propDescription": "EMS message acknowledge timeout in milliseconds",
+    "propValue": "10000",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "concurrentEmsConsumers",
+    "propDescription": "EMS Concurrent Consumers",
+    "propValue": "5",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.planItem.execute.response.queue",
+    "propDescription": "PlanItem execution response queue",
+    "propValue": "tibco.aff.orchestrator.planItem.execute.reply",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.planItem.execute.request.queue",
+    "propDescription": "PlanItem execution request queue",
+    "propValue": "tibco.aff.orchestrator.planItem.execute.request",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.planItem.execute.response.dead.queue",
+    "propDescription": "PlanItem execution response dead queue",
+    "propValue": "tibco.aff.orchestrator.planItem.execute.reply.dead",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.planItem.execute.response.count",
+    "propDescription": "PlanItem execution response receiver count",
+    "propValue": "1",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.planItem.suspend.request.queue",
+    "propDescription": "PlanItem suspend request queue",
+    "propValue": "tibco.aff.orchestrator.planItem.suspend.request",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.planItem.suspend.response.queue",
+    "propDescription": "PlanItem suspend response queue",
+    "propValue": "tibco.aff.orchestrator.planItem.suspend.reply",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.planItem.suspend.response.count",
+    "propDescription": "PlanItem suspend response receiver count",
+    "propValue": "1",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.planItem.suspend.response.dead.queue",
+    "propDescription": "PlanItem suspend response dead queue",
+    "propValue": "tibco.aff.orchestrator.planItem.suspend.reply.dead",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.planItem.activate.request.queue",
+    "propDescription": "PlanItem activate request queue",
+    "propValue": "tibco.aff.orchestrator.planItem.activate.request",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.planItem.milestone.releaseRequest.queue",
+    "propDescription": "MilestoneReleaseRequest from Orchestrator to process components queue",
+    "propValue": "tibco.aff.orchestrator.planItem.milestone.release.request",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.af.oms.ordersService.queue",
+    "propDescription": "Queue for receiving SOAP Over JMS Order Service requests",
+    "propValue": "tibco.aff.oms.ordersService",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.af.oms.webservice.soap.jms.concurrentConsumers",
+    "propDescription": "Number of concurrent consumers for SOAP Over JMS Order Service requests (default 1)",
+    "propValue": "1",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.prequalificationfailed.request.queue",
+    "propDescription": "External PreQualificationFailed request queue",
+    "propValue": "tibco.aff.orchestrator.provider.order.prequal.failed.request",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.prequalificationfailed.reply.queue",
+    "propDescription": "External PreQualificationFailed reply queue",
+    "propValue": "tibco.aff.orchestrator.provider.order.prequal.failed.reply",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.prequalificationfailed.reply.queue.receiver.count",
+    "propDescription": "External PreQualificationFailed reply queue receiver count",
+    "propValue": "6",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.prequalificationfailed.reply.dead.queue",
+    "propDescription": "External PreQualificationFailed reply dead queue",
+    "propValue": "tibco.aff.orchestrator.provider.order.prequal.failed.reply.dead",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.feasibility.request.queue",
+    "propDescription": "External Feasibility request queue",
+    "propValue": "tibco.aff.orchestrator.provider.order.feasibility.request",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.feasibility.reply.queue",
+    "propDescription": "External Feasibility reply queue",
+    "propValue": "tibco.aff.orchestrator.provider.order.feasibility.reply",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.feasibility.reply.queue.receiver.count",
+    "propDescription": "External Feasibility reply queue receiver count",
+    "propValue": "6",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.feasibility.reply.dead.queue",
+    "propDescription": "External Feasibility reply dead queue",
+    "propValue": "tibco.aff.orchestrator.provider.order.feasibility.reply.dead",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.planItem.errhandler.response.queue",
+    "propDescription": "PlanItem error handler response queue",
+    "propValue": "tibco.aff.orchestrator.provider.planItem.failed.reply",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.planItem.errhandler.response.count",
+    "propDescription": "PlanItem error handler response receiver count",
+    "propValue": "1",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.planItem.errhandler.response.dead.queue",
+    "propDescription": "PlanItem error handler response dead queue",
+    "propValue": "tibco.aff.orchestrator.provider.planItem.failed.reply.dead",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.order.sequencing.queue",
+    "propDescription": "Order Sequencing queue",
+    "propValue": "tibco.aff.oms.ordersSequencer.notification.order",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.order.sequencing.dead.queue",
+    "propDescription": "Order Sequencing dead queue",
+    "propValue": "tibco.aff.oms.ordersSequencer.notification.order.dead",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.order.sequencing.retry.count",
+    "propDescription": "Order Sequencing Retry Count",
+    "propValue": "5",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.order.sequencing.receiver.count",
+    "propDescription": "Order Sequencing Receiver Count",
+    "propValue": "1",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "globalCacheCleanupTopicName",
+    "propDescription": "Global Cache Clean Up Topic Name",
+    "propValue": "tibco.fos.global.cache.clean.publish",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.planItem.errhandler.request.queue",
+    "propDescription": "PlanItem error handler request queue",
+    "propValue": "tibco.aff.orchestrator.provider.planItem.failed.request",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.enableFeasibilityErrorHandling",
+    "propDescription": "Enable error handling for failed feasibility request in Orchestrator",
+    "propValue": "false",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.feasibilityRequired",
+    "propDescription": "Enable feasibility check for orders in Orchestrator",
+    "propValue": "false",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.retryFailedFeasibility",
+    "propDescription": "Enable retry of failed feasibility request in Orchestrator",
+    "propValue": "false",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.feasibilityRetries",
+    "propDescription": "Number of retries to be done for failed feasibility request",
+    "propValue": "5",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.fom.orch.feasibilityRetryInterval",
+    "propDescription": "Time interval in milliseconds between two consecutive feasibility retry requests",
+    "propValue": "6000",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.af.oms.statusmessage.max.redeliveries",
+    "propDescription": "Maximum number of times the Status Message to be retried",
+    "propValue": "3",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.af.oms.statusmessage.redelivery.delay",
+    "propDescription": "Interval delay in millisecs between Status Message retries",
+    "propValue": "3000",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.af.oms.statusmessage.max.redelivery.delay",
+    "propDescription": "Maximum delay in millisecs For Status Message retries",
+    "propValue": "30000",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.af.oms.statusmessage.useExponentialBackOff",
+    "propDescription": "Use Exponential backoff For Status Message retries",
+    "propValue": "false",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.af.oms.statusmessage.exponentialBackOffMultiplier",
+    "propDescription": "Exponential backoff Multiplier For Status Message retries",
+    "propValue": "2",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.af.oms.statusmessage.logRetryAttempted",
+    "propDescription": "Log retry attempt For Status Message retries",
+    "propValue": "false",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.af.oms.statusmessage.logStackTrace",
+    "propDescription": "Log retry failed stacktrace For Status Message retries",
+    "propValue": "false",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "adminDsUsername",
+    "propDescription": "Data Source Username",
+    "propValue": "adminuserll",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "adminDsPassword",
+    "propDescription": "Data Source Password",
+    "propValue": "adminuserll",
+    "valueType": "password",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "adminDsUrl",
+    "propDescription": "Data Source URL",
+    "allowedValues": [
+      "jdbc:postgresql://localhost:5432/admindbll?currentSchema=adminschemall",
+      "jdbc:oracle:thin:@//localhost:1521/orcl.apac.tibco.com"
+    ],
+    "propValue": "jdbc:postgresql://localhost:5432/admindbll?currentSchema=adminschemall",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "adminDsInitializeSize",
+    "propDescription": "Number of connections that will be established when the connection pool is started",
+    "propValue": "2",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "adminDsMaxIdle",
+    "propDescription": "Maximum number of connections that should be kept in the idle pool",
+    "propValue": "11",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "adminDsMaxActive",
+    "propDescription": "Maximum number of active connections that can be allocated from this pool at the same time",
+    "propValue": "12",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "adminDsMaxWait",
+    "propDescription": "Maximum number of milliseconds that the pool will wait when there are no available connections",
+    "propValue": "10000",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "adminDsTestOnBorrow",
+    "propDescription": "Enable connection validation before being borrowed from the pool",
+    "propValue": "false",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "adminDsValidationInterval",
+    "propDescription": "Data source validation interval in milliseconds",
+    "propValue": "5000",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "adminDsTestWhileIdle",
+    "propDescription": "Enable connection validation while idle in connection pool",
+    "propValue": "true",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "adminDsTimeBetweenEvictionRunsMillis",
+    "propDescription": "Data Source Eviction Interval in milliseconds",
+    "propValue": "5000",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "adminDsMinEvictableIdleTimeMillis",
+    "propDescription": "Minimum amount of time in milliseconds an object must sit idle in the pool before it is eligible for eviction",
+    "propValue": "5000",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "adminDsNumTestsPerEvictionRun",
+    "propDescription": "Maximum number of connections to examine during each evictor run",
+    "propValue": "5",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "adminDsDefaultAutoCommit",
+    "propDescription": "Enable auto commit after each transaction",
+    "propValue": "false",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "adminDsRollbackOnReturn",
+    "propDescription": "Enable transaction rollback when connection is returned back to the pool",
+    "propValue": "false",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "adminDsCommitOnReturn",
+    "propDescription": "Enable transaction commit when connection is returned back to the pool",
+    "propValue": "false",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "adminDsCustomProperty",
+    "propDescription": "Pooled Database Custom Property",
+    "propValue": "",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "orderDsUsername",
+    "propDescription": "Data Source Username",
+    "propValue": "orderuserll",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "orderDsPassword",
+    "propDescription": "Data Source Password",
+    "propValue": "orderuserll",
+    "valueType": "password",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "orderDsUrl",
+    "propDescription": "Data Source URL",
+    "allowedValues": [
+      "jdbc:postgresql://localhost:5432/orderdbll?currentSchema=orderschemall",
+      "jdbc:oracle:thin:@//localhost:1521/orcl.apac.tibco.com"
+    ],
+    "propValue": "jdbc:postgresql://localhost:5432/orderdbll?currentSchema=orderschemall",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "orderDsInitializeSize",
+    "propDescription": "Number of connections that will be established when the connection pool is started",
+    "propValue": "2",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "orderDsMaxIdle",
+    "propDescription": "Maximum number of connections that should be kept in the idle pool",
+    "propValue": "11",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "orderDsMaxActive",
+    "propDescription": "Maximum number of active connections that can be allocated from this pool at the same time",
+    "propValue": "12",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "orderDsMaxWait",
+    "propDescription": "Maximum number of milliseconds that the pool will wait when there are no available connections",
+    "propValue": "10000",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "orderDsTestOnBorrow",
+    "propDescription": "Enable connection validation before being borrowed from the pool",
+    "propValue": "false",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "orderDsValidationInterval",
+    "propDescription": "Data source validation interval in milliseconds",
+    "propValue": "5000",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "orderDsTestWhileIdle",
+    "propDescription": "Enable connection validation while idle in connection pool",
+    "propValue": "true",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "orderDsTimeBetweenEvictionRunsMillis",
+    "propDescription": "Minimum amount of time in milliseconds an object must sit idle in the pool before it is eligible for eviction",
+    "propValue": "5000",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "orderDsMinEvictableIdleTimeMillis",
+    "propDescription": "Minimum amount of time in milliseconds an object may sit idle in the pool",
+    "propValue": "5000",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "orderDsNumTestsPerEvictionRun",
+    "propDescription": "Maximum number of connections to examine during each evictor run",
+    "propValue": "5",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "orderDsDefaultAutoCommit",
+    "propDescription": "Enable auto commit after each transaction",
+    "propValue": "false",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "orderDsRollbackOnReturn",
+    "propDescription": "Enable transaction rollback when connection is returned back to the pool",
+    "propValue": "false",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "orderDsCommitOnReturn",
+    "propDescription": "Enable transaction commit when connection is returned back to the pool",
+    "propValue": "false",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "orderDsCustomProperty",
+    "propDescription": "Pooled Database Custom Property",
+    "propValue": "",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "catalogDsUsername",
+    "propDescription": "Data Source Username",
+    "propValue": "catalogdsuserll",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "catalogDsPassword",
+    "propDescription": "Data Source Password",
+    "propValue": "catalogdsuserll",
+    "valueType": "password",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "catalogDsUrl",
+    "propDescription": "Data Source URL",
+    "allowedValues": [
+      "jdbc:postgresql://localhost:5432/catalogdsdbll?currentSchema=catalogdsschemall",
+      "jdbc:oracle:thin:@//localhost:1521/orcl.apac.tibco.com"
+    ],
+    "propValue": "jdbc:postgresql://localhost:5432/catalogdsdbll?currentSchema=catalogdsschemall",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "catalogDsInitializeSize",
+    "propDescription": "Number of connections that will be established when the connection pool is started",
+    "propValue": "2",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "catalogDsMaxIdle",
+    "propDescription": "Maximum number of connections that should be kept in the idle pool",
+    "propValue": "11",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "catalogDsMaxActive",
+    "propDescription": "Maximum number of active connections that can be allocated from this pool at the same time",
+    "propValue": "12",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "catalogDsMaxWait",
+    "propDescription": "Maximum number of milliseconds that the pool will wait when there are no available connections",
+    "propValue": "10000",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "catalogDsTestOnBorrow",
+    "propDescription": "Enable connection validation before being borrowed from the pool",
+    "propValue": "false",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "catalogDsValidationInterval",
+    "propDescription": "Data source validation interval in milliseconds",
+    "propValue": "5000",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "catalogDsTestWhileIdle",
+    "propDescription": "Enable connection validation while idle in connection pool",
+    "propValue": "true",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "catalogDsTimeBetweenEvictionRunsMillis",
+    "propDescription": "Minimum amount of time in milliseconds an object must sit idle in the pool before it is eligible for eviction",
+    "propValue": "5000",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "catalogDsMinEvictableIdleTimeMillis",
+    "propDescription": "Minimum amount of time in milliseconds an object may sit idle in the pool",
+    "propValue": "5000",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "catalogDsNumTestsPerEvictionRun",
+    "propDescription": "Maximum number of connections to examine during each evictor run",
+    "propValue": "5",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "catalogDsDefaultAutoCommit",
+    "propDescription": "Enable auto commit after each transaction",
+    "propValue": "false",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "catalogDsRollbackOnReturn",
+    "propDescription": "Enable transaction rollback when connection is returned back to the pool",
+    "propValue": "false",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "catalogDsCommitOnReturn",
+    "propDescription": "Enable transaction commit when connection is returned back to the pool",
+    "propValue": "false",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "catalogDsCustomProperty",
+    "propDescription": "Pooled Database Custom Property",
+    "propValue": "",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "datasourceDriverClassName",
+    "propDescription": "Data Source Driver Class Name",
+    "allowedValues": [
+      "org.postgresql.Driver",
+      "oracle.jdbc.driver.OracleDriver"
+    ],
+    "propValue": "org.postgresql.Driver",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "databaseType",
+    "propDescription": "Database Type. Allowed values are oracle or postgres",
+    "allowedValues": [
+      "postgres",
+      "oracle"
+    ],
+    "propValue": "postgres",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "datasourceValidationQuery",
+    "propDescription": "SQL query that will be used to validate connections",
+    "allowedValues": [
+      "select 1 from dual",
+      "SELECT 1"
+    ],
+    "propValue": "SELECT 1",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "hibernateDialect",
+    "propDescription": "Hibernate Dialect",
+    "allowedValues": [
+      "org.hibernate.dialect.PostgreSQLDialect",
+      "org.hibernate.dialect.Oracle10gDialect"
+    ],
+    "propValue": "org.hibernate.dialect.PostgreSQLDialect",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "catalogHibernateShowSql",
+    "propDescription": "Hibernate Show SQL",
+    "propValue": "false",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "timedep.bufferInterval",
+    "propDescription": "Time Dependency Buffer Interval in seconds",
+    "propValue": "1",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "timedep.numRows",
+    "propDescription": "Time Dependency Row Process Count",
+    "propValue": "5",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "timedep.pollingInterval",
+    "propDescription": "Time Dependency Polling Interval in milliseconds",
+    "propValue": "10000",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.af.oms.webservice.security.userNameTokenBased",
+    "propDescription": "Enable User Name token based Security",
+    "propValue": "true",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.af.oms.webservice.schema.validation",
+    "propDescription": "Enable Schema validation",
+    "propValue": "true",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.af.oms.security.authProvider",
+    "propDescription": "Default Authentication Provider",
+    "propValue": "defaultAuthenticationProvider",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "authorization.service.username",
+    "propDescription": "Username For Inter Service Communication",
+    "propValue": "apiUser",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "authorization.service.password",
+    "propDescription": "User Password For Inter Service Communication",
+    "propValue": "apiUser",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "orderRedisHost",
+    "propDescription": "Redis Server Host for Storing Order Related Information",
+    "propValue": "localhost",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "orderRedisPort",
+    "propDescription": "Redis Server Port for Storing Order Related Information",
+    "propValue": "6379",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "orderRedisUsername",
+    "propDescription": " Username to connect to Redis Cluster/Node",
+    "propValue": "",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "orderRedisPassword",
+    "propDescription": "Password to connect to Redis Cluster/Node",
+    "propValue": "password",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "orderRedisDatabase",
+    "propDescription": "Redis server Database name for storing Order Related Information",
+    "propValue": "",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "orderRedisClientName",
+    "propDescription": "Redis server ClientName for storing Order Related Information",
+    "propValue": "",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "orderRedisSslEnabled",
+    "propDescription": "Connect to Redis Cluster/Node via SSL",
+    "propValue": "true",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "orderRedisKeyStoreType",
+    "propDescription": "Redis SSL KeyStore Type",
+    "propValue": "pkcs12",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "orderRedisKeyStorePassword",
+    "propDescription": "Redis SSL KeyStore Password",
+    "propValue": "tibco123",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "orderRedisTrustStoreType",
+    "propDescription": "Redis SSL TrustStore Type",
+    "propValue": "jks",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "orderRedisTrustStorePassword",
+    "propDescription": "Redis SSL TrustStore Password",
+    "propValue": "tibco123",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "orderRedisKeyStoreAbsoluteFilePath",
+    "propDescription": "Redis SSL KeyStore Absolute File Path",
+    "propValue": "D:/certificate/myhost.p12",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "orderRedisTrustStoreAbsoluteFilePath",
+    "propDescription": "Redis SSL TrustStore Absolute File Path",
+    "propValue": "D:/certificate/cacert",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "redisStatsHost",
+    "propDescription": "Redis Server Host for Storing Order Statistics",
+    "propValue": "localhost",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "redisStatsPort",
+    "propDescription": "Redis Server Port for Storing Order Statistics",
+    "propValue": "6379",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "redisStatsUsername",
+    "propDescription": " Username to connect to Redis Cluster/Node",
+    "propValue": "",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "redisStatsPassword",
+    "propDescription": "Password to connect to Redis Cluster/Node",
+    "propValue": "password",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "redisStatsDatabase",
+    "propDescription": "Redis server Database name for Storing Order Statistics",
+    "propValue": "",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "redisStatsClientName",
+    "propDescription": "Redis server ClientName for Storing Order Statistics",
+    "propValue": "",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "redisStatsSslEnabled",
+    "propDescription": "Connect to Redis Cluster/Node via SSL",
+    "propValue": "true",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "redisStatsKeyStoreType",
+    "propDescription": "Redis SSL KeyStore Type",
+    "propValue": "pkcs12",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "redisStatsKeyStorePassword",
+    "propDescription": "Redis SSL KeyStore Password",
+    "propValue": "tibco123",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "redisStatsTrustStoreType",
+    "propDescription": "Redis SSL TrustStore Type",
+    "propValue": "jks",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "redisStatsTrustStorePassword",
+    "propDescription": "Redis SSL TrustStore Password",
+    "propValue": "tibco123",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "redisStatsKeyStoreAbsoluteFilePath",
+    "propDescription": "Redis SSL KeyStore Absolute File Path",
+    "propValue": "D:/certificate/myhost.p12",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "redisStatsTrustStoreAbsoluteFilePath",
+    "propDescription": "Redis SSL TrustStore Absolute File Path",
+    "propValue": "D:/certificate/cacert",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "catalogRedisHost",
+    "propDescription": "Redis Server Host for Catalog datasource",
+    "propValue": "localhost",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "catalogRedisPort",
+    "propDescription": "Redis Server Port for Catalog datasource",
+    "propValue": "6379",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "catalogRedisUsername",
+    "propDescription": " Username to connect to Redis Cluster/Node",
+    "propValue": "",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "catalogRedisPassword",
+    "propDescription": "Password to connect to Redis Cluster/Node",
+    "propValue": "password",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "catalogRedisDatabase",
+    "propDescription": "Redis server Database name for Catalog datasource",
+    "propValue": "",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "catalogRedisClientName",
+    "propDescription": "Redis server ClientName for Catalog datasource",
+    "propValue": "",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "catalogRedisSslEnabled",
+    "propDescription": "Connect to Redis Cluster/Node via SSL",
+    "propValue": "true",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "catalogRedisKeyStoreType",
+    "propDescription": "Redis SSL KeyStore Type",
+    "propValue": "pkcs12",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "catalogRedisKeyStorePassword",
+    "propDescription": "Redis SSL KeyStore Password",
+    "propValue": "tibco123",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "catalogRedisTrustStoreType",
+    "propDescription": "Redis SSL TrustStore Type",
+    "propValue": "jks",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "catalogRedisTrustStorePassword",
+    "propDescription": "Redis SSL TrustStore Password",
+    "propValue": "tibco123",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "catalogRedisKeyStoreAbsoluteFilePath",
+    "propDescription": "Redis SSL KeyStore Absolute File Path",
+    "propValue": "D:/certificate/myhost.p12",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "catalogRedisTrustStoreAbsoluteFilePath",
+    "propDescription": "Redis SSL TrustStore Absolute File Path",
+    "propValue": "D:/certificate/cacert",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "catalogRedisClusterEnabled",
+    "propDescription": "Whether redis for Catalog Related Information is running in Cluster Mode",
+    "propValue": "true",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "orderRedisClusterEnabled",
+    "propDescription": "Whether redis for Order Related Information is running in Cluster Mode",
+    "propValue": "true",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "redisTestOnBorrow",
+    "propDescription": "Enable connection validation before being borrowed from the pool",
+    "propValue": "true",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "redisTestOnReturn",
+    "propDescription": "Enable connection validation before being returned to the pool",
+    "propValue": "true",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "redisTestWhileIdle",
+    "propDescription": "Enable connection validation while idle in connection pool",
+    "propValue": "true",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "redisBlockedWhenExhausted",
+    "propDescription": "Enable connection blocking on borrow when connection pool is exhausted",
+    "propValue": "true",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "redisJmxEnabled",
+    "propDescription": "Enabled JMX for connections",
+    "propValue": "true",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "redisLifo",
+    "propDescription": "Enable LIFO behaviour for idle objects. Always returning the most recently used object from the pool",
+    "propValue": "true",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "redisMaxIdle",
+    "propDescription": "Maximum number of idle connections in the pool",
+    "propValue": "64",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "redisMinIdle",
+    "propDescription": "Minimum number of idle connections to maintain the pool",
+    "propValue": "16",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "redisMaxTotal",
+    "propDescription": "Maximum number of connections that can be allocated by the pool at a given time",
+    "propValue": "64",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "redisNumTestsPerEvictionRun",
+    "propDescription": "Maximum number of connections to examine during each evictor run ",
+    "propValue": "5",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "redisSoftMinEvictableIdleTimeMillis",
+    "propDescription": "Minimum amount of time in milliseconds an object may sit idle in the pool if minIdle instances are available",
+    "propValue": "3000",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "redisMinEvictableIdleTimeMillis",
+    "propDescription": "Minimum amount of time in milliseconds an object may sit idle in the pool",
+    "propValue": "6000",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "redisTimeBetweenEvictionRunsMillis",
+    "propDescription": "Number of milliseconds to sleep between runs of the idle object evictor thread",
+    "propValue": "3000",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "lockManager.defaultLockTimeout",
+    "propDescription": "Default Lock Timeout",
+    "propValue": "60",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "lockManager.lockRetryCount",
+    "propDescription": "Lock Retry Count",
+    "propValue": "0",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "lockManager.lockRetryInterval",
+    "propDescription": "Lock Retry Interval",
+    "propValue": "2",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "lockManager.lockRetryDelayOffsetCount",
+    "propDescription": "Lock Retry Delay Offset Count",
+    "propValue": "10000",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "lockManager.numThreads",
+    "propDescription": "Number of Threads in Thread Schedular",
+    "propValue": "100",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "lockManager.lockSchedularPreRunTime",
+    "propDescription": "Lock Schedular Pre Run Time",
+    "propValue": "10",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "lockManager.hashCodeIndexDistributionSize",
+    "propDescription": "Number of rows in ORDER_LOCK table",
+    "propValue": "1024",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  }
+]

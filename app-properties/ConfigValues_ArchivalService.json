@@ -1,0 +1,438 @@
+[
+  {
+    "propName": "logging.config",
+    "propDescription": "Logging Configuration File Path",
+    "propValue": "config/logback_arch.xml",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "enablePurgeCompleteOrder",
+    "propDescription": "Enable order purging in orchestrator once order reaches final state",
+    "propValue": "false",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.archival.order.udf.searchkeys",
+    "propDescription": "Frequently searched Order UDF names in ordersByCriteria API",
+    "propValue": "OrderUDF",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.archival.orderline.udf.searchkeys",
+    "propDescription": "Frequently searched Order Line UDF names in ordersByCriteria API",
+    "propValue": "test",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "com.tibco.archival.order.states",
+    "propDescription": "Order states for which order state notification changes would be processed.",
+    "propValue": "Execution,Blocked,Complete,Cancelled,Withdrawn,OPD,Suspended,Cancelled,Prequalificationfailed,Feasibility",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "info.app.name",
+    "propDescription": "Application name to show on actuator info endpoint",
+    "propValue": "Archival Service",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "datasourceDriverClassName",
+    "propDescription": "Data Source Driver Name",
+    "allowedValues": [
+      "org.postgresql.Driver",
+      "oracle.jdbc.driver.OracleDriver"
+    ],
+    "propValue": "org.postgresql.Driver",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "archivalDsUrl",
+    "propDescription": "Data Source URL",
+    "allowedValues": [
+      "jdbc:postgresql://localhost:5432/archivaldbll?currentSchema=archivalschemall",
+      "jdbc:oracle:thin:@//localhost:1521/orcl.apac.tibco.com"
+    ],
+    "propValue": "jdbc:postgresql://localhost:5432/archivaldbll?currentSchema=archivalschemall",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "archivalDsUsername",
+    "propDescription": "Data Source Username",
+    "propValue": "archivaluserll",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "archivalDsPassword",
+    "propDescription": "Data Source Password",
+    "propValue": "archivaluserll",
+    "valueType": "password",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "hibernateDialect",
+    "propDescription": "Hibernate Dialect",
+    "allowedValues": [
+      "org.hibernate.dialect.PostgreSQLDialect",
+      "org.hibernate.dialect.Oracle10gDialect"
+    ],
+    "propValue": "org.hibernate.dialect.PostgreSQLDialect",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "hibernateDsDefaults",
+    "propDescription": "Enable Hibernate Metadata Defaults",
+    "propValue": "false",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "archivalHibernateShowSql",
+    "propDescription": "Enable Hibernate Show Queries",
+    "propValue": "false",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "archivalDsInitialSize",
+    "propDescription": "Number of connections that will be established when the connection pool is started.",
+    "propValue": "10",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "archivalDsMaxWait",
+    "propDescription": "Maximum number of milliseconds that the pool will wait (when there are no available connections and the getMaxActive has been reached) for a connection to be returned before throwing an exception.",
+    "propValue": "30000",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "archivalDsMaxActive",
+    "propDescription": "Maximum number of active connections that can be allocated from this pool at the same time.",
+    "propValue": "100",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "archivalDsMaxIdle",
+    "propDescription": "Maximum number of connections that should be kept in the idle pool.",
+    "propValue": "100",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "archivalDsMinIdle",
+    "propDescription": "Minimum number of established connections that should be kept in the pool at all times.",
+    "propValue": "10",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "datasourceValidationQuery",
+    "propDescription": "Pooled Data Source Validation Query",
+    "allowedValues": [
+      "SELECT 1",
+      "SELECT 1 from dual"
+    ],
+    "propValue": "SELECT 1",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "archivalDsTestOnBorrow",
+    "propDescription": "Pooled Data Source Test OnBorrow",
+    "propValue": "true",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "archivalDsValidationInterval",
+    "propDescription": "Pooled Data Source Validation Interval",
+    "propValue": "5000",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "orchInteractionMode",
+    "propDescription": "Orchestrator Interaction Mode",
+    "propValue": "JMS",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "orderArchivalserviceUrl",
+    "propDescription": "Orchestrator Web Service Archival Service URL",
+    "propValue": "http://localhost:9093/v1/order/archival",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "orderOrchAmendOrderUrl",
+    "propDescription": "Orchestrator Web Service Amend Order URL",
+    "propValue": "http://localhost:9093/v1/amend",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "orderOrchSuspendOrderUrl",
+    "propDescription": "Orchestrator Web Service Suspend Order URL",
+    "propValue": "http://localhost:9093/v1/order/suspend",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "orderOrchActivateOrderUrl",
+    "propDescription": "Orchestrator Web Service Activate Order URL",
+    "propValue": "http://localhost:9093/v1/order/activate",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "orderOrchCancelOrderUrl",
+    "propDescription": "Orchestrator Web Service Cancel Order URL",
+    "propValue": "http://localhost:9093/v1/order/cancel",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "orderOrchWithdrawOrderUrl",
+    "propDescription": "Orchestrator Web Service Withdraw Order URL",
+    "propValue": "http://localhost:9093/v1/order",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "orderOrchBulkActionUrl",
+    "propDescription": "Orchestrator Web Service Bulk Order Action URL",
+    "propValue": "http://localhost:9093/v1/orders/bulkaction",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "orderOrchPlanPreviewUrl",
+    "propDescription": "Orchestrator Web Service Plan Preview URL",
+    "propValue": "http://localhost:9093/v1/planPreview",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "orderPurgeOrderUrl",
+    "propDescription": "Orchestrator Web Service Purge Order URL",
+    "propValue": "http://localhost:9093/v1/order/purgeOrder",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "orderErrorHandlerreplyUrl",
+    "propDescription": "Orchestrator Web Service Error Handler Order URL",
+    "propValue": "http://localhost:9093/v1/planitem/errorHandlerreply",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "orderBulkErrorHandlerreplyUrl",
+    "propDescription": "Orchestrator Web Service BulkError Handler Order URL",
+    "propValue": "http://localhost:9093/v1/planitem/bulkErrorHandlerreply",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "operation.roles.orderSummary",
+    "propDescription": "User Role for orderSummary API",
+    "propValue": "ROLE_ADMIN,ROLE_USER",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "operation.roles.ordersByCriteria",
+    "propDescription": "User Role for ordersByCriteria API",
+    "propValue": "ROLE_ADMIN,ROLE_USER",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "operation.roles.orderByQueryFilter",
+    "propDescription": "User Role for orderByQueryFilter API",
+    "propValue": "ROLE_ADMIN,ROLE_USER",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "operation.roles.orderDetails",
+    "propDescription": "User Role for orderDetails API",
+    "propValue": "ROLE_ADMIN,ROLE_USER",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "operation.roles.executionPlanbyQueryFilter",
+    "propDescription": "User Role for executionPlanbyQueryFilter API",
+    "propValue": "ROLE_ADMIN,ROLE_USER",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "operation.roles.enrichedPlanByPlanId",
+    "propDescription": "User Role for enrichedPlanByPlanId API",
+    "propValue": "ROLE_ADMIN,ROLE_USER",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "operation.roles.auditTrailForOrder",
+    "propDescription": "User Role for auditTrailForOrder API",
+    "propValue": "ROLE_ADMIN,ROLE_USER",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "operation.roles.auditTrailForPlan",
+    "propDescription": "User Role for auditTrailForPlan API",
+    "propValue": "ROLE_ADMIN,ROLE_USER",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "authorization.service.username",
+    "propDescription": "Username For Inter Service Communication",
+    "propValue": "apiUser",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "authorization.service.password",
+    "propDescription": "User Password For Inter Service Communication",
+    "propValue": "apiUser",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "emsServerURL",
+    "propDescription": "EMS Server URL",
+    "propValue": "tcp://localhost:7222",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "securityProtocol",
+    "propDescription": "For SSL Configuration value should be ssl",
+    "propValue": "",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "sslEnableVerifyHost",
+    "propDescription": "For SSL enable verify host value should be false",
+    "propValue": "",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "emsServerUsername",
+    "propDescription": "EMS Server User Name",
+    "propValue": "admin",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "emsServerPassword",
+    "propDescription": "EMS Server Password",
+    "propValue": "admin",
+    "valueType": "password",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "jndiConnectionFactory",
+    "propDescription": "JNDI Connection Factory Name",
+    "propValue": "GenericConnectionFactory",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "initialContextFactory",
+    "propDescription": "Initializing Context Factory Name",
+    "propValue": "com.tibco.tibjms.naming.TibjmsInitialContextFactory",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "jmsSessionTransacted",
+    "propDescription": "Keep EMS Session Transacted",
+    "propValue": "true",
+    "valueType": "boolean",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "timeoutMillis",
+    "propDescription": "EMS message acknowledge timeout in milliseconds",
+    "propValue": "10000",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "concurrentEmsConsumers",
+    "propDescription": "EMS Concurrent Consumers",
+    "propValue": "5",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "archivalNotificationQueue",
+    "propDescription": "Orchestrator order state notification queue",
+    "propValue": "tibco.aff.orchestrator.archival.notification",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "archivalNotificationDeadQueue",
+    "propDescription": "Orchestrator order state notification dead queue",
+    "propValue": "tibco.aff.orchestrator.archival.notification.dead",
+    "valueType": "string",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "archivalNotificationRedeliveryCount",
+    "propDescription": "Order state notification redelivery count",
+    "propValue": "5",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "archivalNotificationReceiverCount",
+    "propDescription": "Order state notification receiver count",
+    "propValue": "1",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "lockRetryCount",
+    "propDescription": "Lock retry count",
+    "propValue": "5",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "lockRetryInterval",
+    "propDescription": "Lock retry interval",
+    "propValue": "2",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  },
+  {
+    "propName": "hashCodeIndexDistributionSize",
+    "propDescription": "Number Of Rows In ARCHIVALLOCK Table",
+    "propValue": "2048",
+    "valueType": "number",
+    "isTenantProperty": "false"
+  }
+]
