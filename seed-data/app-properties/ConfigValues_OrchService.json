@@ -134,7 +134,7 @@
             "ExternalErrorHandler",
             "InternalErrorHandler"
           ],
-          "propValue": "ExternalErrorHandler",
+          "propValue": "InternalErrorHandler",
           "valueType": "string",
           "isTenantProperty": "false"
         },

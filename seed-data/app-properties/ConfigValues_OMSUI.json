@@ -141,21 +141,21 @@
                 {
                     "propName": "com.tibco.af.omsui.planItemExpression.gridView",
                     "propDescription": "OMS UI PlanItem Display Template for Grid View. Possible template variables are - PlanItemID, PlanFragmentID, ProductID, Action and Description; these template variables are case sensitive and have to be specified within curly braces {}. Different template variables can be combined with any type of delimiter e.g. {PlanFragmentID}|{PlanItemID}",
-                    "propValue": "{PlanItemID}",
+                    "propValue": "{ProductID}|{PlanItemID}",
                     "valueType": "string",
                     "isTenantProperty": "false"
                 },
                 {
                     "propName": "com.tibco.af.omsui.planItemExpression.ganttView",
                     "propDescription": "OMS UI PlanItem Display Template for Gantt View. Possible template variables are - PlanItemID, PlanFragmentID,ProductID, Action and Description; these template variables are case sensitive and have to be specified within curly braces {}. Different template variables can be combined with any type of delimiter e.g. {PlanFragmentID}|{PlanItemID}",
-                    "propValue": "{Description}",
+                    "propValue": "{PlanItemID}",
                     "valueType": "string",
                     "isTenantProperty": "false"
                 },
                 {
                     "propName": "com.tibco.af.omsui.planItemExpression.dependencyView",
                     "propDescription": "OMS UI PlanItem Display Template for Dependency View. Possible template variables are - PlanItemID, PlanFragmentID, ProductID, Action and Description; these template variables are case sensitive and have to be specified within curly braces {}. Different template variables can be combined with any type of delimiter e.g. {PlanFragmentID}|{PlanItemID}",
-                    "propValue": "{Description}|{PlanItemID}",
+                    "propValue": "{ProductID}",
                     "valueType": "string",
                     "isTenantProperty": "false"
                 }
@@ -213,7 +213,7 @@
                         "ExternalErrorHandler",
                         "InternalErrorHandler"
                     ],
-                    "propValue": "ExternalErrorHandler",
+                    "propValue": "InternalErrorHandler",
                     "valueType": "string",
                     "isTenantProperty": "false"
                 },
