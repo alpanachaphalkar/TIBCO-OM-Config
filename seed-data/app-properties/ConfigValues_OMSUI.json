@@ -115,7 +115,7 @@
                 {
                     "propName": "com.tibco.af.oms.default.tenantId",
                     "propDescription": "Default tenant information",
-                    "propValue": "TIBCO",
+                    "propValue": "ALPSINTECH.COM",
                     "valueType": "string",
                     "isTenantProperty": "false"
                 },
