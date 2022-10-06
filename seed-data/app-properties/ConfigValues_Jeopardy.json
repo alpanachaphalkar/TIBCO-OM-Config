@@ -137,7 +137,7 @@
         {
           "propName": "jeopardyDsPassword",
           "propDescription": "Data Source Password",
-          "propValue": "jeopardyuserll",
+          "propValue": "ENC(Sc9wFyFGECzY7yXQCGfh1Q==)",
           "valueType": "password",
           "isTenantProperty": "false"
         },
@@ -248,8 +248,8 @@
         {
           "propName": "emsServerPassword",
           "propDescription": "EMS server password",
-          "propValue": "admin",
-          "valueType": "string",
+          "propValue": "ENC(T9aNk07NMsU=)",
+          "valueType": "password",
           "isTenantProperty": "false"
         },
         {
@@ -443,7 +443,7 @@
         {
           "propName": "catalogDsPassword",
           "propDescription": "Data Source Password",
-          "propValue": "catalogdsuserll",
+          "propValue": "ENC(LyZjaTxmkBpL+MuSLgf82Q==)",
           "valueType": "password",
           "isTenantProperty": "false"
         },

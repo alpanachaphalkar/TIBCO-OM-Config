@@ -288,7 +288,7 @@
                 {
                     "propName": "emsServerPassword",
                     "propDescription": "JNDI Password",
-                    "propValue": "admin",
+                    "propValue": "ENC(T9aNk07NMsU=)",
                     "valueType": "password",
                     "isTenantProperty": "false"
                 },

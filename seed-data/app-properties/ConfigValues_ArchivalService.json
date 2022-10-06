@@ -337,7 +337,7 @@
         {
           "propName": "authorization.service.password",
           "propDescription": "User Password For Inter Service Communication",
-          "propValue": "ENC(qkPb+5npIW41z/hoalBzjA==)",
+          "propValue": "ENC(q9Z2hVkH2qG/KwDTk0+GFg==)",
           "valueType": "password",
           "isTenantProperty": "false"
         }
@@ -377,7 +377,7 @@
         {
           "propName": "emsServerPassword",
           "propDescription": "EMS Server Password",
-          "propValue": "admin",
+          "propValue": "ENC(T9aNk07NMsU=)",
           "valueType": "password",
           "isTenantProperty": "false"
         },

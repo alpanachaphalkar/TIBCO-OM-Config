@@ -649,7 +649,7 @@
         {
           "propName": "emsServerPassword",
           "propDescription": "EMS Server Password",
-          "propValue": "admin",
+          "propValue": "ENC(T9aNk07NMsU=)",
           "valueType": "password",
           "isTenantProperty": "false"
         },
@@ -1014,7 +1014,7 @@
         {
           "propName": "adminDsPassword",
           "propDescription": "Data Source Password",
-          "propValue": "adminuserll",
+          "propValue": "ENC(O4UrXXgTEmyecFyHLo+Ivw==)",
           "valueType": "password",
           "isTenantProperty": "false"
         },
@@ -1142,7 +1142,7 @@
         {
           "propName": "orderDsPassword",
           "propDescription": "Data Source Password",
-          "propValue": "orderuserll",
+          "propValue": "ENC(A9fTymcpAOSVjnpb6jkvjA==)",
           "valueType": "password",
           "isTenantProperty": "false"
         },
@@ -1270,7 +1270,7 @@
         {
           "propName": "catalogDsPassword",
           "propDescription": "Data Source Password",
-          "propValue": "catalogdsuserll",
+          "propValue": "ENC(LyZjaTxmkBpL+MuSLgf82Q==)",
           "valueType": "password",
           "isTenantProperty": "false"
         },
@@ -1501,7 +1501,7 @@
         {
           "propName": "authorization.service.password",
           "propDescription": "User Password For Inter Service Communication",
-          "propValue": "ENC(qkPb+5npIW41z/hoalBzjA==)",
+          "propValue": "ENC(q9Z2hVkH2qG/KwDTk0+GFg==)",
           "valueType": "password",
           "isTenantProperty": "false"
         }
