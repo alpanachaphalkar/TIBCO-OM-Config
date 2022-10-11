@@ -1,732 +1,775 @@
 {
-    "appDescription": "AOPD",
-    "categories": [
-        {
-            "categoryName": "In Memory Cache Configurations",
-            "properties": [
-                {
-                    "propName": "com.tibco.fos.model.cacheType.cache.maxNoProductcached",
-                    "propDescription": "Max No of Product Catalog Stored In Cache",
-                    "propValue": "1000",
-                    "valueType": "number",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "enableProductModelGlobalCache",
-                    "propDescription": "Enable Product Catalog Global Caching",
-                    "propValue": "true",
-                    "valueType": "boolean",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "productCacheExpiryPeriod",
-                    "propDescription": "Product Catalog Cache Expiry Period in Seconds",
-                    "propValue": "30",
-                    "valueType": "number",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "com.tibco.af.aopd.cacheType.cache.maxNoActioncached",
-                    "propDescription": "Max No of Action Catalog Stored In Cache",
-                    "propValue": "1000",
-                    "valueType": "number",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "enableActionModelGlobalCache",
-                    "propDescription": "Enable Action Catalog Global Caching",
-                    "propValue": "true",
-                    "valueType": "boolean",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "actionCacheExpiryPeriod",
-                    "propDescription": "Action Catalog Cache Expiry Period in Seconds",
-                    "propValue": "30",
-                    "valueType": "number",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "info.app.name",
-                    "propDescription": "Application name to show on actuator info endpoint",
-                    "propValue": "AOPD",
-                    "valueType": "string",
-                    "isTenantProperty": "false"
-                }
-            ]
-        },
-        {
-            "categoryName": "AOPD General Configuration",
-            "properties": [
-                {
-                    "propName": "logging.config",
-                    "propDescription": "Logging Configuration File Path",
-                    "propValue": "config/logback_aopd.xml",
-                    "valueType": "string",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "com.tibco.af.aopd.service.schema.validation",
-                    "propDescription": "AOPD Soap Service Schema Validation",
-                    "propValue": "true",
-                    "valueType": "boolean",
-                    "isTenantProperty": "false"
-                }
-            ]
-        },
-        {
-            "categoryName": "AOPD Functional Configuration",
-            "properties": [
-                {
-                    "propName": "nonexecutingPlanfragmentID",
-                    "propDescription": "Plan-Fragment IDs whose Plan Items will be auto completed",
-                    "propValue": "NON_EXECUTING",
-                    "valueType": "string",
-                    "isTenantProperty": "true"
-                },
-                {
-                    "propName": "com.tibco.af.aopd.flags.affinity.affinityudfnamemerge",
-                    "propDescription": "Enable merging of UDF with same name for affinity plan items",
-                    "propValue": "false",
-                    "valueType": "string",
-                    "isTenantProperty": "true"
-                },
-                {
-                    "propName": "com.tibco.af.aopd.flags.affinity.characterisitcswithoutaffinitypostfix",
-                    "propDescription": "Disable UDFs merging during Affinity Sequencing, these UDFs should be added as CSV in the variable",
-                    "propValue": "",
-                    "valueType": "string",
-                    "isTenantProperty": "true"
-                },
-                {
-                    "propName": "com.tibco.af.aopd.flags.skipitemsequence",
-                    "propDescription": "If the sequence number of Product Catalog is -1, it will skip the product and all its mandatory children from Execution Plan",
-                    "propValue": "-1",
-                    "valueType": "string",
-                    "isTenantProperty": "true"
-                },
-                {
-                    "propName": "com.tibco.af.aopd.flags.affinity.mergeaffinityitemdescription",
-                    "propDescription": "Enable merging of Plan Item Description for affinity plan items",
-                    "propValue": "false",
-                    "valueType": "string",
-                    "isTenantProperty": "true"
-                },
-                {
-                    "propName": "com.tibco.af.aopd.flags.singleuse.hierarchysingleuse",
-                    "propDescription": "For Single Use product, remove duplicate plan items of child products from the Plan.",
-                    "propValue": "false",
-                    "valueType": "string",
-                    "isTenantProperty": "true"
-                },
-                {
-                    "propName": "com.tibco.af.aopd.flags.affinity.enableaffinityudfparent",
-                    "propDescription": "Enable merging of Parent Product Id in Udf name",
-                    "propValue": "false",
-                    "valueType": "string",
-                    "isTenantProperty": "true"
-                },
-                {
-                    "propName": "com.tibco.af.aopd.flags.udflist",
-                    "propDescription": "Internal UDFs to be skipped for affinity merging",
-                    "propValue": "EPMR_ACTION_PROVIDE,EPMR_ACTION_UPDATE,EPMR_ACTION_CEASE,EPMR_ACTION_WITHDRAW,COMPENSATE_PROVIDE,COMPENSATE_UPDATE,COMPENSATE_CEASE,MODIFICATION_IDENTIFYING_ATTR",
-                    "valueType": "string",
-                    "isTenantProperty": "true"
-                },
-                {
-                    "propName": "com.tibco.af.aopd.flags.enablebidirectionallinkid",
-                    "propDescription": "Enable LinkID behavior for products(with missing LinkID) by considering linkId of PDO/MDO related products",
-                    "propValue": "false",
-                    "valueType": "string",
-                    "isTenantProperty": "true"
-                },
-                {
-                    "propName": "com.tibco.af.aopd.flags.amendment.enablemodificationidentifyingattribute",
-                    "propDescription": "Enable UDF amendment based on MODIFICATION_IDENTIFYING_ATTR UDF value",
-                    "propValue": "false",
-                    "valueType": "string",
-                    "isTenantProperty": "true"
-                },
-                {
-                    "propName": "com.tibco.af.aopd.flags.amendment.noDependencyInCOMPPlanItems",
-                    "propDescription": "Disable dependency on plan item being cancelled while generating compensatory plan item",
-                    "propValue": "false",
-                    "valueType": "string",
-                    "isTenantProperty": "true"
-                },
-                {
-                    "propName": "com.tibco.af.aopd.flags.amendment.dateshiftcompredo",
-                    "propDescription": "Enable creation of compensatory and redo plan items in case of requiredByDate change (Date Shift) type amendments.",
-                    "propValue": "false",
-                    "valueType": "string",
-                    "isTenantProperty": "true"
-                },
-                {
-                    "propName": "com.tibco.af.aopd.flags.amendment.compensateRestartForNoEPMRChar",
-                    "propDescription": "Enable COMPENSATE and RESTART behaviour in case of the required EPMR characteristic not present in the product model.",
-                    "propValue": "false",
-                    "valueType": "string",
-                    "isTenantProperty": "true"
-                },
-                {
-                    "propName": "com.tibco.af.aopd.flags.allowmultiplerequiredproducts",
-                    "propDescription": "Enable Multiple Required Products for the same link ID",
-                    "propValue": "false",
-                    "valueType": "string",
-                    "isTenantProperty": "true"
-                },
-                {
-                    "propName": "com.tibco.af.aopd.flags.ignorepdofirstchilddependency",
-                    "propDescription": "Ignore First child dependency for source product in PDO relationship",
-                    "propValue": "false",
-                    "valueType": "string",
-                    "isTenantProperty": "true"
-                },
-                {
-                    "propName": "com.tibco.af.aopd.flags.handleconflict",
-                    "propDescription": "Handling of Affinity Types for CrossLink with PCO Conflicts and Single Use with PCO Conflicts",
-                    "allowedValues": [
-                        "Error",
-                        "Ignore",
-                        "Apply"
-                    ],
-                    "propValue": "",
-                    "valueType": "string",
-                    "isTenantProperty": "true"
-                },
-                {
-                    "propName": "com.tibco.af.aopd.flags.handlepcocircularDependency",
-                    "propDescription": "Handling of circular PCO dependencies",
-                    "allowedValues": [
-                        "Error",
-                        "Ignore"
-                    ],
-                    "propValue": "Error",
-                    "valueType": "string",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "com.tibco.af.aopd.flags.includeonlyproductorderline",
-                    "propDescription": "Include only orderline udf for attribute based decomposition evaluation",
-                    "propValue": "false",
-                    "valueType": "string",
-                    "isTenantProperty": "true"
-                },
-                {
-                    "propName": "com.tibco.af.aopd.flags.includeproductmodelcharacteristics",
-                    "propDescription": "Include plan item udfs for attribute based decomposition evaluation",
-                    "propValue": "false",
-                    "valueType": "string",
-                    "isTenantProperty": "true"
-                },
-                {
-                    "propName": "com.tibco.af.aopd.flags.enableparentidudfcheck",
-                    "propDescription": "Validate Parent_ID UDF to compare plan items",
-                    "propValue": "true",
-                    "valueType": "string",
-                    "isTenantProperty": "true"
-                },
-                {
-                    "propName": "com.tibco.af.aopd.flags.disableParentItemsDependencyImpact",
-                    "propDescription": "For parent plan item modification, ignore EPMR application on child plan item.",
-                    "propValue": "false",
-                    "valueType": "string",
-                    "isTenantProperty": "true"
-                },
-                {
-                    "propName": "com.tibco.af.aopd.flags.disableAffinityBrokeUDFImpact",
-                    "propDescription": "Disable UDF amendment when affinity breaks due to an orderline cancellation",
-                    "propValue": "false",
-                    "valueType": "string",
-                    "isTenantProperty": "true"
-                }
-            ]
-        },
-        {
-            "categoryName": "AOPD Inventory Integration Configurations",
-            "properties": [
-                {
-                    "propName": "com.tibco.fom.oms.afi.aopd.merge.inventory",
-                    "propDescription": "Merge inventory in AOPD request",
-                    "propValue": "false",
-                    "valueType": "boolean",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "com.tibco.fom.oms.afi.aopd.merge.inventory.url",
-                    "propDescription": "Inventory service address",
-                    "propValue": "http://localhost:8080/fsi-server/soapapi/v1/service",
-                    "valueType": "string",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "com.tibco.fom.oms.afi.aopd.merge.inventory.username",
-                    "propDescription": "Inventory service username",
-                    "propValue": "admin@tibco",
-                    "valueType": "string",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "com.tibco.fom.oms.afi.aopd.merge.inventory.password",
-                    "propDescription": "Inventory service password",
-                    "propValue": "admin",
-                    "valueType": "string",
-                    "isTenantProperty": "false"
-                }
-            ]
-        },
-        {
-            "categoryName": "Relational Data Source Configuration",
-            "properties": [
-                {
-                    "propName": "datasourceDriverClassName",
-                    "propDescription": "Data Source Driver Class Name",
-                    "allowedValues": [
-                        "org.postgresql.Driver",
-                        "oracle.jdbc.driver.OracleDriver"
-                    ],
-                    "propValue": "org.postgresql.Driver",
-                    "valueType": "string",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "catalogDsUsername",
-                    "propDescription": "Data Source Username",
-                    "propValue": "catalogdsuserll",
-                    "valueType": "string",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "catalogDsPassword",
-                    "propDescription": "Data Source Password",
-                    "propValue": "catalogdsuserll",
-                    "valueType": "password",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "catalogDsUrl",
-                    "propDescription": "Data Source URL",
-                    "allowedValues": [
-                        "jdbc:postgresql://localhost:5432/catalogdsdbll?currentSchema=catalogdsschemall",
-                        "jdbc:oracle:thin:@//localhost:1521/orcl.apac.tibco.com"
-                    ],
-                    "propValue": "jdbc:postgresql://localhost:5432/catalogdsdbll?currentSchema=catalogdsschemall",
-                    "valueType": "string",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "catalogDsInitializeSize",
-                    "propDescription": "Number of connections that will be established when the connection pool is started",
-                    "propValue": "2",
-                    "valueType": "number",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "catalogDsMaxIdle",
-                    "propDescription": "Maximum number of connections that should be kept in the idle pool",
-                    "propValue": "11",
-                    "valueType": "number",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "catalogDsMaxActive",
-                    "propDescription": "Maximum number of active connections that can be allocated from this pool at the same time",
-                    "propValue": "12",
-                    "valueType": "number",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "catalogDsMaxWait",
-                    "propDescription": "Maximum number of milliseconds that the pool will wait when there are no available connections",
-                    "propValue": "10000",
-                    "valueType": "number",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "datasourceValidationQuery",
-                    "propDescription": "SQL query that will be used to validate connections",
-                    "allowedValues": [
-                        "select 1 from dual",
-                        "SELECT 1"
-                    ],
-                    "propValue": "SELECT 1",
-                    "valueType": "string",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "catalogDsTestOnBorrow",
-                    "propDescription": "Enable connection validation before being borrowed from the pool",
-                    "propValue": "false",
-                    "valueType": "boolean",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "catalogDsValidationInterval",
-                    "propDescription": "Data source validation interval in milliseconds",
-                    "propValue": "5000",
-                    "valueType": "number",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "catalogDsTestWhileIdle",
-                    "propDescription": "Enable connection validation while idle in connection pool",
-                    "propValue": "true",
-                    "valueType": "boolean",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "catalogDsTimeBetweenEvictionRunsMillis",
-                    "propDescription": "Data Source Eviction Interval in milliseconds",
-                    "propValue": "5000",
-                    "valueType": "number",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "catalogDsMinEvictableIdleTimeMillis",
-                    "propDescription": "The minimum amount of time in milliseconds an object must sit idle in the pool before it is eligible for eviction",
-                    "propValue": "5000",
-                    "valueType": "number",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "catalogDsNumTestsPerEvictionRun",
-                    "propDescription": "Data Source Tests Per Eviction Run",
-                    "propValue": "5",
-                    "valueType": "number",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "catalogDsDefaultAutoCommit",
-                    "propDescription": "The default auto-commit state of connections created by this pool",
-                    "propValue": "false",
-                    "valueType": "boolean",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "catalogDsRollbackOnReturn",
-                    "propDescription": "Enable rollback any pending transaction when a connection is returned to pool",
-                    "propValue": "false",
-                    "valueType": "boolean",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "catalogDsCommitOnReturn",
-                    "propDescription": "Enable commit any pending transaction when a connection is returned to pool",
-                    "propValue": "false",
-                    "valueType": "boolean",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "catalogDsCustomProperty",
-                    "propDescription": "Database Custom Property",
-                    "propValue": "",
-                    "valueType": "string",
-                    "isTenantProperty": "false"
-                }
-            ]
-        },
-        {
-            "categoryName": "Redis Data Source Configuration",
-            "properties": [
-                {
-                    "propName": "catalogRedisHost",
-                    "propDescription": "Redis Server Host for Storing Catalog Models",
-                    "propValue": "localhost",
-                    "valueType": "string",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "catalogRedisClusterEnabled",
-                    "propDescription": "Whether redis is running in Cluster Mode",
-                    "propValue": "true",
-                    "valueType": "boolean",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "catalogRedisPort",
-                    "propDescription": "Redis Server Port for Storing Catalog Models",
-                    "propValue": "6379",
-                    "valueType": "number",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "catalogRedisUsername",
-                    "propDescription": "Username to connect to Redis Cluster/Node",
-                    "propValue": "",
-                    "valueType": "string",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "catalogRedisPassword",
-                    "propDescription": "Password to connect to Redis Cluster/Node",
-                    "propValue": "password",
-                    "valueType": "string",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "catalogRedisDatabase",
-                    "propDescription": "Redis server Database name for Catalog datasource",
-                    "propValue": "",
-                    "valueType": "string",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "catalogRedisClientName",
-                    "propDescription": "Redis server ClientName for Catalog datasource",
-                    "propValue": "",
-                    "valueType": "string",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "redisTestOnBorrow",
-                    "propDescription": "Enable connection validation before being borrowed from the pool",
-                    "propValue": "true",
-                    "valueType": "boolean",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "redisTestOnReturn",
-                    "propDescription": "Enable connection validation before being returned to the pool",
-                    "propValue": "true",
-                    "valueType": "boolean",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "redisTestWhileIdle",
-                    "propDescription": "Enable connection validation while idle in connection pool",
-                    "propValue": "true",
-                    "valueType": "boolean",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "redisBlockedWhenExhausted",
-                    "propDescription": "Enable connection blocking on borrow when connection pool is exhausted",
-                    "propValue": "true",
-                    "valueType": "boolean",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "redisJmxEnabled",
-                    "propDescription": "Enabled JMX for connections.",
-                    "propValue": "true",
-                    "valueType": "boolean",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "redisLifo",
-                    "propDescription": "Enable LIFO behaviour for idle objects. Always returning the most recently used object from the pool ",
-                    "propValue": "true",
-                    "valueType": "boolean",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "redisMaxIdle",
-                    "propDescription": "Maximum number of idle connections in the pool",
-                    "propValue": "64",
-                    "valueType": "number",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "redisMinIdle",
-                    "propDescription": "Minimum number of idle connections to maintain the pool",
-                    "propValue": "16",
-                    "valueType": "number",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "redisMaxTotal",
-                    "propDescription": "Maximum number of connections that can be allocated by the pool at a given time",
-                    "propValue": "64",
-                    "valueType": "number",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "redisNumTestsPerEvictionRun",
-                    "propDescription": "Maximum number of connections to examine during each evictor run",
-                    "propValue": "5",
-                    "valueType": "number",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "redisSoftMinEvictableIdleTimeMillis",
-                    "propDescription": "Minimum amount of time in milliseconds an object may sit idle in the pool if minIdle instances are available",
-                    "propValue": "3000",
-                    "valueType": "number",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "redisMinEvictableIdleTimeMillis",
-                    "propDescription": "Minimum amount of time in milliseconds an object may sit idle in the pool",
-                    "propValue": "6000",
-                    "valueType": "number",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "redisTimeBetweenEvictionRunsMillis",
-                    "propDescription": "Number of milliseconds to sleep between runs of the idle object evictor thread",
-                    "propValue": "3000",
-                    "valueType": "number",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "catalogRedisSslEnabled",
-                    "propDescription": "Connect to Redis Cluster/Node via SSL",
-                    "propValue": "true",
-                    "valueType": "boolean",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "redisKeyStoreType",
-                    "propDescription": "Redis SSL KeyStore Type",
-                    "propValue": "pkcs12",
-                    "valueType": "string",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "redisKeyStorePassword",
-                    "propDescription": "Redis SSL KeyStore Password",
-                    "propValue": "tibco123",
-                    "valueType": "string",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "redisTrustStoreType",
-                    "propDescription": "Redis SSL TrustStore Type",
-                    "propValue": "jks",
-                    "valueType": "string",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "redisTrustStorePassword",
-                    "propDescription": "Redis SSL TrustStore Password",
-                    "propValue": "tibco123",
-                    "valueType": "string",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "redisKeyStoreAbsoluteFilePath",
-                    "propDescription": "Redis SSL KeyStore Absolute File Path",
-                    "propValue": "D:/certificate/myhost.p12",
-                    "valueType": "string",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "redisTrustStoreAbsoluteFilePath",
-                    "propDescription": "Redis SSL TrustStore Absolute File Path",
-                    "propValue": "D:/certificate/cacert",
-                    "valueType": "string",
-                    "isTenantProperty": "false"
-                }
-            ]
-        },
-        {
-            "categoryName": "Generic Relational Data Source Configuration",
-            "properties": [
-                {
-                    "propName": "databaseType",
-                    "propDescription": "Database Type. Allowed values are oracle or postgres",
-                    "allowedValues": [
-                        "postgres",
-                        "oracle"
-                    ],
-                    "propValue": "postgres",
-                    "valueType": "string",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "hibernateDialect",
-                    "propDescription": "Hibernate Dialect",
-                    "allowedValues": [
-                        "org.hibernate.dialect.PostgreSQLDialect",
-                        "org.hibernate.dialect.Oracle10gDialect"
-                    ],
-                    "propValue": "org.hibernate.dialect.PostgreSQLDialect",
-                    "valueType": "string",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "catalogHibernateShowSql",
-                    "propDescription": "Hibernate Show SQL",
-                    "propValue": "false",
-                    "valueType": "boolean",
-                    "isTenantProperty": "false"
-                }
-            ]
-        },
-        {
-            "categoryName": "EMS Configurations for Global Cache Clean",
-            "properties": [
-                {
-                    "propName": "emsServerURL",
-                    "propDescription": "EMS Server URL",
-                    "propValue": "tcp://localhost:7222",
-                    "valueType": "string",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "securityProtocol",
-                    "propDescription": "Security protocol to use in Tibjms JNDI lookups",
-                    "propValue": "",
-                    "valueType": "string",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "sslEnableVerifyHost",
-                    "propDescription": "Enable TrustStore verification using SSL",
-                    "propValue": "",
-                    "valueType": "string",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "emsServerUsername",
-                    "propDescription": "EMS Server User Name",
-                    "propValue": "admin",
-                    "valueType": "string",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "emsServerPassword",
-                    "propDescription": "EMS Server Password",
-                    "propValue": "admin",
-                    "valueType": "password",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "jndiConnectionFactory",
-                    "propDescription": "JNDI Connection Factory Name",
-                    "propValue": "TopicConnectionFactory",
-                    "valueType": "string",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "initialContextFactory",
-                    "propDescription": "Initializing Context Factory Name",
-                    "propValue": "com.tibco.tibjms.naming.TibjmsInitialContextFactory",
-                    "valueType": "string",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "jmsSessionTransacted",
-                    "propDescription": "Keep EMS Session Transacted",
-                    "propValue": "true",
-                    "valueType": "boolean",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "timeoutMillis",
-                    "propDescription": "EMS message acknowledge timeout in milliseconds",
-                    "propValue": "10000",
-                    "valueType": "number",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "globalCacheCleanupTopicName",
-                    "propDescription": "Topic Name To Listen Global Cache Clean Up Notification",
-                    "propValue": "tibco.fos.global.cache.clean.publish",
-                    "valueType": "string",
-                    "isTenantProperty": "false"
-                }
-            ]
-        }
-    ]
+	"appDescription": "AOPD",
+	"categories": [
+		{
+			"categoryName": "In Memory Cache Configurations",
+			"properties": [
+				{
+					"propName": "com.tibco.fos.model.cacheType.cache.maxNoProductcached",
+					"propDescription": "Max No of Product Catalog Stored In Cache",
+					"propValue": "1000",
+					"valueType": "number",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "enableProductModelGlobalCache",
+					"propDescription": "Enable Product Catalog Global Caching",
+					"propValue": "true",
+					"valueType": "boolean",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "productCacheExpiryPeriod",
+					"propDescription": "Product Catalog Cache Expiry Period in Seconds",
+					"propValue": "30",
+					"valueType": "number",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "com.tibco.af.aopd.cacheType.cache.maxNoActioncached",
+					"propDescription": "Max No of Action Catalog Stored In Cache",
+					"propValue": "1000",
+					"valueType": "number",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "enableActionModelGlobalCache",
+					"propDescription": "Enable Action Catalog Global Caching",
+					"propValue": "true",
+					"valueType": "boolean",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "actionCacheExpiryPeriod",
+					"propDescription": "Action Catalog Cache Expiry Period in Seconds",
+					"propValue": "30",
+					"valueType": "number",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "info.app.name",
+					"propDescription": "Application name to show on actuator info endpoint",
+					"propValue": "AOPD",
+					"valueType": "string",
+					"isTenantProperty": "false"
+				}
+			]
+		},
+		{
+			"categoryName": "AOPD General Configuration",
+			"properties": [
+				{
+					"propName": "logging.config",
+					"propDescription": "Logging Configuration File Path",
+					"propValue": "config/logback_aopd.xml",
+					"valueType": "string",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "com.tibco.af.aopd.service.schema.validation",
+					"propDescription": "AOPD Soap Service Schema Validation",
+					"propValue": "true",
+					"valueType": "boolean",
+					"isTenantProperty": "false"
+				}
+			]
+		},
+		{
+			"categoryName": "AOPD Functional Configuration",
+			"properties": [
+				{
+					"propName": "nonexecutingPlanfragmentID",
+					"propDescription": "Plan-Fragment IDs whose Plan Items will be auto completed",
+					"propValue": "NON_EXECUTING",
+					"valueType": "string",
+					"isTenantProperty": "true"
+				},
+				{
+					"propName": "com.tibco.af.aopd.flags.affinity.affinityudfnamemerge",
+					"propDescription": "Enable merging of UDF with same name for affinity plan items",
+					"propValue": "false",
+					"valueType": "string",
+					"isTenantProperty": "true"
+				},
+				{
+					"propName": "com.tibco.af.aopd.flags.affinity.characterisitcswithoutaffinitypostfix",
+					"propDescription": "Disable UDFs merging during Affinity Sequencing, these UDFs should be added as CSV in the variable",
+					"propValue": "",
+					"valueType": "string",
+					"isTenantProperty": "true"
+				},
+				{
+					"propName": "com.tibco.af.aopd.flags.skipitemsequence",
+					"propDescription": "If the sequence number of Product Catalog is -1, it will skip the product and all its mandatory children from Execution Plan",
+					"propValue": "-1",
+					"valueType": "string",
+					"isTenantProperty": "true"
+				},
+				{
+					"propName": "com.tibco.af.aopd.flags.affinity.mergeaffinityitemdescription",
+					"propDescription": "Enable merging of Plan Item Description for affinity plan items",
+					"propValue": "false",
+					"valueType": "string",
+					"isTenantProperty": "true"
+				},
+				{
+					"propName": "com.tibco.af.aopd.flags.singleuse.hierarchysingleuse",
+					"propDescription": "For Single Use product, remove duplicate plan items of child products from the Plan.",
+					"propValue": "false",
+					"valueType": "string",
+					"isTenantProperty": "true"
+				},
+				{
+					"propName": "com.tibco.af.aopd.flags.affinity.enableaffinityudfparent",
+					"propDescription": "Enable merging of Parent Product Id in Udf name",
+					"propValue": "false",
+					"valueType": "string",
+					"isTenantProperty": "true"
+				},
+				{
+					"propName": "com.tibco.af.aopd.flags.udflist",
+					"propDescription": "Internal UDFs to be skipped for affinity merging",
+					"propValue": "EPMR_ACTION_PROVIDE,EPMR_ACTION_UPDATE,EPMR_ACTION_CEASE,EPMR_ACTION_WITHDRAW,COMPENSATE_PROVIDE,COMPENSATE_UPDATE,COMPENSATE_CEASE,MODIFICATION_IDENTIFYING_ATTR",
+					"valueType": "string",
+					"isTenantProperty": "true"
+				},
+				{
+					"propName": "com.tibco.af.aopd.flags.enablebidirectionallinkid",
+					"propDescription": "Enable LinkID behavior for products(with missing LinkID) by considering linkId of PDO/MDO related products",
+					"propValue": "false",
+					"valueType": "string",
+					"isTenantProperty": "true"
+				},
+				{
+					"propName": "com.tibco.af.aopd.flags.amendment.enablemodificationidentifyingattribute",
+					"propDescription": "Enable UDF amendment based on MODIFICATION_IDENTIFYING_ATTR UDF value",
+					"propValue": "false",
+					"valueType": "string",
+					"isTenantProperty": "true"
+				},
+				{
+					"propName": "com.tibco.af.aopd.flags.amendment.noDependencyInCOMPPlanItems",
+					"propDescription": "Disable dependency on plan item being cancelled while generating compensatory plan item",
+					"propValue": "false",
+					"valueType": "string",
+					"isTenantProperty": "true"
+				},
+				{
+					"propName": "com.tibco.af.aopd.flags.amendment.dateshiftcompredo",
+					"propDescription": "Enable creation of compensatory and redo plan items in case of requiredByDate change (Date Shift) type amendments.",
+					"propValue": "false",
+					"valueType": "string",
+					"isTenantProperty": "true"
+				},
+				{
+					"propName": "com.tibco.af.aopd.flags.amendment.compensateRestartForNoEPMRChar",
+					"propDescription": "Enable COMPENSATE and RESTART behaviour in case of the required EPMR characteristic not present in the product model.",
+					"propValue": "false",
+					"valueType": "string",
+					"isTenantProperty": "true"
+				},
+				{
+					"propName": "com.tibco.af.aopd.flags.allowmultiplerequiredproducts",
+					"propDescription": "Enable Multiple Required Products for the same link ID",
+					"propValue": "false",
+					"valueType": "string",
+					"isTenantProperty": "true"
+				},
+				{
+					"propName": "com.tibco.af.aopd.flags.ignorepdofirstchilddependency",
+					"propDescription": "Ignore First child dependency for source product in PDO relationship",
+					"propValue": "false",
+					"valueType": "string",
+					"isTenantProperty": "true"
+				},
+				{
+					"propName": "com.tibco.af.aopd.flags.handleconflict",
+					"propDescription": "Handling of Affinity Types for CrossLink with PCO Conflicts and Single Use with PCO Conflicts",
+					"allowedValues": [
+						"Error",
+						"Ignore",
+						"Apply"
+					],
+					"propValue": "",
+					"valueType": "string",
+					"isTenantProperty": "true"
+				},
+				{
+					"propName": "com.tibco.af.aopd.flags.handlepcocircularDependency",
+					"propDescription": "Handling of circular PCO dependencies",
+					"allowedValues": [
+						"Error",
+						"Ignore"
+					],
+					"propValue": "Error",
+					"valueType": "string",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "com.tibco.af.aopd.flags.includeonlyproductorderline",
+					"propDescription": "Include only orderline udf for attribute based decomposition evaluation",
+					"propValue": "false",
+					"valueType": "string",
+					"isTenantProperty": "true"
+				},
+				{
+					"propName": "com.tibco.af.aopd.flags.includeproductmodelcharacteristics",
+					"propDescription": "Include plan item udfs for attribute based decomposition evaluation",
+					"propValue": "false",
+					"valueType": "string",
+					"isTenantProperty": "true"
+				},
+				{
+					"propName": "com.tibco.af.aopd.flags.enableparentidudfcheck",
+					"propDescription": "Validate Parent_ID UDF to compare plan items",
+					"propValue": "true",
+					"valueType": "string",
+					"isTenantProperty": "true"
+				},
+				{
+					"propName": "com.tibco.af.aopd.flags.disableParentItemsDependencyImpact",
+					"propDescription": "For parent plan item modification, ignore EPMR application on child plan item.",
+					"propValue": "false",
+					"valueType": "string",
+					"isTenantProperty": "true"
+				},
+				{
+					"propName": "com.tibco.af.aopd.flags.disableAffinityBrokeUDFImpact",
+					"propDescription": "Disable UDF amendment when affinity breaks due to an orderline cancellation",
+					"propValue": "false",
+					"valueType": "string",
+					"isTenantProperty": "true"
+				}
+			]
+		},
+		{
+			"categoryName": "AOPD Inventory Integration Configurations",
+			"properties": [
+				{
+					"propName": "com.tibco.fom.oms.afi.aopd.merge.inventory",
+					"propDescription": "Merge inventory in AOPD request",
+					"propValue": "false",
+					"valueType": "boolean",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "com.tibco.fom.oms.afi.aopd.merge.inventory.url",
+					"propDescription": "Inventory service address",
+					"propValue": "http://localhost:8080/fsi-server/soapapi/v1/service",
+					"valueType": "string",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "com.tibco.fom.oms.afi.aopd.merge.inventory.username",
+					"propDescription": "Inventory service username",
+					"propValue": "admin@tibco",
+					"valueType": "string",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "com.tibco.fom.oms.afi.aopd.merge.inventory.password",
+					"propDescription": "Inventory service password",
+					"propValue": "admin",
+					"valueType": "string",
+					"isTenantProperty": "false"
+				}
+			]
+		},
+		{
+			"categoryName": "Relational Data Source Configuration",
+			"properties": [
+				{
+					"propName": "datasourceDriverClassName",
+					"propDescription": "Data Source Driver Class Name",
+					"allowedValues": [
+						"org.postgresql.Driver",
+						"oracle.jdbc.driver.OracleDriver"
+					],
+					"propValue": "org.postgresql.Driver",
+					"valueType": "string",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "catalogDsUsername",
+					"propDescription": "Data Source Username",
+					"propValue": "catalogdsuserll",
+					"valueType": "string",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "catalogDsPassword",
+					"propDescription": "Data Source Password",
+					"propValue": "catalogdsuserll",
+					"valueType": "password",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "catalogDsUrl",
+					"propDescription": "Data Source URL",
+					"allowedValues": [
+						"jdbc:postgresql://localhost:5432/catalogdsdbll?currentSchema=catalogdsschemall",
+						"jdbc:oracle:thin:@//localhost:1521/orcl.apac.tibco.com"
+					],
+					"propValue": "jdbc:postgresql://localhost:5432/catalogdsdbll?currentSchema=catalogdsschemall",
+					"valueType": "string",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "catalogDsInitializeSize",
+					"propDescription": "Number of connections that will be established when the connection pool is started",
+					"propValue": "2",
+					"valueType": "number",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "catalogDsMaxIdle",
+					"propDescription": "Maximum number of connections that should be kept in the idle pool",
+					"propValue": "11",
+					"valueType": "number",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "catalogDsMaxActive",
+					"propDescription": "Maximum number of active connections that can be allocated from this pool at the same time",
+					"propValue": "12",
+					"valueType": "number",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "catalogDsMaxWait",
+					"propDescription": "Maximum number of milliseconds that the pool will wait when there are no available connections",
+					"propValue": "10000",
+					"valueType": "number",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "datasourceValidationQuery",
+					"propDescription": "SQL query that will be used to validate connections",
+					"allowedValues": [
+						"select 1 from dual",
+						"SELECT 1"
+					],
+					"propValue": "SELECT 1",
+					"valueType": "string",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "catalogDsTestOnBorrow",
+					"propDescription": "Enable connection validation before being borrowed from the pool",
+					"propValue": "false",
+					"valueType": "boolean",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "catalogDsValidationInterval",
+					"propDescription": "Data source validation interval in milliseconds",
+					"propValue": "5000",
+					"valueType": "number",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "catalogDsTestWhileIdle",
+					"propDescription": "Enable connection validation while idle in connection pool",
+					"propValue": "true",
+					"valueType": "boolean",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "catalogDsTimeBetweenEvictionRunsMillis",
+					"propDescription": "Data Source Eviction Interval in milliseconds",
+					"propValue": "5000",
+					"valueType": "number",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "catalogDsMinEvictableIdleTimeMillis",
+					"propDescription": "The minimum amount of time in milliseconds an object must sit idle in the pool before it is eligible for eviction",
+					"propValue": "5000",
+					"valueType": "number",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "catalogDsNumTestsPerEvictionRun",
+					"propDescription": "Data Source Tests Per Eviction Run",
+					"propValue": "5",
+					"valueType": "number",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "catalogDsDefaultAutoCommit",
+					"propDescription": "The default auto-commit state of connections created by this pool",
+					"propValue": "false",
+					"valueType": "boolean",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "catalogDsRollbackOnReturn",
+					"propDescription": "Enable rollback any pending transaction when a connection is returned to pool",
+					"propValue": "false",
+					"valueType": "boolean",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "catalogDsCommitOnReturn",
+					"propDescription": "Enable commit any pending transaction when a connection is returned to pool",
+					"propValue": "false",
+					"valueType": "boolean",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "catalogDsCustomProperty",
+					"propDescription": "Database Custom Property",
+					"propValue": "",
+					"valueType": "string",
+					"isTenantProperty": "false"
+				}
+			]
+		},
+		{
+			"categoryName": "Redis Data Source Configuration",
+			"properties": [
+				{
+					"propName": "catalogRedisHost",
+					"propDescription": "Redis Server Host for Storing Catalog Models",
+					"propValue": "localhost",
+					"valueType": "string",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "catalogRedisClusterEnabled",
+					"propDescription": "Whether redis is running in Cluster Mode",
+					"propValue": "true",
+					"valueType": "boolean",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "catalogRedisPort",
+					"propDescription": "Redis Server Port for Storing Catalog Models",
+					"propValue": "6379",
+					"valueType": "number",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "catalogRedisUsername",
+					"propDescription": "Username to connect to Redis Cluster/Node",
+					"propValue": "",
+					"valueType": "string",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "catalogRedisPassword",
+					"propDescription": "Password to connect to Redis Cluster/Node",
+					"propValue": "password",
+					"valueType": "string",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "catalogRedisDatabase",
+					"propDescription": "Redis server Database name for Catalog datasource",
+					"propValue": "",
+					"valueType": "string",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "catalogRedisClientName",
+					"propDescription": "Redis server ClientName for Catalog datasource",
+					"propValue": "",
+					"valueType": "string",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "redisTestOnBorrow",
+					"propDescription": "Enable connection validation before being borrowed from the pool",
+					"propValue": "true",
+					"valueType": "boolean",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "redisTestOnReturn",
+					"propDescription": "Enable connection validation before being returned to the pool",
+					"propValue": "true",
+					"valueType": "boolean",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "redisTestWhileIdle",
+					"propDescription": "Enable connection validation while idle in connection pool",
+					"propValue": "true",
+					"valueType": "boolean",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "redisBlockedWhenExhausted",
+					"propDescription": "Enable connection blocking on borrow when connection pool is exhausted",
+					"propValue": "true",
+					"valueType": "boolean",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "redisJmxEnabled",
+					"propDescription": "Enabled JMX for connections.",
+					"propValue": "true",
+					"valueType": "boolean",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "redisLifo",
+					"propDescription": "Enable LIFO behaviour for idle objects. Always returning the most recently used object from the pool ",
+					"propValue": "true",
+					"valueType": "boolean",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "redisMaxIdle",
+					"propDescription": "Maximum number of idle connections in the pool",
+					"propValue": "64",
+					"valueType": "number",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "redisMinIdle",
+					"propDescription": "Minimum number of idle connections to maintain the pool",
+					"propValue": "16",
+					"valueType": "number",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "redisMaxTotal",
+					"propDescription": "Maximum number of connections that can be allocated by the pool at a given time",
+					"propValue": "64",
+					"valueType": "number",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "redisNumTestsPerEvictionRun",
+					"propDescription": "Maximum number of connections to examine during each evictor run",
+					"propValue": "5",
+					"valueType": "number",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "redisSoftMinEvictableIdleTimeMillis",
+					"propDescription": "Minimum amount of time in milliseconds an object may sit idle in the pool if minIdle instances are available",
+					"propValue": "3000",
+					"valueType": "number",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "redisMinEvictableIdleTimeMillis",
+					"propDescription": "Minimum amount of time in milliseconds an object may sit idle in the pool",
+					"propValue": "6000",
+					"valueType": "number",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "redisTimeBetweenEvictionRunsMillis",
+					"propDescription": "Number of milliseconds to sleep between runs of the idle object evictor thread",
+					"propValue": "3000",
+					"valueType": "number",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "catalogRedisSslEnabled",
+					"propDescription": "Connect to Redis Cluster/Node via SSL",
+					"propValue": "true",
+					"valueType": "boolean",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "redisKeyStoreType",
+					"propDescription": "Redis SSL KeyStore Type",
+					"propValue": "pkcs12",
+					"valueType": "string",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "redisKeyStorePassword",
+					"propDescription": "Redis SSL KeyStore Password",
+					"propValue": "tibco123",
+					"valueType": "string",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "redisTrustStoreType",
+					"propDescription": "Redis SSL TrustStore Type",
+					"propValue": "jks",
+					"valueType": "string",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "redisTrustStorePassword",
+					"propDescription": "Redis SSL TrustStore Password",
+					"propValue": "tibco123",
+					"valueType": "string",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "redisKeyStoreAbsoluteFilePath",
+					"propDescription": "Redis SSL KeyStore Absolute File Path",
+					"propValue": "D:/certificate/myhost.p12",
+					"valueType": "string",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "redisTrustStoreAbsoluteFilePath",
+					"propDescription": "Redis SSL TrustStore Absolute File Path",
+					"propValue": "D:/certificate/cacert",
+					"valueType": "string",
+					"isTenantProperty": "false"
+				}
+			]
+		},
+		{
+			"categoryName": "Generic Relational Data Source Configuration",
+			"properties": [
+				{
+					"propName": "databaseType",
+					"propDescription": "Database Type. Allowed values are oracle or postgres",
+					"allowedValues": [
+						"postgres",
+						"oracle"
+					],
+					"propValue": "postgres",
+					"valueType": "string",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "hibernateDialect",
+					"propDescription": "Hibernate Dialect",
+					"allowedValues": [
+						"org.hibernate.dialect.PostgreSQLDialect",
+						"org.hibernate.dialect.Oracle10gDialect"
+					],
+					"propValue": "org.hibernate.dialect.PostgreSQLDialect",
+					"valueType": "string",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "catalogHibernateShowSql",
+					"propDescription": "Hibernate Show SQL",
+					"propValue": "false",
+					"valueType": "boolean",
+					"isTenantProperty": "false"
+				}
+			]
+		},
+		{
+			"categoryName": "EMS Configurations for Global Cache Clean",
+			"properties": [
+				{
+					"propName": "emsServerURL",
+					"propDescription": "EMS Server URL",
+					"propValue": "tcp://localhost:7222",
+					"valueType": "string",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "securityProtocol",
+					"propDescription": "Security protocol to use in Tibjms JNDI lookups",
+					"propValue": "",
+					"valueType": "string",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "sslEnableVerifyHost",
+					"propDescription": "Enable TrustStore verification using SSL",
+					"propValue": "",
+					"valueType": "string",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "emsServerUsername",
+					"propDescription": "EMS Server User Name",
+					"propValue": "admin",
+					"valueType": "string",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "emsServerPassword",
+					"propDescription": "EMS Server Password",
+					"propValue": "admin",
+					"valueType": "password",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "jndiConnectionFactory",
+					"propDescription": "JNDI Connection Factory Name",
+					"propValue": "TopicConnectionFactory",
+					"valueType": "string",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "initialContextFactory",
+					"propDescription": "Initializing Context Factory Name",
+					"propValue": "com.tibco.tibjms.naming.TibjmsInitialContextFactory",
+					"valueType": "string",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "jmsSessionTransacted",
+					"propDescription": "Keep EMS Session Transacted",
+					"propValue": "true",
+					"valueType": "boolean",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "timeoutMillis",
+					"propDescription": "EMS message acknowledge timeout in milliseconds",
+					"propValue": "10000",
+					"valueType": "number",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "globalCacheCleanupTopicName",
+					"propDescription": "Topic Name To Listen Global Cache Clean Up Notification",
+					"propValue": "tibco.fos.global.cache.clean.publish",
+					"valueType": "string",
+					"isTenantProperty": "false"
+				}
+			]
+		},
+		{
+			"categoryName": "Orchestrator Configuration",
+			"properties": [
+				{
+					"propName": "orchestratorBaseUrl",
+					"propDescription": "Orchestrator base url",
+					"propValue": "http://localhost:9093",
+					"valueType": "string",
+					"isTenantProperty": "false"
+				},{
+					"propName": "planSubmissionRetryCount",
+					"propDescription": "Number of retries in case of plan submission failure to Orchestrator",
+					"propValue": "5",
+					"valueType": "string",
+					"isTenantProperty": "false"
+				},{
+					"propName": "planSubmissionRetryDuration",
+					"propDescription": "Delay between each retries, in seconds, of plan submission to Orchestrator",
+					"propValue": "5",
+					"valueType": "string",
+					"isTenantProperty": "false"
+				}
+			]
+		},
+		{
+			"categoryName": "User Details For Inter Service Communication",
+			"properties": [
+				{
+					"propName": "authorization.service.username",
+					"propDescription": "Username For Inter Service Communication",
+					"propValue": "apiUser",
+					"valueType": "string",
+					"isTenantProperty": "false"
+				},
+				{
+					"propName": "authorization.service.password",
+					"propDescription": "User Password For Inter Service Communication",
+					"propValue": "apiUser",
+					"valueType": "string",
+					"isTenantProperty": "false"
+				}
+			]
+		}
+	]
 }

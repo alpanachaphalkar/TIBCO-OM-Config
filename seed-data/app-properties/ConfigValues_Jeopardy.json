@@ -282,15 +282,29 @@
         },
         {
           "propName": "orderNotificationQueue",
-          "propDescription": "Order statenotification queue",
+          "propDescription": "Order state notification queue",
           "propValue": "jeopardy.order",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "orderNotificationDeadQueue",
-          "propDescription": "Order statenotification dead queue",
+          "propDescription": "Order state notification dead queue",
           "propValue": "jeopardy.order.dead",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "orderAmendmentNotificationQueue",
+          "propDescription": "Order amendment state notification queue",
+          "propValue": "jeopardy.order.amendment",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "orderAmendmentNotificationDeadQueue",
+          "propDescription": "Order amendment state notification dead queue",
+          "propValue": "jeopardy.order.amendment.dead",
           "valueType": "string",
           "isTenantProperty": "false"
         },
@@ -381,7 +395,7 @@
         {
           "propName": "notificationRedeliveryCount",
           "propDescription": "Notification redelivery count",
-          "propValue": "1",
+          "propValue": "5",
           "valueType": "number",
           "isTenantProperty": "false"
         },
@@ -389,6 +403,13 @@
           "propName": "notificationReceiverCount",
           "propDescription": "Notification receiver count",
           "propValue": "1",
+          "valueType": "number",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "notificationRedeliveryDelay",
+          "propDescription": "Notification delivery delay in seconds",
+          "propValue": "10",
           "valueType": "number",
           "isTenantProperty": "false"
         },
@@ -740,8 +761,8 @@
         },
         {
           "propName": "lockRetryInterval",
-          "propDescription": "Lock retry interval",
-          "propValue": "2",
+          "propDescription": "Lock retry interval in seconds",
+          "propValue": "10",
           "valueType": "number",
           "isTenantProperty": "false"
         },
@@ -749,6 +770,13 @@
           "propName": "hashCodeIndexDistributionSize",
           "propDescription": "Number of rows in JEOPARDY_LOCK table",
           "propValue": "2048",
+          "valueType": "number",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "defaultLockTimeout",
+          "propDescription": "Lock expiry timeout in seconds",
+          "propValue": "300",
           "valueType": "number",
           "isTenantProperty": "false"
         }

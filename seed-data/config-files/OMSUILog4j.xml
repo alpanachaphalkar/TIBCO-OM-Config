@@ -40,6 +40,26 @@
 			<appender-ref ref="LocalLogFileAppender"/>
 		</Logger>
 
+		<Logger name="org.springframework" level="ERROR" additivity="false">
+			<appender-ref ref="console"/>
+			<appender-ref ref="LocalLogFileAppender"/>
+		</Logger>
+ 
+		<Logger name="org.apache.shindig" level="ERROR" additivity="false">
+			<appender-ref ref="console"/>
+			<appender-ref ref="LocalLogFileAppender"/>
+		</Logger>
+		
+		<Logger name="org.atmosphere.cpr" level="ERROR" additivity="false">
+			<appender-ref ref="console"/>
+			<appender-ref ref="LocalLogFileAppender"/>
+		</Logger>
+
+		<Logger name="org.dozer.config" level="ERROR" additivity="false">
+			<appender-ref ref="console"/>
+			<appender-ref ref="LocalLogFileAppender"/>
+		</Logger>
+
 		<Logger name="com.tibco.aff.oms.config" level="INFO" additivity="false">
 			<appender-ref ref="console"/>
 			<appender-ref ref="LocalLogFileAppender"/>

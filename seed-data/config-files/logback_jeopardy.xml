@@ -33,6 +33,10 @@
         <appender-ref ref="console"/>
         <appender-ref ref="LocalLogFileAppender"/>
     </logger>
+    <logger name="org.apache.camel.processor.DefaultErrorHandler" level="INFO" additivity="false">
+        <appender-ref ref="console"/>
+        <appender-ref ref="LocalLogFileAppender"/>
+    </logger>
     <logger name="org.hibernate.engine" level="OFF" additivity="false">
         <appender-ref ref="console"/>
         <appender-ref ref="LocalLogFileAppender"/>

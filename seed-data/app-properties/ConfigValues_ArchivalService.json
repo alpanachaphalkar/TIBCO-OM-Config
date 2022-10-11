@@ -321,6 +321,116 @@
           "propValue": "ROLE_ADMIN,ROLE_USER",
           "valueType": "string",
           "isTenantProperty": "false"
+        },
+		{
+          "propName": "operation.roles.planByCriteria",
+          "propDescription": "User Role for planByCriteria API",
+          "propValue": "ROLE_ADMIN,ROLE_USER",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        }
+      ]
+    },
+	{
+      "categoryName": "OMSUI Archival Api Security Configurations",
+      "properties": [
+        {
+          "propName": "operation.roles.amendOrder",
+          "propDescription": "User Role for amendOrder API",
+          "propValue": "ROLE_ADMIN",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "operation.roles.suspendOrder",
+          "propDescription": "User Role for suspendOrder API",
+          "propValue": "ROLE_ADMIN",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "operation.roles.activateOrder",
+          "propDescription": "User Role for activateOrder API",
+          "propValue": "ROLE_ADMIN",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "operation.roles.cancelOrder",
+          "propDescription": "User Role for cancelOrder API",
+          "propValue": "ROLE_ADMIN",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "operation.roles.withdrawOrder",
+          "propDescription": "User Role for withdrawOrder API",
+          "propValue": "ROLE_ADMIN",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "operation.roles.performBulkOrderAction",
+          "propDescription": "User Role for performBulkOrderAction API",
+          "propValue": "ROLE_ADMIN",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "operation.roles.getPlanItemsInError",
+          "propDescription": "User Role for getPlanItemsInError API",
+          "propValue": "ROLE_ADMIN,ROLE_USER",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "operation.roles.getPlanItemsInErrorForPlans",
+          "propDescription": "User Role for getPlanItemsInErrorForPlans API",
+          "propValue": "ROLE_ADMIN,ROLE_USER",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "operation.roles.submitBulkErrorResolution",
+          "propDescription": "User Role for submitBulkErrorResolution API",
+          "propValue": "ROLE_ADMIN",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "operation.roles.submitErrorResolution",
+          "propDescription": "User Role for submitErrorResolution API",
+          "propValue": "ROLE_ADMIN",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "operation.roles.planPreview",
+          "propDescription": "User Role for planPreview API",
+          "propValue": "ROLE_ADMIN,ROLE_USER",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "operation.roles.acquireLockForOrder",
+          "propDescription": "User Role for acquireLockForOrder API",
+          "propValue": "ROLE_ADMIN,ROLE_USER",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "operation.roles.releaseLockForOrder",
+          "propDescription": "User Role for releaseLockForOrder API",
+          "propValue": "ROLE_ADMIN,ROLE_USER",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "operation.roles.findAmendedOrder",
+          "propDescription": "User Role for findAmendedOrder API",
+          "propValue": "ROLE_ADMIN,ROLE_USER",
+          "valueType": "string",
+          "isTenantProperty": "false"
         }
       ]
     },
@@ -467,6 +577,13 @@
           "propName": "hashCodeIndexDistributionSize",
           "propDescription": "Number Of Rows In ARCHIVALLOCK Table",
           "propValue": "2048",
+          "valueType": "number",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "defaultLockTimeout",
+          "propDescription": "Lock expiry timeout in seconds",
+          "propValue": "300",
           "valueType": "number",
           "isTenantProperty": "false"
         }
