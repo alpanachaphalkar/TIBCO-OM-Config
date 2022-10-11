@@ -7,14 +7,14 @@
         {
           "propName": "enableAuditTrail",
           "propDescription": "Enable Audit Trail Persistence",
-          "propValue": "false",
+          "propValue": "true",
           "valueType": "boolean",
           "isTenantProperty": "false"
         },
         {
           "propName": "enableLogNotifications",
           "propDescription": "Enable logging of order state change notifications",
-          "propValue": "false",
+          "propValue": "true",
           "valueType": "boolean",
           "isTenantProperty": "false"
         },
