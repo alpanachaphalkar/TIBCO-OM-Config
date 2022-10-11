@@ -50,7 +50,7 @@
                 {
                     "propName": "default.tenant.id",
                     "propDescription": "Default Tenant ID",
-                    "propValue": "TIBCO",
+                    "propValue": "SKY.DE",
                     "valueType": "string",
                     "isTenantProperty": "false"
                 },
