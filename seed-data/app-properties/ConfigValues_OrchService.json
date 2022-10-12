@@ -278,7 +278,7 @@
 		{
           "propName": "aopdBaseUrl",
           "propDescription": "AOPD Server Plan Generation Base URL",
-          "propValue": "http://localhost:9094",
+          "propValue": "http://aopd-svc.om.svc.cluster.local:9094",
           "valueType": "string",
           "isTenantProperty": "false"
         },
