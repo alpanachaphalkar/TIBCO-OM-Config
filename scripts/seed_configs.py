@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 import requests
 import environment as env
 import oauth
