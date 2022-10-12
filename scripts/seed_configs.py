@@ -102,9 +102,10 @@ def upload_properties_files(properties: dict) -> None:
 
 
 def refresh_config():
+    logger.info("Refreshing configurations")
     refresh_response = requests.post(url=configurator_refresh_config_url)
     if refresh_response.status_code == 200:
-        logger.info("Refreshing configurations")
+        logger.info("Configurations are refreshed")
     else:
         logger.error("Something went wrong while refreshing configurations")
         raise Exception(refresh_response.__dict__)
@@ -112,3 +113,4 @@ def refresh_config():
 
 upload_config_files(config_files_dict)
 upload_properties_files(app_properties_files_dict)
+refresh_config()
