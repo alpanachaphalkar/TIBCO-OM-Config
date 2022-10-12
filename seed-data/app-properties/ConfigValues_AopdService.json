@@ -734,7 +734,7 @@
 				{
 					"propName": "orchestratorBaseUrl",
 					"propDescription": "Orchestrator base url",
-					"propValue": "http://localhost:9093",
+					"propValue": "http://orchestrator-svc.om.svc.cluster.local:9093",
 					"valueType": "string",
 					"isTenantProperty": "false"
 				},{

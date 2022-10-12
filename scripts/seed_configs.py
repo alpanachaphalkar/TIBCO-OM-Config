@@ -17,7 +17,8 @@ oauth_request_payload = {
     "grant_type": "password",
     "scope": "read write",
     "password": env.om_admin_password,
-    "username": f"{env.om_admin_username}@{env.tenant_id}"
+    "username": env.om_admin_username,
+    "tenantId": env.tenant_id
 }
 
 oauth_token = oauth.generate_token(url=authorization_service_url, req_headers=oauth_request_headers,
@@ -28,6 +29,7 @@ app_properties_dir = "../seed-data/app-properties"
 
 configurator_config_uri = f"{env.configurator_svc}/v1/configuration/configFile/"
 configurator_app_uri = f"{env.configurator_svc}/v1/configuration/"
+configurator_refresh_config_url = f"{env.configurator_svc}/management/refresh"
 
 config_files_dict = {
     "aopd": ["logback_aopd.xml", "aopd_config.xml"],
@@ -97,6 +99,15 @@ def upload_properties_files(properties: dict) -> None:
 
         upload_response = requests.post(url=configurator_app_url, headers=req_headers, data=req_body)
         is_file_uploaded(response=upload_response, file=properties_file)
+
+
+def refresh_config():
+    refresh_response = requests.post(url=configurator_refresh_config_url)
+    if refresh_response.status_code == 200:
+        logger.info("Refreshing configurations")
+    else:
+        logger.error("Something went wrong while refreshing configurations")
+        raise Exception(refresh_response.__dict__)
 
 
 upload_config_files(config_files_dict)
