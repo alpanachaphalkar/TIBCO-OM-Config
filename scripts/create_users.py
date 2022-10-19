@@ -3,6 +3,7 @@
 import requests
 import environment as env
 import logging.config
+from users import users
 
 logging.config.fileConfig('logging.ini')
 logger = logging.getLogger('post-install')
@@ -23,35 +24,19 @@ headers = {
     'X-API-AppId': env.x_api_appid
 }
 
-admin_user_payload = {
-    "user": [
-        {
-            "enabled": True,
-            "password": env.om_admin_password,
-            "tenantId": env.tenant_id,
-            "userName": env.om_admin_username,
-            "userRoles": [
-                "ROLE_ADMIN",
-                "ROLE_USER"
-            ]
-        }
-    ]
-}
 
-api_user_payload = {
-    "user": [
-        {
-            "enabled": True,
-            "password": env.om_apiuser_password,
-            "tenantId": env.tenant_id,
-            "userName": env.om_apiuser_username,
-            "userRoles": [
-                "ROLE_ADMIN",
-                "ROLE_USER"
-            ]
-        }
-    ]
-}
+def get_user_req_payload(tenant: str, user: str, password: str, roles: list[str]) -> dict:
+    return {
+        "user": [
+            {
+                "enabled": True,
+                "password": password,
+                "tenantId": tenant,
+                "userName": user,
+                "userRoles": roles
+            }
+        ]
+    }
 
 
 def create_user(user: str, req_body: dict) -> requests.Response:
@@ -59,8 +44,13 @@ def create_user(user: str, req_body: dict) -> requests.Response:
     return requests.post(authorization_service_url, headers=headers, json=req_body, verify=False)
 
 
-admin_response = create_user(user=env.om_admin_username, req_body=admin_user_payload)
-is_user_created(response=admin_response, user=env.om_admin_username)
+for u in users:
+    request_payload = get_user_req_payload(
+        tenant=u["tenant"],
+        user=u["user"],
+        password=u["password"],
+        roles=u["roles"]
+    )
+    create_user_response = create_user(user=u["user"], req_body=request_payload)
+    is_user_created(response=create_user_response, user=u["user"])
 
-api_user_response = create_user(user=env.om_apiuser_username, req_body=api_user_payload)
-is_user_created(response=api_user_response, user=env.om_apiuser_username)

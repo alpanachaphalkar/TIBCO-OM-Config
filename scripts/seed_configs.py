@@ -16,8 +16,8 @@ oauth_request_headers = {
 oauth_request_payload = {
     "grant_type": "password",
     "scope": "read write",
-    "password": env.om_admin_password,
-    "username": env.om_admin_username,
+    "password": env.om_apiuser_password,
+    "username": env.om_apiuser_username,
     "tenantId": env.tenant_id
 }
 
