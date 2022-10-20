@@ -8,8 +8,7 @@ users = [
         "password": "",
         "tenant": env.tenant_id,
         "roles": [
-            "azure-tibco-om-dev-admin-role",
-            "azure-tibco-om-dev-user-role"
+            "azure-tibco-om-dev-admin-role"
         ]
     },
     {
@@ -17,8 +16,7 @@ users = [
         "password": "",
         "tenant": env.tenant_id,
         "roles": [
-            "azure-tibco-om-dev-admin-role",
-            "azure-tibco-om-dev-user-role"
+            "azure-tibco-om-dev-admin-role"
         ]
     },
     {
