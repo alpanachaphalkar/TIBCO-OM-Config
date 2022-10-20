@@ -185,63 +185,63 @@
                 {
                     "propName": "operation.roles.submitPlanFragmentModel",
                     "propDescription": "User Role to access submitPlanFragmentModel Service",
-                    "propValue": "ROLE_ADMIN",
+                    "propValue": "azure-tibco-om-dev-admin-role",
                     "valueType": "string",
                     "isTenantProperty": "false"
                 },
                 {
                     "propName": "operation.roles.submitProductModel",
                     "propDescription": "User Role to access submitProductModel Service",
-                    "propValue": "ROLE_ADMIN",
+                    "propValue": "azure-tibco-om-dev-admin-role",
                     "valueType": "string",
                     "isTenantProperty": "false"
                 },
                 {
                     "propName": "operation.roles.submitActionModel",
                     "propDescription": "User Role to access submitActionModel Service",
-                    "propValue": "ROLE_ADMIN",
+                    "propValue": "azure-tibco-om-dev-admin-role",
                     "valueType": "string",
                     "isTenantProperty": "false"
                 },
                 {
                     "propName": "operation.roles.purgePlanFragmentModel",
                     "propDescription": "User Role to access purgePlanFragmentModel Service",
-                    "propValue": "ROLE_ADMIN",
+                    "propValue": "azure-tibco-om-dev-admin-role",
                     "valueType": "string",
                     "isTenantProperty": "false"
                 },
                 {
                     "propName": "operation.roles.purgeProductModel",
                     "propDescription": "User Role to access purgeProductModel Service",
-                    "propValue": "ROLE_ADMIN",
+                    "propValue": "azure-tibco-om-dev-admin-role",
                     "valueType": "string",
                     "isTenantProperty": "false"
                 },
                 {
                     "propName": "operation.roles.purgeActionModel",
                     "propDescription": "User Role to access purgeActionModel Service",
-                    "propValue": "ROLE_ADMIN",
+                    "propValue": "azure-tibco-om-dev-admin-role",
                     "valueType": "string",
                     "isTenantProperty": "false"
                 },
                 {
                     "propName": "operation.roles.getProductModelRoles",
                     "propDescription": "User Role to access getProductModelRoles Service",
-                    "propValue": "ROLE_ADMIN",
+                    "propValue": "azure-tibco-om-dev-admin-role",
                     "valueType": "string",
                     "isTenantProperty": "false"
                 },
                 {
                     "propName": "operation.roles.getPlanFragmentModelRoles",
                     "propDescription": "User Role to access getPlanFragmentModelRoles Service",
-                    "propValue": "ROLE_ADMIN",
+                    "propValue": "azure-tibco-om-dev-admin-role",
                     "valueType": "string",
                     "isTenantProperty": "false"
                 },
                 {
                     "propName": "operation.roles.getActionModelRoles",
                     "propDescription": "User Role to access getActionModelRoles Service",
-                    "propValue": "ROLE_ADMIN",
+                    "propValue": "azure-tibco-om-dev-admin-role",
                     "valueType": "string",
                     "isTenantProperty": "false"
                 }

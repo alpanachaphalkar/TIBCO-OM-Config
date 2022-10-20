@@ -220,7 +220,7 @@
                 {
                     "propName": "com.tibco.fom.orch.roles.piExecutionToComplete",
                     "propDescription": "To force completing plan items in execution status on the bases of role",
-                    "propValue": "ROLE_ADMIN",
+                    "propValue": "azure-tibco-om-dev-admin-role",
                     "valueType": "string",
                     "isTenantProperty": "false"
                 },
