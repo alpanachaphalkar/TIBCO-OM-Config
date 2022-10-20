@@ -5,20 +5,20 @@ import environment as env
 users = [
     {
         "user": env.om_admin_username,
-        "password": env.om_admin_password,
+        "password": "",
         "tenant": env.tenant_id,
         "roles": [
-            "ROLE_ADMIN",
-            "ROLE_USER"
+            "azure-tibco-om-dev-admin-role",
+            "azure-tibco-om-dev-user-role"
         ]
     },
     {
         "user": env.om_apiuser_username,
-        "password": env.om_apiuser_password,
+        "password": "",
         "tenant": env.tenant_id,
         "roles": [
-            "ROLE_ADMIN",
-            "ROLE_USER"
+            "azure-tibco-om-dev-admin-role",
+            "azure-tibco-om-dev-user-role"
         ]
     },
     {
@@ -26,7 +26,7 @@ users = [
         "password": "",
         "tenant": env.tenant_id,
         "roles": [
-            "ROLE_USER"
+            "azure-tibco-om-dev-user-role"
         ]
     },
     {
@@ -34,7 +34,7 @@ users = [
         "password": "",
         "tenant": env.tenant_id,
         "roles": [
-            "ROLE_USER"
+            "azure-tibco-om-dev-user-role"
         ]
     }
 ]

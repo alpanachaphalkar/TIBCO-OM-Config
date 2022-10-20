@@ -356,14 +356,14 @@
 				{
                     "propName": "admin_role",
                     "propDescription": "Custom role for user with admin permissions",
-                    "propValue": "ROLE_ADMIN",
+                    "propValue": "azure-tibco-om-dev-admin-role",
                     "valueType": "string",
                     "isTenantProperty": "false"
                 },
 				{
                     "propName": "user_role",
                     "propDescription": "Custom role for user with user permissions",
-                    "propValue": "ROLE_USER",
+                    "propValue": "azure-tibco-om-dev-user-role",
                     "valueType": "string",
                     "isTenantProperty": "false"
                 }
