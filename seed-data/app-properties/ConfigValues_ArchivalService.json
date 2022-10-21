@@ -269,63 +269,63 @@
         {
           "propName": "operation.roles.orderSummary",
           "propDescription": "User Role for orderSummary API",
-          "propValue": "AZ_TIBCO_OM_DEV_ROLE_ADMIN,AZ_TIBCO_OM_DEV_ROLE_USER",
+          "propValue": "AZ_TIBCO_OM_DEV_ADMIN_ROLE,AZ_TIBCO_OM_DEV_USER_ROLE",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "operation.roles.ordersByCriteria",
           "propDescription": "User Role for ordersByCriteria API",
-          "propValue": "AZ_TIBCO_OM_DEV_ROLE_ADMIN,AZ_TIBCO_OM_DEV_ROLE_USER",
+          "propValue": "AZ_TIBCO_OM_DEV_ADMIN_ROLE,AZ_TIBCO_OM_DEV_USER_ROLE",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "operation.roles.orderByQueryFilter",
           "propDescription": "User Role for orderByQueryFilter API",
-          "propValue": "AZ_TIBCO_OM_DEV_ROLE_ADMIN,AZ_TIBCO_OM_DEV_ROLE_USER",
+          "propValue": "AZ_TIBCO_OM_DEV_ADMIN_ROLE,AZ_TIBCO_OM_DEV_USER_ROLE",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "operation.roles.orderDetails",
           "propDescription": "User Role for orderDetails API",
-          "propValue": "AZ_TIBCO_OM_DEV_ROLE_ADMIN,AZ_TIBCO_OM_DEV_ROLE_USER",
+          "propValue": "AZ_TIBCO_OM_DEV_ADMIN_ROLE,AZ_TIBCO_OM_DEV_USER_ROLE",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "operation.roles.executionPlanbyQueryFilter",
           "propDescription": "User Role for executionPlanbyQueryFilter API",
-          "propValue": "AZ_TIBCO_OM_DEV_ROLE_ADMIN,AZ_TIBCO_OM_DEV_ROLE_USER",
+          "propValue": "AZ_TIBCO_OM_DEV_ADMIN_ROLE,AZ_TIBCO_OM_DEV_USER_ROLE",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "operation.roles.enrichedPlanByPlanId",
           "propDescription": "User Role for enrichedPlanByPlanId API",
-          "propValue": "AZ_TIBCO_OM_DEV_ROLE_ADMIN,AZ_TIBCO_OM_DEV_ROLE_USER",
+          "propValue": "AZ_TIBCO_OM_DEV_ADMIN_ROLE,AZ_TIBCO_OM_DEV_USER_ROLE",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "operation.roles.auditTrailForOrder",
           "propDescription": "User Role for auditTrailForOrder API",
-          "propValue": "AZ_TIBCO_OM_DEV_ROLE_ADMIN,AZ_TIBCO_OM_DEV_ROLE_USER",
+          "propValue": "AZ_TIBCO_OM_DEV_ADMIN_ROLE,AZ_TIBCO_OM_DEV_USER_ROLE",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "operation.roles.auditTrailForPlan",
           "propDescription": "User Role for auditTrailForPlan API",
-          "propValue": "AZ_TIBCO_OM_DEV_ROLE_ADMIN,AZ_TIBCO_OM_DEV_ROLE_USER",
+          "propValue": "AZ_TIBCO_OM_DEV_ADMIN_ROLE,AZ_TIBCO_OM_DEV_USER_ROLE",
           "valueType": "string",
           "isTenantProperty": "false"
         },
 		{
           "propName": "operation.roles.planByCriteria",
           "propDescription": "User Role for planByCriteria API",
-          "propValue": "AZ_TIBCO_OM_DEV_ROLE_ADMIN,AZ_TIBCO_OM_DEV_ROLE_USER",
+          "propValue": "AZ_TIBCO_OM_DEV_ADMIN_ROLE,AZ_TIBCO_OM_DEV_USER_ROLE",
           "valueType": "string",
           "isTenantProperty": "false"
         }
@@ -337,98 +337,98 @@
         {
           "propName": "operation.roles.amendOrder",
           "propDescription": "User Role for amendOrder API",
-          "propValue": "AZ_TIBCO_OM_DEV_ROLE_ADMIN",
+          "propValue": "AZ_TIBCO_OM_DEV_ADMIN_ROLE",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "operation.roles.suspendOrder",
           "propDescription": "User Role for suspendOrder API",
-          "propValue": "AZ_TIBCO_OM_DEV_ROLE_ADMIN",
+          "propValue": "AZ_TIBCO_OM_DEV_ADMIN_ROLE",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "operation.roles.activateOrder",
           "propDescription": "User Role for activateOrder API",
-          "propValue": "AZ_TIBCO_OM_DEV_ROLE_ADMIN",
+          "propValue": "AZ_TIBCO_OM_DEV_ADMIN_ROLE",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "operation.roles.cancelOrder",
           "propDescription": "User Role for cancelOrder API",
-          "propValue": "AZ_TIBCO_OM_DEV_ROLE_ADMIN",
+          "propValue": "AZ_TIBCO_OM_DEV_ADMIN_ROLE",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "operation.roles.withdrawOrder",
           "propDescription": "User Role for withdrawOrder API",
-          "propValue": "AZ_TIBCO_OM_DEV_ROLE_ADMIN",
+          "propValue": "AZ_TIBCO_OM_DEV_ADMIN_ROLE",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "operation.roles.performBulkOrderAction",
           "propDescription": "User Role for performBulkOrderAction API",
-          "propValue": "AZ_TIBCO_OM_DEV_ROLE_ADMIN",
+          "propValue": "AZ_TIBCO_OM_DEV_ADMIN_ROLE",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "operation.roles.getPlanItemsInError",
           "propDescription": "User Role for getPlanItemsInError API",
-          "propValue": "AZ_TIBCO_OM_DEV_ROLE_ADMIN,AZ_TIBCO_OM_DEV_ROLE_USER",
+          "propValue": "AZ_TIBCO_OM_DEV_ADMIN_ROLE,AZ_TIBCO_OM_DEV_USER_ROLE",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "operation.roles.getPlanItemsInErrorForPlans",
           "propDescription": "User Role for getPlanItemsInErrorForPlans API",
-          "propValue": "AZ_TIBCO_OM_DEV_ROLE_ADMIN,AZ_TIBCO_OM_DEV_ROLE_USER",
+          "propValue": "AZ_TIBCO_OM_DEV_ADMIN_ROLE,AZ_TIBCO_OM_DEV_USER_ROLE",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "operation.roles.submitBulkErrorResolution",
           "propDescription": "User Role for submitBulkErrorResolution API",
-          "propValue": "AZ_TIBCO_OM_DEV_ROLE_ADMIN",
+          "propValue": "AZ_TIBCO_OM_DEV_ADMIN_ROLE",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "operation.roles.submitErrorResolution",
           "propDescription": "User Role for submitErrorResolution API",
-          "propValue": "AZ_TIBCO_OM_DEV_ROLE_ADMIN",
+          "propValue": "AZ_TIBCO_OM_DEV_ADMIN_ROLE",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "operation.roles.planPreview",
           "propDescription": "User Role for planPreview API",
-          "propValue": "AZ_TIBCO_OM_DEV_ROLE_ADMIN,AZ_TIBCO_OM_DEV_ROLE_USER",
+          "propValue": "AZ_TIBCO_OM_DEV_ADMIN_ROLE,AZ_TIBCO_OM_DEV_USER_ROLE",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "operation.roles.acquireLockForOrder",
           "propDescription": "User Role for acquireLockForOrder API",
-          "propValue": "AZ_TIBCO_OM_DEV_ROLE_ADMIN,AZ_TIBCO_OM_DEV_ROLE_USER",
+          "propValue": "AZ_TIBCO_OM_DEV_ADMIN_ROLE,AZ_TIBCO_OM_DEV_USER_ROLE",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "operation.roles.releaseLockForOrder",
           "propDescription": "User Role for releaseLockForOrder API",
-          "propValue": "AZ_TIBCO_OM_DEV_ROLE_ADMIN,AZ_TIBCO_OM_DEV_ROLE_USER",
+          "propValue": "AZ_TIBCO_OM_DEV_ADMIN_ROLE,AZ_TIBCO_OM_DEV_USER_ROLE",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "operation.roles.findAmendedOrder",
           "propDescription": "User Role for findAmendedOrder API",
-          "propValue": "AZ_TIBCO_OM_DEV_ROLE_ADMIN,AZ_TIBCO_OM_DEV_ROLE_USER",
+          "propValue": "AZ_TIBCO_OM_DEV_ADMIN_ROLE,AZ_TIBCO_OM_DEV_USER_ROLE",
           "valueType": "string",
           "isTenantProperty": "false"
         }

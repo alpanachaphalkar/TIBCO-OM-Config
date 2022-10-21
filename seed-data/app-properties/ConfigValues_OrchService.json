@@ -574,147 +574,147 @@
         {
           "propName": "operation.roles.submitOrder",
           "propDescription": "User Role for submitOrder Service",
-          "propValue": "AZ_TIBCO_OM_DEV_ROLE_ADMIN",
+          "propValue": "AZ_TIBCO_OM_DEV_ADMIN_ROLE",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "operation.roles.orderExecutionPlan",
           "propDescription": "User Role for getOrderExecutionPlan Service",
-          "propValue": "AZ_TIBCO_OM_DEV_ROLE_ADMIN,AZ_TIBCO_OM_DEV_ROLE_USER",
+          "propValue": "AZ_TIBCO_OM_DEV_ADMIN_ROLE,AZ_TIBCO_OM_DEV_USER_ROLE",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "operation.roles.getOrderDetails",
           "propDescription": "User Role for getOrderDetails Service",
-          "propValue": "AZ_TIBCO_OM_DEV_ROLE_ADMIN,AZ_TIBCO_OM_DEV_ROLE_USER",
+          "propValue": "AZ_TIBCO_OM_DEV_ADMIN_ROLE,AZ_TIBCO_OM_DEV_USER_ROLE",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "operation.roles.getAuditTrail",
           "propDescription": "User Role for getAuditTrail Service",
-          "propValue": "AZ_TIBCO_OM_DEV_ROLE_ADMIN,AZ_TIBCO_OM_DEV_ROLE_USER",
+          "propValue": "AZ_TIBCO_OM_DEV_ADMIN_ROLE,AZ_TIBCO_OM_DEV_USER_ROLE",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "operation.roles.executePlanItemReply",
           "propDescription": "User Role for planItemExecuteResponse Service",
-          "propValue": "AZ_TIBCO_OM_DEV_ROLE_ADMIN",
+          "propValue": "AZ_TIBCO_OM_DEV_ADMIN_ROLE",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "operation.roles.orderWithdraw",
           "propDescription": "User Role for orderWithdraw Service",
-          "propValue": "AZ_TIBCO_OM_DEV_ROLE_ADMIN",
+          "propValue": "AZ_TIBCO_OM_DEV_ADMIN_ROLE",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "operation.roles.submitOrderExecutionPlan",
           "propDescription": "User Role for submitOrderExecutionPlan Service",
-          "propValue": "AZ_TIBCO_OM_DEV_ROLE_ADMIN",
+          "propValue": "AZ_TIBCO_OM_DEV_ADMIN_ROLE",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "operation.roles.milestoneNotifyRequest",
           "propDescription": "User Role for milestoneNotifyRequest Service",
-          "propValue": "AZ_TIBCO_OM_DEV_ROLE_ADMIN",
+          "propValue": "AZ_TIBCO_OM_DEV_ADMIN_ROLE",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "operation.roles.planItemSuspendResponse",
           "propDescription": "User Role for planItemSuspendResponse Service",
-          "propValue": "AZ_TIBCO_OM_DEV_ROLE_ADMIN",
+          "propValue": "AZ_TIBCO_OM_DEV_ADMIN_ROLE",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "operation.roles.amendOrder",
           "propDescription": "User Role for amendOrder Service",
-          "propValue": "AZ_TIBCO_OM_DEV_ROLE_ADMIN",
+          "propValue": "AZ_TIBCO_OM_DEV_ADMIN_ROLE",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "operation.roles.purgeOrder",
           "propDescription": "User Role for purgeOrder Service",
-          "propValue": "AZ_TIBCO_OM_DEV_ROLE_ADMIN",
+          "propValue": "AZ_TIBCO_OM_DEV_ADMIN_ROLE",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "operation.roles.orderSuspend",
           "propDescription": "User Role for orderSuspend Service",
-          "propValue": "AZ_TIBCO_OM_DEV_ROLE_ADMIN",
+          "propValue": "AZ_TIBCO_OM_DEV_ADMIN_ROLE",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "operation.roles.orderActivate",
           "propDescription": "User Role for orderActivate Service",
-          "propValue": "AZ_TIBCO_OM_DEV_ROLE_ADMIN",
+          "propValue": "AZ_TIBCO_OM_DEV_ADMIN_ROLE",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "operation.roles.planItemErrorHandler",
           "propDescription": "User Role for planItemErrorHandler Service",
-          "propValue": "AZ_TIBCO_OM_DEV_ROLE_ADMIN",
+          "propValue": "AZ_TIBCO_OM_DEV_ADMIN_ROLE",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "operation.roles.planItemBulkErrorHandler",
           "propDescription": "User Role for planItemBulkErrorHandler Service",
-          "propValue": "AZ_TIBCO_OM_DEV_ROLE_ADMIN",
+          "propValue": "AZ_TIBCO_OM_DEV_ADMIN_ROLE",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "operation.roles.preQualificationFailedReply",
           "propDescription": "User Role for preQualificationFailedReply Service",
-          "propValue": "AZ_TIBCO_OM_DEV_ROLE_ADMIN",
+          "propValue": "AZ_TIBCO_OM_DEV_ADMIN_ROLE",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "operation.roles.feasibilityReply",
           "propDescription": "User Role for feasibilityReply Service",
-          "propValue": "AZ_TIBCO_OM_DEV_ROLE_ADMIN",
+          "propValue": "AZ_TIBCO_OM_DEV_ADMIN_ROLE",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "operation.roles.orderCancel",
           "propDescription": "User Role for orderCancel Service",
-          "propValue": "AZ_TIBCO_OM_DEV_ROLE_ADMIN",
+          "propValue": "AZ_TIBCO_OM_DEV_ADMIN_ROLE",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "operation.roles.performBulkOrderAction",
           "propDescription": "User Role for performBulkOrderAction Service",
-          "propValue": "AZ_TIBCO_OM_DEV_ROLE_ADMIN",
+          "propValue": "AZ_TIBCO_OM_DEV_ADMIN_ROLE",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "operation.roles.orderScXml",
           "propDescription": "User Role for orderScXml Service",
-          "propValue": "AZ_TIBCO_OM_DEV_ROLE_ADMIN,AZ_TIBCO_OM_DEV_ROLE_USER",
+          "propValue": "AZ_TIBCO_OM_DEV_ADMIN_ROLE,AZ_TIBCO_OM_DEV_USER_ROLE",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "operation.roles.orderContentForArchival",
           "propDescription": "Roles of the user used by archival for Inter Service Communication",
-          "propValue": "AZ_TIBCO_OM_DEV_ROLE_ADMIN,AZ_TIBCO_OM_DEV_ROLE_USER",
+          "propValue": "AZ_TIBCO_OM_DEV_ADMIN_ROLE,AZ_TIBCO_OM_DEV_USER_ROLE",
           "valueType": "string",
           "isTenantProperty": "false"
         }

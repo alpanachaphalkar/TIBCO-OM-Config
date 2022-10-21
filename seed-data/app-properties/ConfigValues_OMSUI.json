@@ -220,7 +220,7 @@
                 {
                     "propName": "com.tibco.fom.orch.roles.piExecutionToComplete",
                     "propDescription": "To force completing plan items in execution status on the bases of role",
-                    "propValue": "AZ_TIBCO_OM_DEV_ROLE_ADMIN",
+                    "propValue": "AZ_TIBCO_OM_DEV_ADMIN_ROLE",
                     "valueType": "string",
                     "isTenantProperty": "false"
                 },
@@ -356,14 +356,14 @@
 				{
                     "propName": "admin_role",
                     "propDescription": "Custom role for user with admin permissions",
-                    "propValue": "AZ_TIBCO_OM_DEV_ROLE_ADMIN",
+                    "propValue": "AZ_TIBCO_OM_DEV_ADMIN_ROLE",
                     "valueType": "string",
                     "isTenantProperty": "false"
                 },
 				{
                     "propName": "user_role",
                     "propDescription": "Custom role for user with user permissions",
-                    "propValue": "AZ_TIBCO_OM_DEV_ROLE_USER",
+                    "propValue": "AZ_TIBCO_OM_DEV_USER_ROLE",
                     "valueType": "string",
                     "isTenantProperty": "false"
                 }
