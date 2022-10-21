@@ -8,7 +8,7 @@ users = [
         "password": "",
         "tenant": env.tenant_id,
         "roles": [
-            "az_tibco_om_dev_admin_role"
+            "AZ_TIBCO_OM_DEV_ADMIN_ROLE"
         ]
     },
     {
@@ -16,7 +16,7 @@ users = [
         "password": "",
         "tenant": env.tenant_id,
         "roles": [
-            "az_tibco_om_dev_admin_role"
+            "AZ_TIBCO_OM_DEV_ADMIN_ROLE"
         ]
     },
     {
@@ -24,7 +24,7 @@ users = [
         "password": "",
         "tenant": env.tenant_id,
         "roles": [
-            "az_tibco_om_dev_user_role"
+            "AZ_TIBCO_OM_DEV_USER_ROLE"
         ]
     },
     {
@@ -32,7 +32,7 @@ users = [
         "password": "",
         "tenant": env.tenant_id,
         "roles": [
-            "az_tibco_om_dev_user_role"
+            "AZ_TIBCO_OM_DEV_USER_ROLE"
         ]
     }
 ]
