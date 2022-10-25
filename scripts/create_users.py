@@ -31,8 +31,7 @@ admin_user_payload = {
             "tenantId": env.tenant_id,
             "userName": env.om_admin_username,
             "userRoles": [
-                "ROLE_ADMIN",
-                "ROLE_USER"
+                "ROLE_ADMIN"
             ]
         }
     ]
@@ -46,8 +45,7 @@ api_user_payload = {
             "tenantId": env.tenant_id,
             "userName": env.om_apiuser_username,
             "userRoles": [
-                "ROLE_ADMIN",
-                "ROLE_USER"
+                "ROLE_ADMIN"
             ]
         }
     ]
