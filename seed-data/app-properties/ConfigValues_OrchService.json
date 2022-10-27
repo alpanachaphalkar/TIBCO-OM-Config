@@ -1585,14 +1585,14 @@
         {
           "propName": "authorization.service.username",
           "propDescription": "Username For Inter Service Communication",
-          "propValue": "apiUser",
+          "propValue": "apiuser@alpsintech.com",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "authorization.service.password",
           "propDescription": "User Password For Inter Service Communication",
-          "propValue": "apiUser",
+          "propValue": "ENC(q9Z2hVkH2qG/KwDTk0+GFg==)",
           "valueType": "string",
           "isTenantProperty": "false"
         }
