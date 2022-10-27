@@ -448,7 +448,7 @@
           "propName": "authorization.service.password",
           "propDescription": "User Password For Inter Service Communication",
           "propValue": "ENC(q9Z2hVkH2qG/KwDTk0+GFg==)",
-          "valueType": "string",
+          "valueType": "password",
           "isTenantProperty": "false"
         }
       ]

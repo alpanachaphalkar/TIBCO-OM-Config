@@ -734,7 +734,7 @@
 				{
 					"propName": "orchestratorBaseUrl",
 					"propDescription": "Orchestrator base url",
-					"propValue": "http://orchestrator-svc.om-alpanachaphalkar.svc.cluster.local:9093",
+					"propValue": "http://localhost:9093",
 					"valueType": "string",
 					"isTenantProperty": "false"
 				},{
@@ -766,7 +766,7 @@
 					"propName": "authorization.service.password",
 					"propDescription": "User Password For Inter Service Communication",
 					"propValue": "ENC(q9Z2hVkH2qG/KwDTk0+GFg==)",
-					"valueType": "string",
+					"valueType": "password",
 					"isTenantProperty": "false"
 				}
 			]
