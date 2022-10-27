@@ -40,28 +40,28 @@
         {
           "propName": "operation.roles.submitPlanUDFChange",
           "propDescription": "User Role for submitPlanUDFChange API",
-          "propValue": "ROLE_ADMIN",
+          "propValue": "AZ_TIBCO_OM_NONPROD_ADMIN",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "operation.roles.submitPlanItemUDFChange",
           "propDescription": "User Role for submitPlanItemUDFChange API",
-          "propValue": "ROLE_ADMIN",
+          "propValue": "AZ_TIBCO_OM_NONPROD_ADMIN",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "operation.roles.getPlanItemsDetail",
           "propDescription": "User Role for getPlanItemsDetail API",
-          "propValue": "ROLE_ADMIN,ROLE_USER",
+          "propValue": "AZ_TIBCO_OM_NONPROD_ADMIN,AZ_TIBCO_OM_NONPROD_USER",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "operation.roles.getPlanDetail",
           "propDescription": "User Role for getPlanDetail API",
-          "propValue": "ROLE_ADMIN,ROLE_USER",
+          "propValue": "AZ_TIBCO_OM_NONPROD_ADMIN,AZ_TIBCO_OM_NONPROD_USER",
           "valueType": "string",
           "isTenantProperty": "false"
         }
