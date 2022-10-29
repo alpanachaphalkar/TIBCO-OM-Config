@@ -69,7 +69,7 @@
                 {
                     "propName": "management.endpoints.web.exposure.include",
                     "propDescription": "Resource Metric Endpoints to expose",
-                    "propValue": "health,info,ready,loggers",
+                    "propValue": "health,info,ready,loggers,prometheus",
                     "valueType": "string",
                     "isTenantProperty": "false"
                 },
@@ -97,7 +97,7 @@
                 {
                     "propName": "monitoringSystem",
                     "propDescription": "External System to moniter metrics",
-                    "propValue": "",
+                    "propValue": "prometheus",
                     "valueType": "string",
                     "isTenantProperty": "false"
                 },
