@@ -16,8 +16,8 @@ oauth_request_headers = {
 oauth_request_payload = {
     "grant_type": "password",
     "scope": "read write",
-    "password": env.om_admin_password,
-    "username": env.om_admin_username,
+    "password": env.om_apiuser_password,
+    "username": env.om_apiuser_username,
     "tenantId": env.tenant_id
 }
 
@@ -61,8 +61,8 @@ def is_file_uploaded(response: requests.Response, file: str) -> None:
         raise Exception(f"{response.__dict__}")
 
 
-def upload_config_files(configs: dict) -> None:
-    for app, config_files in config_files_dict.items():
+def upload_config_files(configs: dict[str, list[str]]) -> None:
+    for app, config_files in configs.items():
         configurator_config_url = configurator_config_uri + app
         logger.info(f"{'* ' * 15} Uploading files {'* ' * 15}")
         logger.info(f"URL: {configurator_config_url}")
@@ -82,7 +82,7 @@ def upload_config_files(configs: dict) -> None:
             is_file_uploaded(response=upload_response, file=config_file)
 
 
-def upload_properties_files(properties: dict) -> None:
+def upload_properties_files(properties: dict[str, str]) -> None:
     for app, properties_file in properties.items():
         configurator_app_url = configurator_app_uri + app
         logger.info(f"{'* ' * 15} Uploading files {'* ' * 15}")

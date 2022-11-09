@@ -14,4 +14,3 @@ def generate_token(url: str, req_headers: dict, req_body: dict, logger: logging.
     else:
         logger.error("Something went wrong while generating OAuth token")
         raise Exception(f"{oauth_response.__dict__}")
-
