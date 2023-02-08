@@ -52,14 +52,6 @@
     ]
   },
   {
-    "applicationId": "tmf",
-    "applicationDescription": "TMFAdapter Service",
-    "appProperties": "ConfigValues_TMFAdapterService.json",
-    "configurationFiles": [
-      "logback_tmf.xml"
-    ]
-  },
-  {
     "applicationId": "oms-ui",
     "applicationDescription": "Order Management System UI",
     "appProperties": "ConfigValues_OMSUI.json",
@@ -67,14 +59,6 @@
       "ConfigFiles.props",
       "OMSUILog4j.xml",
       "customDomainExt.xml"
-    ]
-  },
-  {
-    "applicationId": "migration",
-    "applicationDescription": "Migration Service",
-    "appProperties": "ConfigValues_Migration.json",
-    "configurationFiles": [
-      "logback_migration.xml"
     ]
   },
   {
