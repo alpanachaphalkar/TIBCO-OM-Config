@@ -1,0 +1,88 @@
+[
+  {
+    "applicationId": "aopd",
+    "applicationDescription": "AOPD",
+    "appProperties": "ConfigValues_AopdService.json",
+    "configurationFiles": [
+      "tibeds_config.xml",
+      "aopd_config.xml",
+      "logback_aopd.xml"
+    ]
+  },
+  {
+    "applicationId": "archival",
+    "applicationDescription": "Archival Service",
+    "appProperties": "ConfigValues_ArchivalService.json",
+    "configurationFiles": [
+      "logback_arch.xml"
+    ]
+  },
+  {
+    "applicationId": "data-service",
+    "applicationDescription": "Data Service",
+    "appProperties": "ConfigValues_DataService.json",
+    "configurationFiles": [
+      "logback_dataservice.xml"
+    ]
+  },
+  {
+    "applicationId": "jeopardy",
+    "applicationDescription": "Jeopardy Service",
+    "appProperties": "ConfigValues_Jeopardy.json",
+    "configurationFiles": [
+      "logback_jeopardy.xml",
+      "tibeds_config.xml"
+    ]
+  },
+  {
+    "applicationId": "catalog",
+    "applicationDescription": "Catalog Service",
+    "appProperties": "ConfigValues_CatalogService.json",
+    "configurationFiles": [
+      "logback_catalog.xml"
+    ]
+  },
+  {
+    "applicationId": "orch",
+    "applicationDescription": "Order Management System",
+    "appProperties": "ConfigValues_OrchService.json",
+    "configurationFiles": [
+      "logback_orch.xml",
+      "ProcessComponent.props"
+    ]
+  },
+  {
+    "applicationId": "tmf",
+    "applicationDescription": "TMFAdapter Service",
+    "appProperties": "ConfigValues_TMFAdapterService.json",
+    "configurationFiles": [
+      "logback_tmf.xml"
+    ]
+  },
+  {
+    "applicationId": "oms-ui",
+    "applicationDescription": "Order Management System UI",
+    "appProperties": "ConfigValues_OMSUI.json",
+    "configurationFiles": [
+      "ConfigFiles.props",
+      "OMSUILog4j.xml",
+      "customDomainExt.xml"
+    ]
+  },
+  {
+    "applicationId": "migration",
+    "applicationDescription": "Migration Service",
+    "appProperties": "ConfigValues_Migration.json",
+    "configurationFiles": [
+      "logback_migration.xml"
+    ]
+  },
+  {
+    "applicationId": "common",
+    "applicationDescription": "Common Configuration",
+    "appProperties": "ConfigValues_Common.json",
+    "configurationFiles": [
+      "keystore.jks"
+    ]
+  }
+]

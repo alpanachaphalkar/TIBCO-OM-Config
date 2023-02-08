@@ -73,7 +73,7 @@
         {
           "propName": "emsServerURL",
           "propDescription": "EMS Server URL",
-          "propValue": "tcp://localhost:7222",
+          "propValue": "tcp://ems-svc.ems-alpanachaphalkar.svc.cluster.local:30722",
           "valueType": "string",
           "isTenantProperty": "false"
         },
@@ -298,10 +298,10 @@
           "propName": "orderDsUrl",
           "propDescription": "Data Source URL",
           "allowedValues": [
-            "jdbc:postgresql://localhost:5432/orderdsdbll?currentSchema=orderdsschemall",
+            "jdbc:postgresql://postgres.om-db-alpanachaphalkar.svc.cluster.local:5432/orderdbll?currentSchema=orderschemall",
             "jdbc:oracle:thin:@//localhost:1521/orcl.apac.tibco.com"
           ],
-          "propValue": "jdbc:postgresql://localhost:5432/orderdsdbll?currentSchema=orderdsschemall",
+          "propValue": "jdbc:postgresql://postgres.om-db-alpanachaphalkar.svc.cluster.local:5432/orderdbll?currentSchema=orderschemall",
           "valueType": "string",
           "isTenantProperty": "false"
         },
@@ -595,16 +595,16 @@
           "isTenantProperty": "false"
         },
         {
-          "propName": "redisKeyStoreAbsoluteFilePath",
-          "propDescription": "Redis SSL KeyStore Absolute File Path",
-          "propValue": "D:/certificate/myhost.p12",
+          "propName": "redisKeyStoreAbsoluteFileName",
+          "propDescription": "Redis SSL KeyStore Absolute File Name",
+          "propValue": "myhost.p12",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
-          "propName": "redisTrustStoreAbsoluteFilePath",
-          "propDescription": "Redis SSL TrustStore Absolute File Path",
-          "propValue": "D:/certificate/cacert",
+          "propName": "redisTrustStoreAbsoluteFileName",
+          "propDescription": "Redis SSL TrustStore Absolute File Name",
+          "propValue": "cacert",
           "valueType": "string",
           "isTenantProperty": "false"
         }

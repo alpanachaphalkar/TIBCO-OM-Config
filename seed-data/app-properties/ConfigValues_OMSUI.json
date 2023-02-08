@@ -31,31 +31,31 @@
                     "isTenantProperty": "false"
                 },
                 {
-                    "propName": "archivalHost",
-                    "propDescription": "Host address of the Archival service",
-                    "propValue": "localhost",
+                    "propName": "archivalServiceUrl",
+                    "propDescription": "Archival service URL",
+                    "propValue": "http://archival-svc.om-alpanachaphalkar.svc.cluster.local:9099",
                     "valueType": "string",
                     "isTenantProperty": "false"
                 },
                 {
-                    "propName": "archivalPort",
-                    "propDescription": "Port number of the Archival service",
-                    "propValue": "9099",
-                    "valueType": "number",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "jeopardyServiceProxyHost",
-                    "propDescription": "Host address of the Jeopardy server",
-                    "propValue": "localhost",
+                    "propName": "catalogServiceUrl",
+                    "propDescription": "Catalog service URL",
+                    "propValue": "http://catalog-svc.om-alpanachaphalkar.svc.cluster.local:9092",
                     "valueType": "string",
                     "isTenantProperty": "false"
                 },
                 {
-                    "propName": "jeopardyServiceProxyPort",
-                    "propDescription": "Port number of the Jeopardy Service",
-                    "propValue": "9102",
-                    "valueType": "number",
+                    "propName": "jeopardyServiceUrl",
+                    "propDescription": "Jeopardy service URL",
+                    "propValue": "http://jeopardy-svc.om-alpanachaphalkar.svc.cluster.local:9102",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "orchestratorServiceUrl",
+                    "propDescription": "Orchestrator service URL",
+                    "propValue": "http://orchestrator-svc.om-alpanachaphalkar.svc.cluster.local:9093",
+                    "valueType": "string",
                     "isTenantProperty": "false"
                 },
                 {
@@ -131,58 +131,6 @@
                     "propDescription": "Application name to show on actuator info endpoint",
                     "propValue": "Order Management System UI",
                     "valueType": "string",
-                    "isTenantProperty": "false"
-                }
-            ]
-        },
-        {
-            "categoryName": "OMS UI PlanItem Display Template",
-            "properties": [
-                {
-                    "propName": "com.tibco.af.omsui.planItemExpression.gridView",
-                    "propDescription": "OMS UI PlanItem Display Template for Grid View. Possible template variables are - PlanItemID, PlanFragmentID, ProductID, Action and Description; these template variables are case sensitive and have to be specified within curly braces {}. Different template variables can be combined with any type of delimiter e.g. {PlanFragmentID}|{PlanItemID}",
-                    "propValue": "{ProductID}|{PlanItemID}",
-                    "valueType": "string",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "com.tibco.af.omsui.planItemExpression.ganttView",
-                    "propDescription": "OMS UI PlanItem Display Template for Gantt View. Possible template variables are - PlanItemID, PlanFragmentID,ProductID, Action and Description; these template variables are case sensitive and have to be specified within curly braces {}. Different template variables can be combined with any type of delimiter e.g. {PlanFragmentID}|{PlanItemID}",
-                    "propValue": "{PlanItemID}",
-                    "valueType": "string",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "com.tibco.af.omsui.planItemExpression.dependencyView",
-                    "propDescription": "OMS UI PlanItem Display Template for Dependency View. Possible template variables are - PlanItemID, PlanFragmentID, ProductID, Action and Description; these template variables are case sensitive and have to be specified within curly braces {}. Different template variables can be combined with any type of delimiter e.g. {PlanFragmentID}|{PlanItemID}",
-                    "propValue": "{Description}|{PlanItemID}",
-                    "valueType": "string",
-                    "isTenantProperty": "false"
-                }
-            ]
-        },
-        {
-            "categoryName": "OMS UI Grid View and Gantt View Pagination",
-            "properties": [
-                {
-                    "propName": "com.tibco.af.omsui.pagination.enable",
-                    "propDescription": "Enable Grid View and Gantt View Pagination",
-                    "propValue": "false",
-                    "valueType": "boolean",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "com.tibco.af.omsui.gridView.pageSize",
-                    "propDescription": "OMS UI Grid View Page Size",
-                    "propValue": "20",
-                    "valueType": "number",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "com.tibco.af.omsui.ganttView.pageSize",
-                    "propDescription": "OMS UI Gantt View Page Size",
-                    "propValue": "10",
-                    "valueType": "number",
                     "isTenantProperty": "false"
                 }
             ]
@@ -274,7 +222,7 @@
                 {
                     "propName": "emsServerURL",
                     "propDescription": "JNDI URL for JMS Service",
-                    "propValue": "tibjmsnaming://localhost:7222",
+                    "propValue": "tibjmsnaming://ems-svc.ems-alpanachaphalkar.svc.cluster.local:30722",
                     "valueType": "string",
                     "isTenantProperty": "false"
                 },
@@ -350,20 +298,6 @@
                     "propName": "com.tibco.af.oms.security.authProvider",
                     "propDescription": "Default Authentication Provider",
                     "propValue": "defaultAuthenticationProvider",
-                    "valueType": "string",
-                    "isTenantProperty": "false"
-                },
-				{
-                    "propName": "admin_role",
-                    "propDescription": "Custom role for user with admin permissions",
-                    "propValue": "ROLE_ADMIN",
-                    "valueType": "string",
-                    "isTenantProperty": "false"
-                },
-				{
-                    "propName": "user_role",
-                    "propDescription": "Custom role for user with user permissions",
-                    "propValue": "ROLE_USER",
                     "valueType": "string",
                     "isTenantProperty": "false"
                 }

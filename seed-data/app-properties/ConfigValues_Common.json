@@ -12,7 +12,7 @@
                         "false"
                     ],
                     "propValue": "true",
-                    "valueType": "string",
+                    "valueType": "boolean",
                     "isTenantProperty": "false"
                 }
             ]
@@ -27,7 +27,7 @@
                         "Redis",
                         "Relational"
                     ],
-                    "propValue": "Redis",
+                    "propValue": "Relational",
                     "valueType": "string",
                     "isTenantProperty": "false"
                 },
@@ -38,8 +38,34 @@
                         "Redis",
                         "Relational"
                     ],
-                    "propValue": "Redis",
+                    "propValue": "Relational",
                     "valueType": "string",
+                    "isTenantProperty": "false"
+                }
+            ]
+        },
+        {
+            "categoryName": "In Memory Cache Configurations",
+            "properties": [
+                {
+                    "propName": "enableProductScoringAndLedger",
+                    "propDescription": "Enable Product Scoring",
+                    "propValue": "false",
+                    "valueType": "boolean",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "enablePriceScoringAndLedger",
+                    "propDescription": "Enable Price Scoring",
+                    "propValue": "false",
+                    "valueType": "boolean",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "enableDiscountScoringAndLedger",
+                    "propDescription": "Enable Discount Scoring",
+                    "propValue": "false",
+                    "valueType": "boolean",
                     "isTenantProperty": "false"
                 }
             ]
@@ -53,13 +79,6 @@
                     "propValue": "TIBCO",
                     "valueType": "string",
                     "isTenantProperty": "false"
-                },
-                {
-                    "propName": "catalogMode",
-                    "propDescription": "Start Configurator service for - OM or OPES",
-                    "propValue": "OM",
-                    "valueType": "string",
-                    "isTenantProperty": "false"
                 }
             ]
         },
@@ -69,7 +88,7 @@
                 {
                     "propName": "management.endpoints.web.exposure.include",
                     "propDescription": "Resource Metric Endpoints to expose",
-                    "propValue": "health,info,ready,loggers,prometheus",
+                    "propValue": "health,loggers",
                     "valueType": "string",
                     "isTenantProperty": "false"
                 },
@@ -80,7 +99,7 @@
                     "valueType": "string",
                     "isTenantProperty": "false"
                 },
-		{
+                {
                     "propName": "management.endpoint.loggers.enabled",
                     "propDescription": "Whether to enable loggers endpoint",
                     "propValue": "true",
@@ -97,7 +116,7 @@
                 {
                     "propName": "monitoringSystem",
                     "propDescription": "External System to moniter metrics",
-                    "propValue": "prometheus",
+                    "propValue": "",
                     "valueType": "string",
                     "isTenantProperty": "false"
                 },
@@ -140,7 +159,7 @@
                     "propName": "management.metrics.export.elastic.password",
                     "propDescription": "Login password of the Elastic server",
                     "propValue": "",
-                    "valueType": "string",
+                    "valueType": "password",
                     "isTenantProperty": "false"
                 },
                 {
@@ -186,7 +205,7 @@
                 {
                     "propName": "authorizationServiceTokenEndPoint",
                     "propDescription": "Authorization Server OAuth URL",
-                    "propValue": "http://localhost:9091/oauth/token",
+                    "propValue": "http://authorization-svc.om-alpanachaphalkar.svc.cluster.local:9091",
                     "valueType": "string",
                     "isTenantProperty": "false"
                 },
@@ -209,6 +228,13 @@
                     "propDescription": "Authentication Token Signing Key",
                     "propValue": "ENC(nSa0k6lmjPPN8ZA5SO6BpQ==)",
                     "valueType": "password",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "authorization.access.token.validity",
+                    "propDescription": "OAuth Token Validity in seconds",
+                    "propValue": "43200",
+                    "valueType": "number",
                     "isTenantProperty": "false"
                 },
                 {

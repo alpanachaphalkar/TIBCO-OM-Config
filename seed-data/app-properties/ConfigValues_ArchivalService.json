@@ -35,7 +35,7 @@
         {
           "propName": "com.tibco.archival.order.states",
           "propDescription": "Order states for which order state notification changes would be processed.",
-          "propValue": "Execution,Blocked,Complete,Cancelled,Withdrawn,OPD,Suspended,Cancelled,Prequalificationfailed,Feasibility",
+          "propValue": "Execution,Blocked,Complete,Cancelled,Withdrawn,OPD,OPDERROR,Suspended,Cancelled,Prequalificationfailed,Feasibility",
           "valueType": "string",
           "isTenantProperty": "false"
         },
@@ -43,6 +43,13 @@
           "propName": "info.app.name",
           "propDescription": "Application name to show on actuator info endpoint",
           "propValue": "Archival Service",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "allowedCorsOrigins",
+          "propDescription": "Allowed origins to connect to archival service",
+          "propValue": "http://localhost:9097",
           "valueType": "string",
           "isTenantProperty": "false"
         }
@@ -66,10 +73,10 @@
           "propName": "archivalDsUrl",
           "propDescription": "Data Source URL",
           "allowedValues": [
-            "jdbc:postgresql://localhost:5432/archivaldbll?currentSchema=archivalschemall",
+            "jdbc:postgresql://postgres.om-db-alpanachaphalkar.svc.cluster.local:5432/archivaldbll?currentSchema=archivalschemall",
             "jdbc:oracle:thin:@//localhost:1521/orcl.apac.tibco.com"
           ],
-          "propValue": "jdbc:postgresql://localhost:5432/archivaldbll?currentSchema=archivalschemall",
+          "propValue": "jdbc:postgresql://postgres.om-db-alpanachaphalkar.svc.cluster.local:5432/archivaldbll?currentSchema=archivalschemall",
           "valueType": "string",
           "isTenantProperty": "false"
         },
@@ -185,82 +192,33 @@
           "isTenantProperty": "false"
         },
         {
-          "propName": "orderArchivalserviceUrl",
-          "propDescription": "Orchestrator Web Service Archival Service URL",
-          "propValue": "http://localhost:9093/v1/order/archival",
+          "propName": "orchestratorBaseUrl",
+          "propDescription": "Base url of Orchestrator",
+          "propValue": "http://orchestrator-svc.om-alpanachaphalkar.svc.cluster.local:9093",
           "valueType": "string",
-          "isTenantProperty": "false"
+          "isTenantProperty": false
         },
-        {
-          "propName": "orderOrchAmendOrderUrl",
-          "propDescription": "Orchestrator Web Service Amend Order URL",
-          "propValue": "http://localhost:9093/v1/amend",
-          "valueType": "string",
-          "isTenantProperty": "false"
-        },
-        {
-          "propName": "orderOrchSuspendOrderUrl",
-          "propDescription": "Orchestrator Web Service Suspend Order URL",
-          "propValue": "http://localhost:9093/v1/order/suspend",
-          "valueType": "string",
-          "isTenantProperty": "false"
-        },
-        {
-          "propName": "orderOrchActivateOrderUrl",
-          "propDescription": "Orchestrator Web Service Activate Order URL",
-          "propValue": "http://localhost:9093/v1/order/activate",
-          "valueType": "string",
-          "isTenantProperty": "false"
-        },
-        {
-          "propName": "orderOrchCancelOrderUrl",
-          "propDescription": "Orchestrator Web Service Cancel Order URL",
-          "propValue": "http://localhost:9093/v1/order/cancel",
-          "valueType": "string",
-          "isTenantProperty": "false"
-        },
-        {
-          "propName": "orderOrchWithdrawOrderUrl",
-          "propDescription": "Orchestrator Web Service Withdraw Order URL",
-          "propValue": "http://localhost:9093/v1/order",
-          "valueType": "string",
-          "isTenantProperty": "false"
-        },
-        {
-          "propName": "orderOrchBulkActionUrl",
-          "propDescription": "Orchestrator Web Service Bulk Order Action URL",
-          "propValue": "http://localhost:9093/v1/orders/bulkaction",
-          "valueType": "string",
-          "isTenantProperty": "false"
-        },
-        {
-          "propName": "orderOrchPlanPreviewUrl",
-          "propDescription": "Orchestrator Web Service Plan Preview URL",
-          "propValue": "http://localhost:9093/v1/planPreview",
-          "valueType": "string",
-          "isTenantProperty": "false"
-        },
-        {
-          "propName": "orderPurgeOrderUrl",
-          "propDescription": "Orchestrator Web Service Purge Order URL",
-          "propValue": "http://localhost:9093/v1/order/purgeOrder",
-          "valueType": "string",
-          "isTenantProperty": "false"
-        },
-        {
-          "propName": "orderErrorHandlerreplyUrl",
-          "propDescription": "Orchestrator Web Service Error Handler Order URL",
-          "propValue": "http://localhost:9093/v1/planitem/errorHandlerreply",
-          "valueType": "string",
-          "isTenantProperty": "false"
-        },
-        {
-          "propName": "orderBulkErrorHandlerreplyUrl",
-          "propDescription": "Orchestrator Web Service BulkError Handler Order URL",
-          "propValue": "http://localhost:9093/v1/planitem/bulkErrorHandlerreply",
-          "valueType": "string",
-          "isTenantProperty": "false"
-        }
+		{
+		  "propName": "trustStorePassword",
+		  "propDescription": "SSL/TLS certificate trust store password to connect to Orchestrator",
+		  "propValue": "tibco123",
+		  "valueType": "string",
+		  "isTenantProperty": "false"
+		},
+		{
+		  "propName": "trustStoreType",
+		  "propDescription": "SSL/TLS certificate trust store type to connect to Orchestrator",
+		  "propValue": "jks",
+		  "valueType": "string",
+		  "isTenantProperty": "false"
+		},
+		{
+		  "propName": "trustStoreFileName",
+		  "propDescription": "SSL/TLS certificate file name to connect to Orchestrator",
+		  "propValue": "cacert",
+		  "valueType": "string",
+		  "isTenantProperty": "false"
+		}
       ]
     },
     {
@@ -328,110 +286,15 @@
           "propValue": "ROLE_ADMIN,ROLE_USER",
           "valueType": "string",
           "isTenantProperty": "false"
-        }
-      ]
-    },
-	{
-      "categoryName": "OMSUI Archival Api Security Configurations",
-      "properties": [
-        {
-          "propName": "operation.roles.amendOrder",
-          "propDescription": "User Role for amendOrder API",
+        },
+		{
+          "propName": "operation.roles.purgeOrders",
+          "propDescription": "User Role for purgeOrders API",
           "propValue": "ROLE_ADMIN",
-          "valueType": "string",
-          "isTenantProperty": "false"
-        },
-        {
-          "propName": "operation.roles.suspendOrder",
-          "propDescription": "User Role for suspendOrder API",
-          "propValue": "ROLE_ADMIN",
-          "valueType": "string",
-          "isTenantProperty": "false"
-        },
-        {
-          "propName": "operation.roles.activateOrder",
-          "propDescription": "User Role for activateOrder API",
-          "propValue": "ROLE_ADMIN",
-          "valueType": "string",
-          "isTenantProperty": "false"
-        },
-        {
-          "propName": "operation.roles.cancelOrder",
-          "propDescription": "User Role for cancelOrder API",
-          "propValue": "ROLE_ADMIN",
-          "valueType": "string",
-          "isTenantProperty": "false"
-        },
-        {
-          "propName": "operation.roles.withdrawOrder",
-          "propDescription": "User Role for withdrawOrder API",
-          "propValue": "ROLE_ADMIN",
-          "valueType": "string",
-          "isTenantProperty": "false"
-        },
-        {
-          "propName": "operation.roles.performBulkOrderAction",
-          "propDescription": "User Role for performBulkOrderAction API",
-          "propValue": "ROLE_ADMIN",
-          "valueType": "string",
-          "isTenantProperty": "false"
-        },
-        {
-          "propName": "operation.roles.getPlanItemsInError",
-          "propDescription": "User Role for getPlanItemsInError API",
-          "propValue": "ROLE_ADMIN,ROLE_USER",
-          "valueType": "string",
-          "isTenantProperty": "false"
-        },
-        {
-          "propName": "operation.roles.getPlanItemsInErrorForPlans",
-          "propDescription": "User Role for getPlanItemsInErrorForPlans API",
-          "propValue": "ROLE_ADMIN,ROLE_USER",
-          "valueType": "string",
-          "isTenantProperty": "false"
-        },
-        {
-          "propName": "operation.roles.submitBulkErrorResolution",
-          "propDescription": "User Role for submitBulkErrorResolution API",
-          "propValue": "ROLE_ADMIN",
-          "valueType": "string",
-          "isTenantProperty": "false"
-        },
-        {
-          "propName": "operation.roles.submitErrorResolution",
-          "propDescription": "User Role for submitErrorResolution API",
-          "propValue": "ROLE_ADMIN",
-          "valueType": "string",
-          "isTenantProperty": "false"
-        },
-        {
-          "propName": "operation.roles.planPreview",
-          "propDescription": "User Role for planPreview API",
-          "propValue": "ROLE_ADMIN,ROLE_USER",
-          "valueType": "string",
-          "isTenantProperty": "false"
-        },
-        {
-          "propName": "operation.roles.acquireLockForOrder",
-          "propDescription": "User Role for acquireLockForOrder API",
-          "propValue": "ROLE_ADMIN,ROLE_USER",
-          "valueType": "string",
-          "isTenantProperty": "false"
-        },
-        {
-          "propName": "operation.roles.releaseLockForOrder",
-          "propDescription": "User Role for releaseLockForOrder API",
-          "propValue": "ROLE_ADMIN,ROLE_USER",
-          "valueType": "string",
-          "isTenantProperty": "false"
-        },
-        {
-          "propName": "operation.roles.findAmendedOrder",
-          "propDescription": "User Role for findAmendedOrder API",
-          "propValue": "ROLE_ADMIN,ROLE_USER",
           "valueType": "string",
           "isTenantProperty": "false"
         }
+
       ]
     },
     {
@@ -459,7 +322,7 @@
         {
           "propName": "emsServerURL",
           "propDescription": "EMS Server URL",
-          "propValue": "tcp://localhost:7222",
+          "propValue": "tcp://ems-svc.ems-alpanachaphalkar.svc.cluster.local:30722",
           "valueType": "string",
           "isTenantProperty": "false"
         },
@@ -588,6 +451,39 @@
           "isTenantProperty": "false"
         }
       ]
-    }
-  ]
+    },
+	{
+      "categoryName": "Auth Client Properties",
+      "properties": [
+        {
+                    "propName": "authServiceApiKey",
+                    "propDescription": "Api key for auth user services",
+                    "propValue": "auth",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "authServiceApiId",
+                    "propDescription": "Api App Id for auth user services",
+                    "propValue": "auth",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "authServiceRetryDuration",
+                    "propDescription": "Connection Retry Interval for auth service",
+                    "propValue": "3",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "authServiceRetryCount",
+                    "propDescription": "Connection Retry Count for auth service",
+                    "propValue": "5",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                }
+            ]
+       }
+    ]
 }

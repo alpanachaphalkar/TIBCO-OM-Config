@@ -12,9 +12,16 @@
           "isTenantProperty": "false"
         },
         {
+          "propName": "allowedCorsOrigins",
+          "propDescription": "Allowed origins to connect to Orchestrator service",
+          "propValue": "http://localhost:9097",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
           "propName": "enableLogNotifications",
           "propDescription": "Enable logging of order state change notifications",
-          "propValue": "true",
+          "propValue": "false",
           "valueType": "boolean",
           "isTenantProperty": "false"
         },
@@ -172,6 +179,13 @@
           "propValue": "Orchestrator",
           "valueType": "string",
           "isTenantProperty": "false"
+        },
+		{
+          "propName": "enableOpdErrorHandling",
+          "propDescription": "Enable external error handling for failed plan generation",
+          "propValue": "false",
+          "valueType": "boolean",
+          "isTenantProperty": false
         }
       ]
     },
@@ -275,7 +289,7 @@
     {
       "categoryName": "Aopd Configurations",
       "properties": [
-		{
+        {
           "propName": "aopdBaseUrl",
           "propDescription": "AOPD Server Plan Generation Base URL",
           "propValue": "http://aopd-svc.om-alpanachaphalkar.svc.cluster.local:9094",
@@ -301,6 +315,27 @@
           "propDescription": "Time interval, in milliseconds, between two consecutive OPD retries",
           "propValue": "6000",
           "valueType": "number",
+          "isTenantProperty": "false"
+        },
+		{
+          "propName": "aopdTrustStorePassword",
+          "propDescription": "SSL/TLS certificate trust store password to connect to AOPD",
+          "propValue": "tibco123",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+		{
+          "propName": "aopdTrustStoreType",
+          "propDescription": "SSL/TLS certificate trust store type to connect to AOPD",
+          "propValue": "jks",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+		{
+          "propName": "aopdTrustStoreFileName",
+          "propDescription": "SSL/TLS certificate file name to connect to AOPD",
+          "propValue": "cacert",
+          "valueType": "string",
           "isTenantProperty": "false"
         }
       ]
@@ -418,64 +453,97 @@
         {
           "propName": "pcResourceExecuteRequestURL",
           "propDescription": "PC Execute Request URL",
-          "propValue": "http://localhost:9089/v1/planitem/executionrequest",
+          "propValue": "http://localhost:9089/planitem/executionrequest",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "pcResourceSuspendRequestURL",
           "propDescription": "PC Suspend Request URL",
-          "propValue": "http://localhost:9089/v1/planitem/suspendrequest",
+          "propValue": "http://localhost:9089/planitem/suspendrequest",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "pcResourceActivateRequestURL",
           "propDescription": "PC Activate Request URL",
-          "propValue": "http://localhost:9089/v1/planitem/activaterequest",
+          "propValue": "http://localhost:9089/planitem/activaterequest",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "pcResourceExtErrorHanlderRequestURL",
           "propDescription": "PC Error Handler Request URL",
-          "propValue": "http://localhost:9089/v1/planitem/errorhandlerrequest",
+          "propValue": "http://localhost:9089/planitem/errorhandlerrequest",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "feasibleRequestPathRequestURL",
           "propDescription": "PC Feasibility Request URL",
-          "propValue": "http://localhost:9089/v1/feasibility",
+          "propValue": "http://localhost:9089/feasibility",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "pqfRequestPathRequestURL",
           "propDescription": "PC Pre Qualification Request URL",
-          "propValue": "http://localhost:9089/v1/pqf",
+          "propValue": "http://localhost:9089/pqf",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "pcResourceMileReleaseRequestURL",
           "propDescription": "PC PlanItem MilestoneRelease Request URL",
-          "propValue": "http://localhost:9089/v1/planitem/milestonerelease",
+          "propValue": "http://localhost:9089/planitem/milestonerelease",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "defaultAckMode",
           "propDescription": "Default Acknowledge Mode for Process-Component",
-          "propValue": "JMS",
+          "propValue": "MESSAGING",
           "allowedValues": [
-            "ASYNC",
-            "SYNC_CONFIRM",
-            "SYNC_NOCONFIRM",
-            "JMS"
+            "REST",
+            "MESSAGING"
           ],
           "valueType": "string",
           "isTenantProperty": "false"
+        },
+		{
+          "propName": "pcSslEnabled",
+          "propDescription": "Whether SSL/TLS enabled at PC",
+          "propValue": "false",
+          "valueType": "boolean",
+          "isTenantProperty": "false"
+        },
+		{
+          "propName": "pcTrustStorePassword",
+          "propDescription": "SSL/TLS certificate trust store password to connect to PC",
+          "propValue": "tibco123",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+		{
+          "propName": "pcTrustStoreType",
+          "propDescription": "SSL/TLS certificate trust store type to connect to PC",
+          "propValue": "jks",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+		{
+          "propName": "pcTrustStoreFileName",
+          "propDescription": "SSL/TLS certificate file name to connect to PC",
+          "propValue": "cacert",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+		{
+          "propName": "pcResourceOpdErrorHandlerRequestURL",
+          "propDescription": "PC Opd Error Handler Request URL",
+          "propValue": "http://localhost:9089/plan/opdErrorHandlerRequest",
+          "valueType": "string",
+          "isTenantProperty": false
         }
       ]
     },
@@ -485,7 +553,7 @@
         {
           "propName": "archivalGetOrderDetailsURL",
           "propDescription": "Archival GetOrderDetails URL",
-          "propValue": "http://localhost:9099/v1/ordersByCriteria",
+          "propValue": "http://archival-svc.om-alpanachaphalkar.svc.cluster.local:9099/ordersByCriteria",
           "valueType": "string",
           "isTenantProperty": "false"
         },
@@ -511,7 +579,28 @@
         {
           "propName": "migrationURL",
           "propDescription": "Migration service endpoint",
-          "propValue": "http://localhost:9100/v1/migration/order",
+          "propValue": "http://localhost:9100/migration/order",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+		{
+          "propName": "migrationTrustStorePassword",
+          "propDescription": "SSL/TLS certificate trust store password to connect to Migration service",
+          "propValue": "tibco123",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+		{
+          "propName": "migrationTrustStoreType",
+          "propDescription": "SSL/TLS certificate trust store type to connect to Migration service",
+          "propValue": "jks",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+		{
+          "propName": "migrationTrustStoreFileName",
+          "propDescription": "SSL/TLS certificate file name to connect to Migration service",
+          "propValue": "cacert",
           "valueType": "string",
           "isTenantProperty": "false"
         }
@@ -523,14 +612,14 @@
         {
           "propName": "opeOfferValidationSecureURL",
           "propDescription": "OPE Service Offer Validation Secure URL",
-          "propValue": "http://localhost:8181/opes/api/v1/offers/validate",
+          "propValue": "http://localhost:8181/opes/api/offers/validate",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
           "propName": "opeOfferValidationNonSecureURL",
           "propDescription": "OPE Service Offer Validation Non Secure URL",
-          "propValue": "http://localhost:9090/opes/api/v1/offers/validate",
+          "propValue": "http://localhost:9090/opes/api/offers/validate",
           "valueType": "string",
           "isTenantProperty": "false"
         },
@@ -563,6 +652,48 @@
             "false"
           ],
           "propValue": "false",
+          "valueType": "boolean",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "opeTrustStoreFileName",
+          "propDescription": "SSL/TLS certificate trust store file name for ope validateOffer service",
+          "propValue": "cacert",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "opeTrustStorePassword",
+          "propDescription": "SSL/TLS certificate trust store password for ope validateOffer service",
+          "propValue": "tibco123",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "opeTrustStoreType",
+          "propDescription": "SSL/TLS certificate trust store type for ope validateOffer service",
+          "propValue": "jks",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "opeTokenTrustStoreFileName",
+          "propDescription": "SSL/TLS certificate trust store file name for ope login service",
+          "propValue": "cacert",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "opeTokenTrustStorePassword",
+          "propDescription": "SSL/TLS certificate trust store password for ope login service",
+          "propValue": "tibco123",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "opeTokenTrustStoreType",
+          "propDescription": "SSL/TLS certificate trust store type for ope login service",
+          "propValue": "jks",
           "valueType": "string",
           "isTenantProperty": "false"
         }
@@ -717,6 +848,48 @@
           "propValue": "ROLE_ADMIN,ROLE_USER",
           "valueType": "string",
           "isTenantProperty": "false"
+        },
+        {
+          "propName": "operation.roles.triggerAllDeadOrder",
+          "propDescription": "Roles of the user used by triggerAllDeadOrderṁ",
+          "propValue": "ROLE_ADMIN",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "operation.roles.triggerDeadOrderByOrderIds",
+          "propDescription": "Roles of the user used by triggerDeadOrderByOrderIds",
+          "propValue": "ROLE_ADMIN",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "operation.roles.triggerPendingOrderByOrderIds",
+          "propDescription": "Roles of the user used by triggerPendingOrderByOrderIds",
+          "propValue": "ROLE_ADMIN",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "operation.roles.planFragments",
+          "propDescription": "Roles of the user used by getPlanFragments",
+          "propValue": "ROLE_ADMIN,ROLE_USER",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "operation.roles.submitPlanErrorNotification",
+          "propDescription": "Roles of the user used by planErrorNotification",
+          "propValue": "ROLE_ADMIN",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+		{
+          "propName": "operation.roles.opdErrorHandlerReply",
+          "propDescription": "Roles of the user used by opdErrorHandlerReply",
+          "propValue": "ROLE_ADMIN",
+          "valueType": "string",
+          "isTenantProperty": "false"
         }
       ]
     },
@@ -726,7 +899,7 @@
         {
           "propName": "emsServerURL",
           "propDescription": "EMS Server URL",
-          "propValue": "tcp://localhost:7222",
+          "propValue": "tcp://ems-svc.ems-alpanachaphalkar.svc.cluster.local:30722",
           "valueType": "string",
           "isTenantProperty": "false"
         },
@@ -783,13 +956,6 @@
           "propName": "timeoutReceiveCalls",
           "propDescription": "EMS message acknowledge timeout in milliseconds",
           "propValue": "10000",
-          "valueType": "number",
-          "isTenantProperty": "false"
-        },
-        {
-          "propName": "concurrentEmsConsumers",
-          "propDescription": "EMS Concurrent Consumers",
-          "propValue": "5",
           "valueType": "number",
           "isTenantProperty": "false"
         },
@@ -861,6 +1027,27 @@
           "propDescription": "MilestoneReleaseRequest from Orchestrator to process components queue",
           "propValue": "tibco.aff.orchestrator.planItem.milestone.release.request",
           "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "com.tibco.fom.orch.planItem.milestone.notifyRequest.queue",
+          "propDescription": "MilestoneNotifyRequest queue",
+          "propValue": "tibco.aff.orchestrator.planItem.milestone.notify.request",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "com.tibco.fom.orch.planItem.milestone.notifyRequest.dead.queue",
+          "propDescription": "MilestoneNotifyRequest dead queue",
+          "propValue": "tibco.aff.orchestrator.planItem.milestone.notify.request.dead",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "com.tibco.fom.orch.planItem.milestone.notifyRequest.receiver.count",
+          "propDescription": "MilestoneNotifyRequest receiver count",
+          "propValue": "1",
+          "valueType": "number",
           "isTenantProperty": "false"
         },
         {
@@ -995,6 +1182,47 @@
           "propValue": "tibco.aff.orchestrator.provider.planItem.failed.request",
           "valueType": "string",
           "isTenantProperty": "false"
+        },
+        {
+          "propName": "southboundReplyMessageRetryCount",
+          "propDescription": "Southbound reply message retry count",
+          "propValue": "5",
+          "valueType": "number",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "southboundReplyMessageRetryDuration",
+          "propDescription": "Retry Interval, in milliseconds, between each retry",
+          "propValue": "5000",
+          "valueType": "number",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "com.tibco.fom.orch.plan.failed.request.queue",
+          "propDescription": "Plan generation failed request queue",
+          "propValue": "tibco.aff.orchestrator.provider.order.opd.request",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "com.tibco.fom.orch.plan.failed.response.queue",
+          "propDescription": "Plan generation failed response queue",
+          "propValue": "tibco.aff.orchestrator.provider.order.opd.reply",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },
+        {
+          "propName": "com.tibco.fom.orch.plan.failed.response.dead.queue",
+          "propDescription": "Plan generation failed response dead queue",
+          "propValue": "tibco.aff.orchestrator.provider.order.opd.reply.dead",
+          "valueType": "string",
+          "isTenantProperty": "false"
+        },{
+          "propName": "com.tibco.fom.orch.plan.failed.response.receiver.count",
+          "propDescription": "Plan generation failed receiver count",
+          "propValue": "5",
+          "valueType": "number",
+          "isTenantProperty": "false"
         }
       ]
     },
@@ -1113,10 +1341,10 @@
           "propName": "adminDsUrl",
           "propDescription": "Data Source URL",
           "allowedValues": [
-            "jdbc:postgresql://localhost:5432/admindbll?currentSchema=adminschemall",
+            "jdbc:postgresql://postgres.om-db-alpanachaphalkar.svc.cluster.local:5432/admindbll?currentSchema=adminschemall",
             "jdbc:oracle:thin:@//localhost:1521/orcl.apac.tibco.com"
           ],
-          "propValue": "jdbc:postgresql://localhost:5432/admindbll?currentSchema=adminschemall",
+          "propValue": "jdbc:postgresql://postgres.om-db-alpanachaphalkar.svc.cluster.local:5432/admindbll?currentSchema=adminschemall",
           "valueType": "string",
           "isTenantProperty": "false"
         },
@@ -1241,10 +1469,10 @@
           "propName": "orderDsUrl",
           "propDescription": "Data Source URL",
           "allowedValues": [
-            "jdbc:postgresql://localhost:5432/orderdbll?currentSchema=orderschemall",
+            "jdbc:postgresql://postgres.om-db-alpanachaphalkar.svc.cluster.local:5432/orderdbll?currentSchema=orderschemall",
             "jdbc:oracle:thin:@//localhost:1521/orcl.apac.tibco.com"
           ],
-          "propValue": "jdbc:postgresql://localhost:5432/orderdbll?currentSchema=orderschemall",
+          "propValue": "jdbc:postgresql://postgres.om-db-alpanachaphalkar.svc.cluster.local:5432/orderdbll?currentSchema=orderschemall",
           "valueType": "string",
           "isTenantProperty": "false"
         },
@@ -1369,10 +1597,10 @@
           "propName": "catalogDsUrl",
           "propDescription": "Data Source URL",
           "allowedValues": [
-            "jdbc:postgresql://localhost:5432/catalogdsdbll?currentSchema=catalogdsschemall",
+            "jdbc:postgresql://postgres.om-db-alpanachaphalkar.svc.cluster.local:5432/catalogdsdbll?currentSchema=catalogdsschemall",
             "jdbc:oracle:thin:@//localhost:1521/orcl.apac.tibco.com"
           ],
-          "propValue": "jdbc:postgresql://localhost:5432/catalogdsdbll?currentSchema=catalogdsschemall",
+          "propValue": "jdbc:postgresql://postgres.om-db-alpanachaphalkar.svc.cluster.local:5432/catalogdsdbll?currentSchema=catalogdsschemall",
           "valueType": "string",
           "isTenantProperty": "false"
         },
@@ -1679,16 +1907,16 @@
           "isTenantProperty": "false"
         },
         {
-          "propName": "orderRedisKeyStoreAbsoluteFilePath",
-          "propDescription": "Redis SSL KeyStore Absolute File Path",
-          "propValue": "D:/certificate/myhost.p12",
+          "propName": "orderRedisKeyStoreAbsoluteFileName",
+          "propDescription": "Redis SSL KeyStore Absolute File Name",
+          "propValue": "myhost.p12",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
-          "propName": "orderRedisTrustStoreAbsoluteFilePath",
-          "propDescription": "Redis SSL TrustStore Absolute File Path",
-          "propValue": "D:/certificate/cacert",
+          "propName": "orderRedisTrustStoreAbsoluteFileName",
+          "propDescription": "Redis SSL TrustStore Absolute File Name",
+          "propValue": "cacert",
           "valueType": "string",
           "isTenantProperty": "false"
         },
@@ -1770,16 +1998,16 @@
           "isTenantProperty": "false"
         },
         {
-          "propName": "redisStatsKeyStoreAbsoluteFilePath",
-          "propDescription": "Redis SSL KeyStore Absolute File Path",
-          "propValue": "D:/certificate/myhost.p12",
+          "propName": "redisStatsKeyStoreAbsoluteFileName",
+          "propDescription": "Redis SSL KeyStore Absolute File Name",
+          "propValue": "myhost.p12",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
-          "propName": "redisStatsTrustStoreAbsoluteFilePath",
-          "propDescription": "Redis SSL TrustStore Absolute File Path",
-          "propValue": "D:/certificate/cacert",
+          "propName": "redisStatsTrustStoreAbsoluteFileName",
+          "propDescription": "Redis SSL TrustStore Absolute File Name",
+          "propValue": "cacert",
           "valueType": "string",
           "isTenantProperty": "false"
         },
@@ -1861,16 +2089,16 @@
           "isTenantProperty": "false"
         },
         {
-          "propName": "catalogRedisKeyStoreAbsoluteFilePath",
-          "propDescription": "Redis SSL KeyStore Absolute File Path",
-          "propValue": "D:/certificate/myhost.p12",
+          "propName": "catalogRedisKeyStoreAbsoluteFileName",
+          "propDescription": "Redis SSL KeyStore Absolute File Name",
+          "propValue": "myhost.p12",
           "valueType": "string",
           "isTenantProperty": "false"
         },
         {
-          "propName": "catalogRedisTrustStoreAbsoluteFilePath",
-          "propDescription": "Redis SSL TrustStore Absolute File Path",
-          "propValue": "D:/certificate/cacert",
+          "propName": "catalogRedisTrustStoreAbsoluteFileName",
+          "propDescription": "Redis SSL TrustStore Absolute File Name",
+          "propValue": "cacert",
           "valueType": "string",
           "isTenantProperty": "false"
         },

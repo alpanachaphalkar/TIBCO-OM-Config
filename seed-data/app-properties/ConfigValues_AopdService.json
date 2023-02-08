@@ -71,6 +71,13 @@
 					"propValue": "true",
 					"valueType": "boolean",
 					"isTenantProperty": "false"
+				},
+				{
+					"propName": "enableFailurePointInjection",
+					"propDescription": "Enable failure point injection for testing purpose",
+					"propValue": "false",
+					"valueType": "boolean",
+					"isTenantProperty": "false"
 				}
 			]
 		},
@@ -307,10 +314,10 @@
 					"propName": "catalogDsUrl",
 					"propDescription": "Data Source URL",
 					"allowedValues": [
-						"jdbc:postgresql://localhost:5432/catalogdsdbll?currentSchema=catalogdsschemall",
+						"jdbc:postgresql://postgres.om-db-alpanachaphalkar.svc.cluster.local:5432/catalogdsdbll?currentSchema=catalogdsschemall",
 						"jdbc:oracle:thin:@//localhost:1521/orcl.apac.tibco.com"
 					],
-					"propValue": "jdbc:postgresql://localhost:5432/catalogdsdbll?currentSchema=catalogdsschemall",
+					"propValue": "jdbc:postgresql://postgres.om-db-alpanachaphalkar.svc.cluster.local:5432/catalogdsdbll?currentSchema=catalogdsschemall",
 					"valueType": "string",
 					"isTenantProperty": "false"
 				},
@@ -604,16 +611,16 @@
 					"isTenantProperty": "false"
 				},
 				{
-					"propName": "redisKeyStoreAbsoluteFilePath",
-					"propDescription": "Redis SSL KeyStore Absolute File Path",
-					"propValue": "D:/certificate/myhost.p12",
+					"propName": "redisKeyStoreAbsoluteFileName",
+					"propDescription": "Redis SSL KeyStore Absolute File Name",
+					"propValue": "myhost.p12",
 					"valueType": "string",
 					"isTenantProperty": "false"
 				},
 				{
-					"propName": "redisTrustStoreAbsoluteFilePath",
-					"propDescription": "Redis SSL TrustStore Absolute File Path",
-					"propValue": "D:/certificate/cacert",
+					"propName": "redisTrustStoreAbsoluteFileName",
+					"propDescription": "Redis SSL TrustStore Absolute File Name",
+					"propValue": "cacert",
 					"valueType": "string",
 					"isTenantProperty": "false"
 				}
@@ -659,7 +666,7 @@
 				{
 					"propName": "emsServerURL",
 					"propDescription": "EMS Server URL",
-					"propValue": "tcp://localhost:7222",
+					"propValue": "tcp://ems-svc.ems-alpanachaphalkar.svc.cluster.local:30722",
 					"valueType": "string",
 					"isTenantProperty": "false"
 				},
@@ -737,18 +744,41 @@
 					"propValue": "http://orchestrator-svc.om-alpanachaphalkar.svc.cluster.local:9093",
 					"valueType": "string",
 					"isTenantProperty": "false"
-				},{
+				},
+				{
 					"propName": "planSubmissionRetryCount",
 					"propDescription": "Number of retries in case of plan submission failure to Orchestrator",
 					"propValue": "5",
 					"valueType": "string",
 					"isTenantProperty": "false"
-				},{
+				},
+				{
 					"propName": "planSubmissionRetryDuration",
 					"propDescription": "Delay between each retries, in seconds, of plan submission to Orchestrator",
 					"propValue": "5",
 					"valueType": "string",
 					"isTenantProperty": "false"
+				},
+				{
+				  "propName": "trustStorePassword",
+				  "propDescription": "SSL/TLS certificate trust store password to connect to Orchestrator",
+				  "propValue": "tibco123",
+				  "valueType": "string",
+				  "isTenantProperty": "false"
+				},
+				{
+				  "propName": "trustStoreType",
+				  "propDescription": "SSL/TLS certificate trust store type to connect to Orchestrator",
+				  "propValue": "jks",
+				  "valueType": "string",
+				  "isTenantProperty": "false"
+				},
+				{
+				  "propName": "trustStoreFileName",
+				  "propDescription": "SSL/TLS certificate file name to connect to Orchestrator",
+				  "propValue": "cacert",
+				  "valueType": "string",
+				  "isTenantProperty": "false"
 				}
 			]
 		},

@@ -5,12 +5,26 @@
             "categoryName": "Catalog Engine Configuration",
             "properties": [
                 {
+                    "propName": "isOfferSearchIndexEnabled",
+                    "propDescription": "Enable out-bound notifications to EMS on successful product catalog loading",
+                    "propValue": "false",
+                    "valueType": "boolean",
+                    "isTenantProperty": "false"
+                },
+				{
                     "propName": "modelPurgeWorkerThreadCount",
                     "propDescription": "Number of parallel processoring threads to purge catalog",
                     "propValue": "5",
                     "valueType": "number",
                     "isTenantProperty": "false"
-                }
+                },
+                {
+                    "propName": "allowedCorsOrigins",
+                    "propDescription": "Allowed origins to call service",
+                    "propValue": "http://localhost:9097" ,
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                  }
             ]
         },
         {
@@ -26,7 +40,7 @@
                 {
                     "propName": "emsServerURL",
                     "propDescription": "EMS Server URL",
-                    "propValue": "tcp://localhost:7222",
+                    "propValue": "tcp://ems-svc.ems-alpanachaphalkar.svc.cluster.local:30722",
                     "valueType": "string",
                     "isTenantProperty": "false"
                 },
@@ -66,17 +80,17 @@
                     "isTenantProperty": "false"
                 },
                 {
-                    "propName": "concurrentEmsConsumers",
-                    "propDescription": "EMS Concurrent Consumers",
-                    "propValue": "5",
-                    "valueType": "number",
-                    "isTenantProperty": "false"
-                },
-                {
                     "propName": "productCatalogLoadingQueue",
                     "propDescription": "Bulk Product Catalog Loading Queue",
                     "propValue": "tibco.aff.catalog.product.request",
                     "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "bulkProductConcurrentEmsConsumers",
+                    "propDescription": "EMS Concurrent Consumers for Bulk Product",
+                    "propValue": "1",
+                    "valueType": "number",
                     "isTenantProperty": "false"
                 },
                 {
@@ -87,9 +101,85 @@
                     "isTenantProperty": "false"
                 },
                 {
+                    "propName": "bulkPlanFragmentConcurrentEmsConsumers",
+                    "propDescription": "EMS Concurrent Consumers for Bulk Plan-Fragment",
+                    "propValue": "1",
+                    "valueType": "number",
+                    "isTenantProperty": "false"
+                },
+                {
                     "propName": "actionCatalogLoadingQueue",
                     "propDescription": "Bulk Action Catalog Loading Queue",
                     "propValue": "tibco.aff.catalog.action.request",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "bulkActionConcurrentEmsConsumers",
+                    "propDescription": "EMS Concurrent Consumers for Bulk Action",
+                    "propValue": "1",
+                    "valueType": "number",
+                    "isTenantProperty": "false"
+                },{
+                    "propName": "priceCatalogLoadingQueue",
+                    "propDescription": "Bulk Price Catalog Loading Queue",
+                    "propValue": "tibco.aff.catalog.price.request",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "bulkPriceConcurrentEmsConsumers",
+                    "propDescription": "EMS Concurrent Consumers for Bulk Price",
+                    "propValue": "1",
+                    "valueType": "number",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "discountCatalogLoadingQueue",
+                    "propDescription": "Bulk Discount Catalog Loading Queue",
+                    "propValue": "tibco.aff.catalog.discount.request",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "bulkDiscountConcurrentEmsConsumers",
+                    "propDescription": "EMS Concurrent Consumers for Bulk Discount",
+                    "propValue": "1",
+                    "valueType": "number",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "ruleCatalogLoadingQueue",
+                    "propDescription": "Rule Catalog Loading Queue",
+                    "propValue": "tibco.aff.catalog.operulemodel.request",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "ruleConcurrentEmsConsumers",
+                    "propDescription": "EMS Concurrent Consumers for Rule",
+                    "propValue": "1",
+                    "valueType": "number",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "categoryCatalogLoadingQueue",
+                    "propDescription": "Category Catalog Loading Queue",
+                    "propValue": "tibco.aff.catalog.category.request",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "categoryConcurrentEmsConsumers",
+                    "propDescription": "EMS Concurrent Consumers for Category",
+                    "propValue": "1",
+                    "valueType": "number",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "offerSearchProductIndexQueue",
+                    "propDescription": "Catalog Service Product Model Outbound Notification Queue",
+                    "propValue": "tibco.opes.offersearch.product",
                     "valueType": "string",
                     "isTenantProperty": "false"
                 },
@@ -108,6 +198,13 @@
                     "isTenantProperty": "false"
                 },
                 {
+                    "propName": "singleProductConcurrentEmsConsumers",
+                    "propDescription": "EMS Concurrent Consumers for Single Product",
+                    "propValue": "1",
+                    "valueType": "number",
+                    "isTenantProperty": "false"
+                },
+                {
                     "propName": "singlePlanfragmentCatalogLoadingQueue",
                     "propDescription": "Single Plan-Fragment Catalog Loading Queue",
                     "propValue": "tibco.aff.catalog.planfragment.request.single",
@@ -115,10 +212,52 @@
                     "isTenantProperty": "false"
                 },
                 {
+                    "propName": "singlePlanFragmentConcurrentEmsConsumers",
+                    "propDescription": "EMS Concurrent Consumers for Single Plan-Fragment",
+                    "propValue": "1",
+                    "valueType": "number",
+                    "isTenantProperty": "false"
+                },
+                {
                     "propName": "singleActionCatalogLoadingQueue",
                     "propDescription": "Single Action Catalog Loading Queue",
                     "propValue": "tibco.aff.catalog.action.request.single",
                     "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "singleActionConcurrentEmsConsumers",
+                    "propDescription": "EMS Concurrent Consumers for Single Action",
+                    "propValue": "1",
+                    "valueType": "number",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "singlePriceCatalogLoadingQueue",
+                    "propDescription": "Single Price Catalog Loading Queue",
+                    "propValue": "tibco.aff.catalog.price.request.single",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "singlePriceConcurrentEmsConsumers",
+                    "propDescription": "EMS Concurrent Consumers for Single Price",
+                    "propValue": "1",
+                    "valueType": "number",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "singleDiscountCatalogLoadingQueue",
+                    "propDescription": "Single Discount Catalog Loading Queue",
+                    "propValue": "tibco.aff.catalog.discount.request.single",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "singleDiscountConcurrentEmsConsumers",
+                    "propDescription": "EMS Concurrent Consumers for Single Discount",
+                    "propValue": "1",
+                    "valueType": "number",
                     "isTenantProperty": "false"
                 },
                 {
@@ -176,7 +315,64 @@
                     "propValue": "tibco.aff.catalog.action.request.single.dead",
                     "valueType": "string",
                     "isTenantProperty": "false"
+                },
+                {
+                    "propName": "priceCatalogLoadingDeadQueue",
+                    "propDescription": "Bulk Price Catalog Loading Dead Queue",
+                    "propValue": "tibco.aff.catalog.price.request.dead",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "discountCatalogLoadingDeadQueue",
+                    "propDescription": "Bulk Discount Catalog Loading Dead Queue",
+                    "propValue": "tibco.aff.catalog.discount.request.dead",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "categoryCatalogLoadingDeadQueue",
+                    "propDescription": "Category Catalog Loading Dead Queue",
+                    "propValue": "tibco.aff.catalog.category.request.dead",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "ruleCatalogLoadingDeadQueue",
+                    "propDescription": "Rule Catalog Loading Dead Queue",
+                    "propValue": "tibco.aff.catalog.rule.request.dead",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "singlePriceCatalogLoadingDeadQueue",
+                    "propDescription": "Single Price Catalog Loading Dead Queue",
+                    "propValue": "tibco.aff.catalog.price.request.single.dead",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "singleDiscountCatalogLoadingDeadQueue",
+                    "propDescription": "Single Discount Catalog Loading Dead Queue",
+                    "propValue": "tibco.aff.catalog.discount.request.single.dead",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                     "propName": "singlePlanFragmentLoadingQueue", 
+                     "propDescription": "Single Plan-Fragment Catalog Loading Queue", 
+                     "propValue": "tibco.aff.catalog.planfragment.request.single", 
+                     "valueType": "string", 
+                     "isTenantProperty": "false" 
                 }
+                ,{
+                    "propName": "singleActionModelLoadingQueue",
+                    "propDescription": "Single Action Catalog Loading Queue",
+                    "propValue": "tibco.aff.catalog.action.request.single",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                }
+
             ]
         },
         {
@@ -241,6 +437,125 @@
                 {
                     "propName": "operation.roles.getActionModelRoles",
                     "propDescription": "User Role to access getActionModelRoles Service",
+                    "propValue": "ROLE_ADMIN",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+				{
+                    "propName": "operation.roles.getAllActionModelRoles",
+                    "propDescription": "User Role to access getAllActionModelRoles Service",
+                    "propValue": "ROLE_ADMIN",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+				{
+                    "propName": "operation.roles.getAllPriceModelRoles",
+                    "propDescription": "User Role to access getAllPriceModelRoles Service",
+                    "propValue": "ROLE_ADMIN",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+				{
+                    "propName": "operation.roles.getAllOfferIdsModelRoles",
+                    "propDescription": "User Role to access getAllOfferIdsModelRoles Service",
+                    "propValue": "ROLE_ADMIN",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+				{
+                    "propName": "operation.roles.getAllDiscountModelRoles",
+                    "propDescription": "User Role to access getAllDiscountModelRoles Service",
+                    "propValue": "ROLE_ADMIN",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+				{
+                    "propName": "operation.roles.getAllProductModelRoles",
+                    "propDescription": "User Role to access getAllProductModelRoles Service",
+                    "propValue": "ROLE_ADMIN",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+				{
+                    "propName": "operation.roles.getAllPlanFragmentModelRoles",
+                    "propDescription": "User Role to access getAllPlanFragmentModelRoles Service",
+                    "propValue": "ROLE_ADMIN",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+				{
+                    "propName": "operation.roles.getAllCategoryModelRoles",
+                    "propDescription": "User Role to access getAllCategoryModelRoles Service",
+                    "propValue": "ROLE_ADMIN",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "operation.roles.submitPriceModel",
+                    "propDescription": "User Role to access submitPriceModel Service",
+                    "propValue": "ROLE_ADMIN",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "operation.roles.submitDiscountModel",
+                    "propDescription": "User Role to access submitDiscountModel Service",
+                    "propValue": "ROLE_ADMIN",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "operation.roles.submitOfferIdsModel",
+                    "propDescription": "User Role to access submitOfferIdsModel Service",
+                    "propValue": "ROLE_ADMIN",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "operation.roles.submitCategoryModel",
+                    "propDescription": "User Role to access submitCategoryModel Service",
+                    "propValue": "ROLE_ADMIN",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "operation.roles.submitRuleModel",
+                    "propDescription": "User Role to access submitRuleModel Service",
+                    "propValue": "ROLE_ADMIN",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "operation.roles.purgePriceModel",
+                    "propDescription": "User Role to access purgePriceModel Service",
+                    "propValue": "ROLE_ADMIN",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "operation.roles.purgeDiscountModel",
+                    "propDescription": "User Role to access purgeDiscountModel Service",
+                    "propValue": "ROLE_ADMIN",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "operation.roles.purgeCategoryModel",
+                    "propDescription": "User Role to access purgeCategoryModel Service",
+                    "propValue": "ROLE_ADMIN",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "operation.roles.purgeOfferId",
+                    "propDescription": "User Role to access purgeOfferId Service",
+                    "propValue": "ROLE_ADMIN",
+                    "valueType": "string",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "operation.roles.purgeRuleModel",
+                    "propDescription": "User Role to access purgeRuleModel Service",
                     "propValue": "ROLE_ADMIN",
                     "valueType": "string",
                     "isTenantProperty": "false"
@@ -431,8 +746,8 @@
                 {
                     "propName": "catalogRedisPassword",
                     "propDescription": "Password to connect to Redis Cluster/Node",
-                    "propValue": "password",
-                    "valueType": "string",
+                    "propValue": "",
+                    "valueType": "password",
                     "isTenantProperty": "false"
                 },
                 {
@@ -558,7 +873,7 @@
                     "propName": "redisKeyStorePassword",
                     "propDescription": "Redis SSL KeyStore Password",
                     "propValue": "tibco123",
-                    "valueType": "string",
+                    "valueType": "password",
                     "isTenantProperty": "false"
                 },
                 {
@@ -572,20 +887,20 @@
                     "propName": "redisTrustStorePassword",
                     "propDescription": "Redis SSL TrustStore Password",
                     "propValue": "tibco123",
+                    "valueType": "password",
+                    "isTenantProperty": "false"
+                },
+                {
+                    "propName": "redisKeyStoreAbsoluteFileName",
+                    "propDescription": "Redis SSL KeyStore Absolute File Name",
+                    "propValue": "myhost.p12",
                     "valueType": "string",
                     "isTenantProperty": "false"
                 },
                 {
-                    "propName": "redisKeyStoreAbsoluteFilePath",
-                    "propDescription": "Redis SSL KeyStore Absolute File Path",
-                    "propValue": "D:/certificate/myhost.p12",
-                    "valueType": "string",
-                    "isTenantProperty": "false"
-                },
-                {
-                    "propName": "redisTrustStoreAbsoluteFilePath",
-                    "propDescription": "Redis SSL TrustStore Absolute File Path",
-                    "propValue": "D:/certificate/cacert",
+                    "propName": "redisTrustStoreAbsoluteFileName",
+                    "propDescription": "Redis SSL TrustStore Absolute File Name",
+                    "propValue": "cacert",
                     "valueType": "string",
                     "isTenantProperty": "false"
                 }

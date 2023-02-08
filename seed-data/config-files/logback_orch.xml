@@ -53,15 +53,15 @@
 		<appender-ref ref="console"/>
 		<appender-ref ref="LocalLogFileAppender"/>
 	</logger>
-	<logger name="com.tib.fom" level="INFO" additivity="false">
+	<logger name="com.tib.fom" level="DEBUG" additivity="false">
 		<appender-ref ref="console"/>
 		<appender-ref ref="LocalLogFileAppender"/>
 	</logger>
-	<logger name="com.tibco.aff" level="INFO" additivity="false">
+	<logger name="com.tibco.aff" level="DEBUG" additivity="false">
 		<appender-ref ref="console"/>
 		<appender-ref ref="LocalLogFileAppender"/>
 	</logger>
-	<logger name="com.tibco.om" level="INFO" additivity="false">
+	<logger name="com.tibco.om" level="DEBUG" additivity="false">
 		<appender-ref ref="console"/>
 		<appender-ref ref="LocalLogFileAppender"/>
 	</logger>

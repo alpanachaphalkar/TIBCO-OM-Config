@@ -28,15 +28,15 @@
 			<pattern>%date{ISO8601} %5p [%X{businessTransactionId}] [%X{orderRef}] [%X{engineName}] [%c] [%X{operation}] - %m %X{stackTrace}%n</pattern>
 		</encoder>
 	</appender>
-	<logger name="com.tibco.fom" level="INFO" additivity="false">
+	<logger name="com.tibco.fom" level="DEBUG" additivity="false">
 		<appender-ref ref="console"/>
 		<appender-ref ref="LocalLogFileAppender"/>
 	</logger>
-	<logger name="com.tibco.om" level="INFO" additivity="false">
+	<logger name="com.tibco.om" level="DEBUG" additivity="false">
 		<appender-ref ref="console"/>
 		<appender-ref ref="LocalLogFileAppender"/>
 	</logger>
-	<logger name="com.tibco.aff" level="INFO" additivity="false">
+	<logger name="com.tibco.aff" level="DEBUG" additivity="false">
 		<appender-ref ref="console"/>
 		<appender-ref ref="LocalLogFileAppender"/>
 	</logger>
