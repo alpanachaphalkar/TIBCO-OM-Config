@@ -33,28 +33,28 @@
                 {
                     "propName": "archivalServiceUrl",
                     "propDescription": "Archival service URL",
-                    "propValue": "http://archival-svc.om-alpanachaphalkar.svc.cluster.local:9099",
+                    "propValue": "https://archival-svc-om-alpanachaphalkar.cloud.okteto.net",
                     "valueType": "string",
                     "isTenantProperty": "false"
                 },
                 {
                     "propName": "catalogServiceUrl",
                     "propDescription": "Catalog service URL",
-                    "propValue": "http://catalog-svc.om-alpanachaphalkar.svc.cluster.local:9092",
+                    "propValue": "https://catalog-svc-om-alpanachaphalkar.cloud.okteto.net",
                     "valueType": "string",
                     "isTenantProperty": "false"
                 },
                 {
                     "propName": "jeopardyServiceUrl",
                     "propDescription": "Jeopardy service URL",
-                    "propValue": "http://jeopardy-svc.om-alpanachaphalkar.svc.cluster.local:9102",
+                    "propValue": "https://jeopardy-svc-om-alpanachaphalkar.cloud.okteto.net",
                     "valueType": "string",
                     "isTenantProperty": "false"
                 },
                 {
                     "propName": "orchestratorServiceUrl",
                     "propDescription": "Orchestrator service URL",
-                    "propValue": "http://orchestrator-svc.om-alpanachaphalkar.svc.cluster.local:9093",
+                    "propValue": "https://orchestrator-svc-om-alpanachaphalkar.cloud.okteto.net",
                     "valueType": "string",
                     "isTenantProperty": "false"
                 },
